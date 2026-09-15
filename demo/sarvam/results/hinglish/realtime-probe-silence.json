@@ -1,0 +1,521 @@
+{
+  "utc": "2026-09-15T07:38:19.460099+00:00",
+  "scope": "synthetic manual protocol probe",
+  "events": [
+    {
+      "event": "session.begin"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": ""
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": "Okay"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": "Okay."
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": "Okay. Now"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": "Okay. Now"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": "Okay. Now tell"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": "Okay. Now tell me"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": "Okay. Now tell me,"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": "Okay. Now tell me,"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": "Okay. Now tell me, tell"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": "Okay. Now tell me, tell me"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": "Okay. Now tell me, tell me,"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": "Okay. Now tell me, tell me,"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": "Okay. Now tell me, tell me, tell"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": "Okay. Now tell me, tell me, tell"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": "The"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": "Theek"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": "Theek hai"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": "Theek hai."
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": "Theek hai. Ab"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": "Theek hai. Ab bat"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": "Theek hai. Ab batai"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": "Theek hai. Ab bataiye"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": "Theek hai. Ab bataiye a"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": "Theek hai. Ab bataiye aap"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": "Theek hai. Ab bataiye aapne"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": "Theek hai. Ab bataiye aapne is"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": "Theek hai. Ab bataiye aapne is"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": "Theek hai. Ab bataiye aapne is"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": "Theek hai. Ab bataiye aapne is project"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": "Theek hai. Ab bataiye aapne is project mein"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": "Theek hai. Ab bataiye aapne is project"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": "Theek hai. Ab bataiye aapne is project mein"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": "Theek hai. Ab bataiye aapne is project mein ka"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": "Theek hai. Ab bataiye aapne is project mein kaun"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": "Theek hai. Ab bataiye aapne is project mein kaun sa"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": "Theek hai. Ab bataiye aapne is project mein kaun sa technical"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": "Theek hai. Ab bataiye aapne is project mein kaun sa technical"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": "Theek hai. Ab bataiye aapne is project mein kaun sa technical proble"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": "Theek hai. Ab bataiye aapne is project mein kaun sa technical problem"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": "Theek hai. Ab bataiye aapne is project mein kaun sa technical problem solve"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 0,
+      "text": "Theek hai. Ab bataiye aapne is project mein kaun sa technical problem solve ki"
+    },
+    {
+      "event": "transcript.final",
+      "utterance_idx": 0,
+      "text": "ठीक है। अब बताइए आपने इस project में कौन सा technical problem solve किया?",
+      "start_s": 0.5,
+      "end_s": 4.425
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है।"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है।"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है।"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है।"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब बताइए"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब बताइए"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब बताइए आपने"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब बताइए आपने"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब बताइए आपने इस"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब बताइए आपने इस"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब बताइए आपने इस"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब बताइए"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब बताइए"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब बताइए आपने"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब बताइए आपने"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब बताइए आपने इस"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब बताइए आपने इस"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब बताइए आपने इस प्रोजेक्ट"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब बताइए आपने इस प्रोजेक्ट"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब बताइए आपने इस प्रोजेक्ट में"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब बताइए आपने इस प्रोजेक्ट में"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब बताइए आपने इस प्रोजेक्ट में कौन"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब बताइए आपने इस प्रोजेक्ट में कौन"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब बताइए आपने इस प्रोजेक्ट में कौन सा"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब बताइए आपने इस प्रोजेक्ट में कौन सा"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब बताइए आपने इस प्रोजेक्ट में कौन सा टेक्"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब बताइए आपने इस प्रोजेक्ट में कौन सा टेक्निकल"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब बताइए आपने इस प्रोजेक्ट में कौन सा टेक्निकल"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब बताइए आपने इस प्रोजेक्ट"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब बताइए आपने इस प्रोजेक्ट"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब बताइए आपने इस प्रोजेक्ट में"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब बताइए आपने इस प्रोजेक्ट में"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब बताइए आपने इस प्रोजेक्ट में कौन"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब बताइए आपने इस प्रोजेक्ट में कौन"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब बताइए आपने इस प्रोजेक्ट में कौन सा"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब बताइए आपने इस प्रोजेक्ट में कौन सा"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब बताइए आपने इस प्रोजेक्ट में कौन सा टेक्"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब बताइए आपने इस प्रोजेक्ट में कौन सा टेक्निकल"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब बताइए आपने इस प्रोजेक्ट में कौन सा टेक्निकल"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब बताइए आपने इस प्रोजेक्ट में कौन सा टेक्निकल प्रॉब्लम"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब बताइए आपने इस प्रोजेक्ट में कौन सा टेक्निकल प्रॉब्लम"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब बताइए आपने इस प्रोजेक्ट में कौन सा टेक्निकल प्रॉब्लम सॉल्व"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब बताइए आपने इस प्रोजेक्ट में कौन सा टेक्निकल प्रॉब्लम सॉल्व"
+    },
+    {
+      "event": "transcript.partial",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब बताइए आपने इस प्रोजेक्ट में कौन सा टेक्निकल प्रॉब्लम सॉल्व किया"
+    },
+    {
+      "event": "transcript.final",
+      "utterance_idx": 1,
+      "text": "ठीक है। अब बताइए आपने इस project में कौन सा technical problem solve किया?",
+      "start_s": 4.675,
+      "end_s": 8.601
+    },
+    {
+      "event": "session.end"
+    }
+  ],
+  "sent_boundaries": [
+    {
+      "start_s": 0.5,
+      "end_s": 4.4253125
+    },
+    {
+      "start_s": 4.6753125,
+      "end_s": 8.600625
+    }
+  ]
+}

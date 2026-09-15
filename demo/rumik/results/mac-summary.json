@@ -1,0 +1,82 @@
+{
+  "status": "passed",
+  "model_directory": "models/rumik-oss-1/0ed3c98684e14350c910129c0efa179841c41ad2",
+  "endpoint": "http://127.0.0.1:6006",
+  "hardware": {
+    "profile": "macos_apple_silicon",
+    "backend": "mps",
+    "device_name": "Apple M5 Pro",
+    "unified_memory_bytes": 51539607552,
+    "os": "macOS-26.6.2-arm64-arm-64bit",
+    "dtype": "float32"
+  },
+  "runtime_health_after_benchmark": {
+    "status": "ok",
+    "model": "rumik-ai/rumik-oss-1",
+    "runtime": {
+      "loaded": true,
+      "max_rss_bytes": 13447266304,
+      "mps_current_allocated_bytes": 13938065664,
+      "mps_driver_allocated_bytes": 14297038848,
+      "requested_device": "mps",
+      "resolved_device": "mps",
+      "requested_dtype": "float32",
+      "resolved_dtype": "float32",
+      "cpu_threads": null
+    },
+    "compatibility": {
+      "upstream_server_sha256": "48c4eb34c507c2cdfa64941d556ac6c69afa1dfc2dd369a5a756a2fe0c764064",
+      "local_wrapper_sha256": "72bb00abefb464c1621596d41e30ba223be5e27e1cd32311524555c08a22d6cc"
+    }
+  },
+  "cases": [
+    {
+      "case": "introduction",
+      "request_seconds": 22.87507337500574,
+      "queue_wait_seconds": 4.837499000132084e-05,
+      "audio_seconds": 2.48,
+      "real_time_factor": 9.223819909276509,
+      "wav_path": "demo/rumik/results/mac-float32-audio/d3db5338aae140c5.wav",
+      "wav_sha256": "8ac17f92bee90c4785797619c71916a9c26b3ad43c0aa096139410f4f00a86cb",
+      "peak_abs_pcm16": 19157
+    },
+    {
+      "case": "follow_up",
+      "request_seconds": 27.71624924999196,
+      "queue_wait_seconds": 22.87511287498637,
+      "audio_seconds": 2.96,
+      "real_time_factor": 9.363597719591878,
+      "wav_path": "demo/rumik/results/mac-float32-audio/ca1e4eae65abf78d.wav",
+      "wav_sha256": "59e17d35738eb0f1e54968456ae7376fb29195346b98216b53680cd2b2b9e4b7",
+      "peak_abs_pcm16": 30112
+    },
+    {
+      "case": "thinking",
+      "request_seconds": 24.847423583996715,
+      "queue_wait_seconds": 27.71023175001028,
+      "audio_seconds": 2.64,
+      "real_time_factor": 9.411902872726028,
+      "wav_path": "demo/rumik/results/mac-float32-audio/6ee16429668c2d82.wav",
+      "wav_sha256": "83d3836b29a10fa0251ddc3ce38e74cf18541c96903d11dc476cc01d1e5e6891",
+      "peak_abs_pcm16": 21376
+    },
+    {
+      "case": "closing",
+      "request_seconds": 34.8098092500004,
+      "queue_wait_seconds": 24.840460917010205,
+      "audio_seconds": 3.6,
+      "real_time_factor": 9.669391458333443,
+      "wav_path": "demo/rumik/results/mac-float32-audio/6f9a48800d2f3095.wav",
+      "wav_sha256": "f238c3e8bcb93e716048676c63ad685522ad3441126243f90cf8a54d4f828373",
+      "peak_abs_pcm16": 17596
+    }
+  ],
+  "expected_error_statuses": {
+    "invalid_speaker": 400,
+    "missing_input": 422,
+    "empty_input": 422
+  },
+  "performance_limit": "This float32 configuration is not yet responsive enough for the planned 5-second interview reply target. Audio intelligibility and browser playback are not evaluated by this benchmark.",
+  "report_path": "demo/rumik/results/mac-float32.json",
+  "report_sha256": "5dbc23d12300f8e21dadc9a83648d6a781942b5694b79b2c2d73d8205a7cf259"
+}

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101827" />
+    <title>Interview practice</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <p class="eyebrow">INTERVIEW PRACTICE</p>
+        <h1>Tell your story.</h1>
+        <p class="lede">Practise non-technical behavioural questions about teamwork, communication, and real-life experiences.</p>
+      </section>
+
+      <section id="setup" class="card setup-card" aria-labelledby="setup-title">
+        <div class="section-heading"><div><p class="eyebrow">01 / SETUP</p><h2 id="setup-title">Shape your practice</h2></div><span id="language-label" class="language-pill">Tanglish</span></div>
+        <form id="setup-form">
+          <label>Interview language<select id="language-select" name="language"><option value="tanglish" selected>Tanglish — தமிழ் + English</option><option value="hinglish">Hinglish — हिन्दी + English</option><option value="english">English</option></select></label>
+          <div class="form-grid">
+            <label>Role or round<input name="role" value="Behavioural interview" required maxlength="120" /></label>
+            <label>Difficulty<select name="difficulty"><option value="junior" selected>Simple</option><option value="mid">Standard</option><option value="senior">Detailed</option></select></label>
+            <label>Duration<select name="duration_minutes"><option value="5" selected>5 min</option><option value="15">15 min</option><option value="30">30 min</option><option value="45">45 min</option></select></label>
+          </div>
+          <label>What should the interviewer listen for?<textarea name="rubric" rows="3" required maxlength="1000">Simple answers about helping others, speaking politely, doing work carefully, and handling everyday problems. No English or school qualifications needed.</textarea></label>
+          <button class="primary" type="submit">Continue to microphone <span aria-hidden="true">↗</span></button>
+        </form>
+      </section>
+
+      <section id="room" class="card room-card" hidden aria-live="polite">
+        <div class="room-top"><div><p class="eyebrow">LIVE PRACTICE</p><h2 id="room-title">Behavioural interview</h2></div><button id="speaker-button" class="quiet-button" type="button">Enable speaker</button><button id="end-button" class="quiet-button" type="button">End session</button></div>
+        <div class="status-row"><span id="status-dot" class="status-dot"></span><strong id="status-label">Waiting for microphone</strong><span id="question-count" class="muted"></span></div>
+        <div id="permission" class="permission-box"><div><h3>Ready when you are</h3><p>Allow microphone and playback once. Your mic stays on while the interviewer speaks, with echo cancellation enabled.</p></div><button id="permission-button" class="primary" type="button">பேச ஆரம்பிக்கலாம் / Start</button></div>
+        <div id="conversation" class="conversation" aria-label="Interview captions"></div>
+        <p id="audio-help" class="text-continuation">குரல் கேட்கலைன்னா மேலே உள்ள “Enable speaker” பட்டனை அழுத்துங்க. நீங்க தொடர்ந்து பேசலாம்.</p>
+      </section>
+      <p id="notice" class="notice" role="status"></p>
+    </main>
+    <script src="./app.js" defer></script>
+  </body>
+</html>

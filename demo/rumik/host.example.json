@@ -1,0 +1,26 @@
+{
+  "hardware": {
+    "device_name": null,
+    "gpu_uuid": null,
+    "gpu_memory_total_mib": null,
+    "driver": null,
+    "cuda": null
+  },
+  "revisions": {
+    "model_revision": "0ed3c98684e14350c910129c0efa179841c41ad2",
+    "server_revision": "0ed3c98684e14350c910129c0efa179841c41ad2",
+    "server_sha256": "48c4eb34c507c2cdfa64941d556ac6c69afa1dfc2dd369a5a756a2fe0c764064"
+  },
+  "provenance": {
+    "operator_attested": false,
+    "captured_at_utc": null,
+    "note": "Template only. Fill with observations from the exclusive inference host.",
+    "attestation": null
+  },
+  "installed_versions": {},
+  "memory": {
+    "measured": false,
+    "value": null,
+    "reason": "No inference host selected"
+  }
+}

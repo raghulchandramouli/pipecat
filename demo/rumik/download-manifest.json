@@ -1,0 +1,46 @@
+{
+  "revision": "0ed3c98684e14350c910129c0efa179841c41ad2",
+  "directory": "models/rumik-oss-1/0ed3c98684e14350c910129c0efa179841c41ad2",
+  "files": {
+    "model-00001-of-00002.safetensors": {
+      "bytes": 4997224952,
+      "sha256": "ba333fd8e5c48151ce6d890919da1e0104471aa0d029557548720de0a5734dea",
+      "download_etag": "ba333fd8e5c48151ce6d890919da1e0104471aa0d029557548720de0a5734dea"
+    },
+    "model-00002-of-00002.safetensors": {
+      "bytes": 1765876498,
+      "sha256": "68e5ce5c4915885ad47835837a62dcd56aba69da86e99040700bb9e91bc022af",
+      "download_etag": "68e5ce5c4915885ad47835837a62dcd56aba69da86e99040700bb9e91bc022af"
+    },
+    "codec/model.safetensors": {
+      "bytes": 384649828,
+      "sha256": "bac7e85083dcded655d24eaadde7e6eea34c0da1b35fa2d284e641bd2b942a5e",
+      "download_etag": "bac7e85083dcded655d24eaadde7e6eea34c0da1b35fa2d284e641bd2b942a5e"
+    },
+    "server.py": {
+      "bytes": 5716,
+      "sha256": "48c4eb34c507c2cdfa64941d556ac6c69afa1dfc2dd369a5a756a2fe0c764064",
+      "download_etag": "e2ca20b5d13349700116f7068c785841735beb5a"
+    },
+    "modeling_rumik_oss.py": {
+      "bytes": 6861,
+      "sha256": "9b2c05014fa825cc5db030229a8e6707df4a80ebcd2c34b44dc9cbc294d0b8a6",
+      "download_etag": "99453ecd70dc5ef3cbb87231abd7447683bca25b"
+    },
+    "configuration_rumik_oss.py": {
+      "bytes": 2016,
+      "sha256": "f7da28962c6314d52515f9ca4cf8c6ebbce80e08c928474e9dd17c3944c692cc",
+      "download_etag": "629576f93fed88d26202bd64a92b361bb0fdf9f4"
+    },
+    "config.json": {
+      "bytes": 2425,
+      "sha256": "7bfc3004d5321b36ff96bb604941dc270cae408ba7bab54c35ada6db99100720",
+      "download_etag": "e75045bd48e4fe84e0a170ccb030feee9ac94dba"
+    },
+    "tokenizer.json": {
+      "bytes": 24400900,
+      "sha256": "8d89ac93786d08d5535ae2305e65daf145a7af745748558f0556a1ea1d210d16",
+      "download_etag": "8d89ac93786d08d5535ae2305e65daf145a7af745748558f0556a1ea1d210d16"
+    }
+  }
+}

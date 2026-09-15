@@ -1,0 +1,277 @@
+{
+  "utc": "2026-09-15T09:00:22.309934+00:00",
+  "scope": "Chromium UI, synthetic microphone, real WebRTC and live providers",
+  "passed": true,
+  "interrupt_opening": true,
+  "source_sha256": {
+    "interview/__init__.py": "e7d82f1271f2e5b5e472fc4734ea5d43a5fadb1250c33c773e03d1906b90b66b",
+    "interview/browser_contract.py": "6350582a50ab576bdc06bbcee908e09980f6b7f5c3cdc5532fb60746a9e58445",
+    "interview/browser_stt.py": "4c5706163884d8561b3a27670fbfda8b68d49274300fc8da2858e19cdf9e569f",
+    "interview/coaching.py": "a251b56d5d12f7bf76b4012b906da1a852a7e415ea99bfe58f6778151e594559",
+    "interview/config.py": "e711a09b27066c5008b066acb052ef2407811818c3481f29bab6b90f84b6237f",
+    "interview/contracts.py": "f9a620b38d9ce5c6cb4275ae05a946b3eade9001a3801d7a289af0a5fc9f5864",
+    "interview/controller.py": "1b3e2a830a46a7d059e2af6ca7e9e4b432e4c471111655be7043d29053a995b6",
+    "interview/eval_bot.py": "bf2ce4694aca4de414cb65bf4ade25cc21483206293915600c2d663e9936e6f4",
+    "interview/google_llm.py": "632795099f37f29446a44942e1bc1037f3a300d01c0dc45ff1f9f6fecf57e855",
+    "interview/ledger.py": "a81e3f6778f3dfd1182144eb8c115860bece89fbf5e2618df79f0150ea1a26f2",
+    "interview/pipeline.py": "b9d7dcf15bd32bfd48ebd26cdfbd059290c2a37f8160bc4add79f9ba8faf75e9",
+    "interview/providers.py": "da0cc585e3dabcff9a4eff0f0456aa1fe67782aafe0cb21aeb44690b3d845832",
+    "interview/reply_guard.py": "21070171999e280a3146fbd460a61e23b04082d2d5fde19b2eebf1e847180db7",
+    "interview/rumik.py": "b933fa7dbcba1eb42414564850d197bf1664fff925c40489b3619ba706b75e82",
+    "interview/sarvam_events.py": "c43465a1a73933918fdf3bebe923a74817b8763e1db74757ccb5e8b1c93ae57f",
+    "interview/sarvam_tts.py": "40e3fa17070bf7f242938d98be87899882767096f99603f61c4e9025b310c77a",
+    "interview/server.py": "7fa35f9529d8c687d48e4610039a3bfb176194e6b4d9a05abcea55936006e2bb",
+    "interview/session.py": "ee57a2b41b51b8b57ffda65ec1dd61e4849a2e421490a83e562159018f71f82a",
+    "interview/transcript_gate.py": "a1921d2ffa4f83c13f175fc8d1a8dd9a6030ac4b8799682ab3c0fd8a03c08baa",
+    "interview/turn_coordinator.py": "9ab14e0952ef168948d77892cfe73c0b4686fd2fe23e95d0223fe2f690b02cad",
+    "interview/turn_policy.py": "829336f5f42723f29b059d3a4500ddb332e6effa66f012ab0a88869344540e2c",
+    "interview/voice_controls.py": "9ee2993b87866328c298bf21e15498b87f621d9d10cb077ac3d9c8c7b69daa90",
+    "interview/web/app.js": "dcb791976b6bf429f1ff5fe7454d625a1e88751c8a0f68165f3a8ffe221da696",
+    "interview/web/index.html": "98df4b1cd0386ce020e003f9cc413142a02f3f45c09bb54afd8ce5c1d213c76b",
+    "interview/web/styles.css": "29b91cc4b9e0259b633ff818a3505c62bde287f38dd72d97b3916337530f42a7"
+  },
+  "stage": "ended",
+  "events": [
+    {
+      "at": 984.5999999996275,
+      "v": 1,
+      "session_id": "ba988d28ce374a00b95a4b4e6860e1a0",
+      "connection_generation": 1,
+      "seq": 1,
+      "type": "interview.status",
+      "status": "Reconnecting"
+    },
+    {
+      "at": 1015.1999999997206,
+      "v": 1,
+      "session_id": "ba988d28ce374a00b95a4b4e6860e1a0",
+      "connection_generation": 1,
+      "seq": 2,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "introduction",
+      "question_index": 1,
+      "question_count": 1,
+      "playback_epoch": 0
+    },
+    {
+      "at": 1095.5,
+      "v": 1,
+      "session_id": "ba988d28ce374a00b95a4b4e6860e1a0",
+      "connection_generation": 1,
+      "seq": 3,
+      "type": "interview.reply",
+      "text": "Welcome. I am your AI practice interviewer for this 5-minute mid interview for Backend engineer. I will ask one question at a time. You can ask me to repeat, skip, take a moment, or end the interview. You may answer in Hindi, English, or Hinglish.",
+      "dispatch_id": 1
+    },
+    {
+      "at": 1096.5999999996275,
+      "v": 1,
+      "session_id": "ba988d28ce374a00b95a4b4e6860e1a0",
+      "connection_generation": 1,
+      "seq": 4,
+      "type": "interview.reply",
+      "text": "Question 1 of 1 for this mid Backend engineer interview: role-relevant reasoning. Clear reasoning, reliable systems thinking, and concrete examples. Aap Hindi, English, ya Hinglish mein jawab de sakte hain.",
+      "dispatch_id": 3
+    },
+    {
+      "at": 1538.0999999996275,
+      "v": 1,
+      "session_id": "ba988d28ce374a00b95a4b4e6860e1a0",
+      "connection_generation": 1,
+      "seq": 5,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 1,
+      "playback_epoch": 0
+    },
+    {
+      "at": 2037.6999999997206,
+      "v": 1,
+      "session_id": "ba988d28ce374a00b95a4b4e6860e1a0",
+      "connection_generation": 1,
+      "seq": 6,
+      "type": "interview.interruption",
+      "playback_epoch": 1
+    },
+    {
+      "at": 2038.3999999999069,
+      "v": 1,
+      "session_id": "ba988d28ce374a00b95a4b4e6860e1a0",
+      "connection_generation": 1,
+      "seq": 7,
+      "type": "interview.interruption",
+      "playback_epoch": 4
+    },
+    {
+      "at": 2038.3999999999069,
+      "v": 1,
+      "session_id": "ba988d28ce374a00b95a4b4e6860e1a0",
+      "connection_generation": 1,
+      "seq": 8,
+      "type": "interview.interruption",
+      "playback_epoch": 2
+    },
+    {
+      "at": 2038.5,
+      "v": 1,
+      "session_id": "ba988d28ce374a00b95a4b4e6860e1a0",
+      "connection_generation": 1,
+      "seq": 9,
+      "type": "interview.interruption",
+      "playback_epoch": 3
+    },
+    {
+      "at": 2039.7999999998137,
+      "v": 1,
+      "session_id": "ba988d28ce374a00b95a4b4e6860e1a0",
+      "connection_generation": 1,
+      "seq": 10,
+      "type": "interview.interruption",
+      "playback_epoch": 5
+    },
+    {
+      "at": 2042.3999999999069,
+      "v": 1,
+      "session_id": "ba988d28ce374a00b95a4b4e6860e1a0",
+      "connection_generation": 1,
+      "seq": 11,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 1,
+      "playback_epoch": 5
+    },
+    {
+      "at": 2757.1999999997206,
+      "v": 1,
+      "session_id": "ba988d28ce374a00b95a4b4e6860e1a0",
+      "connection_generation": 1,
+      "seq": 12,
+      "type": "interview.caption",
+      "text": "End",
+      "final": false,
+      "segment_id": "0"
+    },
+    {
+      "at": 2767.0999999996275,
+      "v": 1,
+      "session_id": "ba988d28ce374a00b95a4b4e6860e1a0",
+      "connection_generation": 1,
+      "seq": 13,
+      "type": "interview.caption",
+      "text": "End of",
+      "final": false,
+      "segment_id": "0"
+    },
+    {
+      "at": 2775.2999999998137,
+      "v": 1,
+      "session_id": "ba988d28ce374a00b95a4b4e6860e1a0",
+      "connection_generation": 1,
+      "seq": 14,
+      "type": "interview.caption",
+      "text": "End of the",
+      "final": false,
+      "segment_id": "0"
+    },
+    {
+      "at": 2782.399999999907,
+      "v": 1,
+      "session_id": "ba988d28ce374a00b95a4b4e6860e1a0",
+      "connection_generation": 1,
+      "seq": 15,
+      "type": "interview.caption",
+      "text": "End of the interview",
+      "final": false,
+      "segment_id": "0"
+    },
+    {
+      "at": 2789.7999999998137,
+      "v": 1,
+      "session_id": "ba988d28ce374a00b95a4b4e6860e1a0",
+      "connection_generation": 1,
+      "seq": 16,
+      "type": "interview.caption",
+      "text": "End of the interview.",
+      "final": false,
+      "segment_id": "0"
+    },
+    {
+      "at": 2883.2999999998137,
+      "v": 1,
+      "session_id": "ba988d28ce374a00b95a4b4e6860e1a0",
+      "connection_generation": 1,
+      "seq": 17,
+      "type": "interview.interruption",
+      "playback_epoch": 6
+    },
+    {
+      "at": 2883.7999999998137,
+      "v": 1,
+      "session_id": "ba988d28ce374a00b95a4b4e6860e1a0",
+      "connection_generation": 1,
+      "seq": 18,
+      "type": "interview.reply",
+      "text": "That concludes your 5-minute mid practice interview for Backend engineer. Thank you for sharing your experience. Dhanyavaad.",
+      "dispatch_id": 7
+    },
+    {
+      "at": 4882,
+      "v": 1,
+      "session_id": "ba988d28ce374a00b95a4b4e6860e1a0",
+      "connection_generation": 1,
+      "seq": 19,
+      "type": "interview.ended"
+    }
+  ],
+  "playback_interruptions": [
+    {
+      "at": 2038.5,
+      "epoch": 1,
+      "muted": true,
+      "paused": true,
+      "detached": true
+    },
+    {
+      "at": 2038.5,
+      "epoch": 4,
+      "muted": true,
+      "paused": true,
+      "detached": true
+    },
+    {
+      "at": 2038.5,
+      "epoch": 2,
+      "muted": true,
+      "paused": true,
+      "detached": true
+    },
+    {
+      "at": 2038.5,
+      "epoch": 3,
+      "muted": true,
+      "paused": true,
+      "detached": true
+    },
+    {
+      "at": 2039.8999999999069,
+      "epoch": 5,
+      "muted": true,
+      "paused": true,
+      "detached": true
+    },
+    {
+      "at": 2883.5,
+      "epoch": 6,
+      "muted": true,
+      "paused": true,
+      "detached": true
+    }
+  ],
+  "page_errors": [],
+  "notice": ""
+}

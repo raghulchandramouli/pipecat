@@ -1,0 +1,14 @@
+{
+  "utc": "2026-09-15T08:49:37.148453+00:00",
+  "scope": "one full synthetic browser-answer transcript through the coaching contract",
+  "model": "gemini-3.8-flash",
+  "thinking_level": "low",
+  "transcript_sha256": "14e307399932281b43eb147be957657d9d7b5489329a2770c48d5be9ad7f5d03",
+  "segment_count": 5,
+  "completion_status": "complete",
+  "completion_valid": true,
+  "coaching_json_valid": true,
+  "verbatim_quote_valid": false,
+  "provider_outcome": "response_received",
+  "validation_reason": "evidence quote is not a verbatim candidate transcript substring"
+}

@@ -40,6 +40,10 @@ MANIFEST
 .DS_Store
 .env*
 fly.toml
+.loop
+
+# Downloaded model files
+/models/
 
 # Examples
 examples/**/node_modules/

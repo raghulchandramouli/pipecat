@@ -1,3 +1,40 @@
+# AI Voice Interviewer
+
+A browser-based, non-technical behavioural interview built with Pipecat.
+Candidates choose Tanglish, Hinglish, or English. Questions use simple language
+and everyday situations; formal education and office experience are not required.
+
+The live pipeline uses Sarvam speech recognition, Gemini Flash replies, and Sarvam
+speech synthesis. A local Rumik model server is not required.
+
+## Run the interview
+
+From the repository root, with Python 3.12 and uv installed:
+
+```bash
+uv venv demo/.venv --python 3.12
+python3 demo/scripts/prepare_pipecat.py
+uv pip install --python demo/.venv/bin/python 'demo/.build/pipecat[sarvam]' -r demo/requirements-browser.txt
+```
+
+Create `demo/.env` with your own `GOOGLE_API_KEY` and `SARVAM_API_KEY`, then run:
+
+```bash
+PYTHONPATH=src demo/.venv/bin/python -m demo.interview.server --host 127.0.0.1 --port 7860
+```
+
+Open <http://localhost:7860>, select the interview language, and press Start.
+See the [demo guide](demo/README.md) and [browser guide](demo/docs/browser-interview.md)
+for configuration, tests, and limitations. Credentials, downloaded models, and
+virtual environments are excluded from Git.
+
+## Pipecat framework
+
+This repository includes the Pipecat source used by the application. Its upstream
+documentation and attribution follow.
+
+---
+
 <h1><div align="center">
  <img alt="pipecat" width="300px" height="auto" src="https://raw.githubusercontent.com/pipecat-ai/pipecat/main/pipecat.png">
 </div></h1>

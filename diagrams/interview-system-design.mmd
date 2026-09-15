@@ -1,0 +1,30 @@
+%% Proposed application architecture. Blue = existing integration; amber = new application work.
+flowchart TD
+    browser["Candidate browser<br/>Microphone, captions, speaker"]
+    transport["Pipecat WebRTC transport<br/>Input and output"]
+    stt["Sarvam realtime STT<br/>Audio and final outcomes"]
+    core["Turn coordination - NEW<br/>Transcript admission, VAD,<br/>aggregation and dispatch gate"]
+    gemini["Google text LLM<br/>Completion and interview reply"]
+    guard["Reply guard - NEW<br/>Validity, kind and generation"]
+    tts["Rumik adapter - NEW<br/>Bounded queue and audio checks"]
+    gpu["Private Rumik inference<br/>Pinned revision; host to confirm"]
+    assistant["Assistant context aggregator<br/>After transport output"]
+    controller["Interview controller - NEW<br/>Question, answer and generation state"]
+    browser <-->|"WebRTC audio and status"| transport
+    transport -->|"input audio"| stt
+    stt --> core
+    core -->|"ready context only"| gemini
+    gemini --> guard
+    guard -->|"approved spoken text"| tts
+    tts <-->|"sentence request / WAV"| gpu
+    tts -->|"current PCM audio"| transport
+    transport -->|"output-side frames"| assistant
+    controller -.->|"readiness and timers"| core
+    guard -.->|"validated decision"| controller
+    controller -.->|"invalidate stale replies"| guard
+    classDef existing fill:#eaf2fb,stroke:#507496,color:#162f49;
+    classDef proposed fill:#fff1da,stroke:#b78335,color:#493419;
+    classDef boundary fill:#e8f3ee,stroke:#568272,color:#163e30;
+    class transport,stt,gemini,assistant existing;
+    class core,guard,tts,controller proposed;
+    class browser,gpu boundary;

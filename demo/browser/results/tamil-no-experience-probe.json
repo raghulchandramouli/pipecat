@@ -1,0 +1,15 @@
+{
+  "utc": "2026-09-15T11:29:10.814036+00:00",
+  "scope": "one full synthetic browser-answer transcript through the coaching contract",
+  "model": "gemini-3.8-flash",
+  "thinking_level": "low",
+  "transcript_sha256": "e39675d039a2b291ee0eb436666da3bf97e875019b7319b09ad7effb3d728cb4",
+  "segment_count": 1,
+  "prompt_sha256": "0857928e26a28fb555f34327f9c73de648a2830b5472ae80e8c4cc24e25ddd47",
+  "language_instruction_sha256": "7b42259e6d799e63f84071a8bd176f45cd84c99401c2e7d21770c9461b2a1c9d",
+  "completion_status": "complete",
+  "completion_valid": true,
+  "coaching_json_valid": true,
+  "verbatim_quote_valid": true,
+  "provider_outcome": "response_received"
+}

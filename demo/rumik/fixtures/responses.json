@@ -1,0 +1,69 @@
+{
+  "provenance": "synthetic contract fixtures, not output from Rumik inference",
+  "success": {
+    "status": 200,
+    "content_type": "audio/wav",
+    "body_file": "sample.wav",
+    "duration_seconds": 0.1
+  },
+  "invalid_speaker": {
+    "status": 400,
+    "json": {
+      "detail": "speaker must be one of: Ira, Aisha, Siya, Zoya"
+    }
+  },
+  "missing_input": {
+    "status": 422,
+    "json": {
+      "detail": [
+        {
+          "type": "missing",
+          "loc": [
+            "body",
+            "input"
+          ],
+          "msg": "Field required"
+        }
+      ]
+    }
+  },
+  "malformed_wav": {
+    "status": 200,
+    "content_type": "audio/wav",
+    "body_utf8": "not a WAV"
+  },
+  "empty_input": {
+    "status": 422,
+    "json": {
+      "detail": [
+        {
+          "type": "string_too_short",
+          "loc": [
+            "body",
+            "input"
+          ],
+          "msg": "String should have at least 1 character",
+          "input": "",
+          "ctx": {
+            "min_length": 1
+          }
+        }
+      ]
+    }
+  },
+  "invalid_input_type": {
+    "status": 422,
+    "json": {
+      "detail": [
+        {
+          "type": "string_type",
+          "loc": [
+            "body",
+            "input"
+          ],
+          "msg": "Input should be a valid string"
+        }
+      ]
+    }
+  }
+}

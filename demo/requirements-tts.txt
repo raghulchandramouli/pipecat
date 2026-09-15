@@ -1,0 +1,3 @@
+# Hosted Sarvam streaming TTS and local smoke configuration.
+httpx==0.28.1
+python-dotenv==1.2.3

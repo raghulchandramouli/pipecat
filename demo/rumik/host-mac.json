@@ -1,0 +1,58 @@
+{
+  "hardware": {
+    "profile": "macos_apple_silicon",
+    "backend": "mps",
+    "device_name": "Apple M5 Pro",
+    "unified_memory_bytes": 51539607552,
+    "os": "macOS-26.6.2-arm64-arm-64bit",
+    "dtype": "float32"
+  },
+  "revisions": {
+    "model_revision": "0ed3c98684e14350c910129c0efa179841c41ad2",
+    "server_revision": "0ed3c98684e14350c910129c0efa179841c41ad2",
+    "server_sha256": "48c4eb34c507c2cdfa64941d556ac6c69afa1dfc2dd369a5a756a2fe0c764064",
+    "local_wrapper_sha256": "72bb00abefb464c1621596d41e30ba223be5e27e1cd32311524555c08a22d6cc"
+  },
+  "provenance": {
+    "attestation": "Local Mac selected by owner; pinned download hashes verified; runtime read from local process health.",
+    "captured_at_utc": "2026-09-14T15:28:49.684303+00:00",
+    "health": {
+      "status": "ok",
+      "model": "rumik-ai/rumik-oss-1",
+      "runtime": {
+        "loaded": true,
+        "max_rss_bytes": 13447266304,
+        "mps_current_allocated_bytes": 13938065664,
+        "mps_driver_allocated_bytes": 14297038848,
+        "requested_device": "mps",
+        "resolved_device": "mps",
+        "requested_dtype": "float32",
+        "resolved_dtype": "float32",
+        "cpu_threads": null
+      },
+      "compatibility": {
+        "upstream_server_sha256": "48c4eb34c507c2cdfa64941d556ac6c69afa1dfc2dd369a5a756a2fe0c764064",
+        "local_wrapper_sha256": "72bb00abefb464c1621596d41e30ba223be5e27e1cd32311524555c08a22d6cc"
+      }
+    }
+  },
+  "installed_versions": {
+    "torch": "2.14.0",
+    "transformers": "5.17.0",
+    "huggingface-hub": "1.31.0",
+    "fastapi": "0.141.1",
+    "uvicorn": "0.53.0",
+    "httpx": "0.28.1",
+    "safetensors": "0.8.0",
+    "numpy": "2.5.3"
+  },
+  "memory": {
+    "measured": true,
+    "value": 14297038848,
+    "units": "bytes",
+    "scope": "Metal driver process allocation snapshot",
+    "device": "Apple M5 Pro",
+    "source": "local /health runtime measurement",
+    "captured_at_utc": "2026-09-14T15:28:49.684303+00:00"
+  }
+}

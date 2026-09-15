@@ -1,0 +1,43 @@
+{
+  "endpoint": "https://api.sarvam.ai/text-to-speech/stream",
+  "captured_at_utc": "2026-09-15T11:07:05.502752+00:00",
+  "adapter_source_sha256": "3c9cec90347f55d5b120b75a7bf146c8c93d1ef273b69828c7dc38fffe4e1b62",
+  "speaker": "shubh",
+  "model": "bulbul:v3",
+  "language_code": "ta-IN",
+  "text": "\u0ba8\u0ba9\u0bcd\u0bb1\u0bbf. \u0b89\u0b99\u0bcd\u0b95 project experience \u0baa\u0bb1\u0bcd\u0bb1\u0bbf \u0b95\u0bca\u0b9e\u0bcd\u0b9a\u0bae\u0bcd \u0b9a\u0bca\u0bb2\u0bcd\u0bb2\u0bc1\u0b99\u0bcd\u0b95.",
+  "timeout_seconds": 30.0,
+  "audio_path": "demo/sarvam/results/tanglish/adapter-smoke.wav",
+  "audio_bytes": 155648,
+  "context_id": "69891b4a-60e8-4655-b78e-507dc031494c",
+  "lifecycle": [
+    "TTSStartedFrame",
+    "TTSAudioRawFrame",
+    "TTSAudioRawFrame",
+    "TTSAudioRawFrame",
+    "TTSAudioRawFrame",
+    "TTSAudioRawFrame",
+    "TTSAudioRawFrame",
+    "TTSAudioRawFrame",
+    "TTSAudioRawFrame",
+    "TTSAudioRawFrame",
+    "TTSAudioRawFrame",
+    "TTSAudioRawFrame",
+    "TTSAudioRawFrame",
+    "TTSAudioRawFrame",
+    "TTSAudioRawFrame",
+    "TTSAudioRawFrame",
+    "TTSAudioRawFrame",
+    "TTSAudioRawFrame",
+    "TTSAudioRawFrame",
+    "TTSTextFrame",
+    "TTSStoppedFrame"
+  ],
+  "metrics": {
+    "queue_wait_seconds": 5.91669995628763e-05,
+    "first_audio_seconds": 0.44810804100052337,
+    "request_seconds": 0.9464995409998664,
+    "audio_seconds": 3.2426666666666666
+  },
+  "worker_cleaned_up": true
+}

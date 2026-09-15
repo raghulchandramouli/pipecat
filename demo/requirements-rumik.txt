@@ -1,0 +1,2 @@
+# Rumik HTTP adapter and benchmark; no local model dependencies.
+httpx==0.28.1

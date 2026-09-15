@@ -1,0 +1,30 @@
+flowchart TD
+    event["STT final outcome<br/>including empty final"]
+    owner{"Current connection and<br/>candidate segment owner?"}
+    drop["Discard obsolete event"]
+    admit["Deduplicate and order<br/>before user aggregation"]
+    ledger["Keep pending answer<br/>and segment outcomes"]
+    ready{"Quiet, pause grace elapsed,<br/>all closed segments resolved?"}
+    wait["Keep listening<br/>Missing final: recover on deadline"]
+    llm["Dispatch complete context<br/>to Gemini semantic probe"]
+    valid{"Valid decision and<br/>current response generation?"}
+    suppress["Suppress reply and state change<br/>Preserve pending answer"]
+    accept{"Validated answer-completion<br/>decision for this answer?"}
+    commit["Accept answer once<br/>Authorize follow-up or next question"]
+    hold["Keep answer open<br/>Check-in never grades or advances"]
+    event --> owner
+    owner -->|"no"| drop
+    owner -->|"yes"| admit --> ledger --> ready
+    ready -->|"no"| wait
+    wait -.->|"readiness changes"| ready
+    ready -->|"yes"| llm --> valid
+    valid -->|"no"| suppress
+    valid -->|"yes"| accept
+    accept -->|"yes"| commit
+    accept -->|"incomplete / check-in"| hold
+    classDef action fill:#eaf2fb,stroke:#507496,color:#162f49;
+    classDef gate fill:#fff1da,stroke:#b78335,color:#493419;
+    classDef safe fill:#e8f3ee,stroke:#568272,color:#163e30;
+    class event,admit,ledger,llm action;
+    class owner,ready,valid,accept gate;
+    class drop,wait,suppress,commit,hold safe;

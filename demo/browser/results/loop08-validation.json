@@ -1,0 +1,18 @@
+{
+  "baseline": "4bae10d06018c9ee68b8d1a4f4fff7ea94d57988",
+  "live_reports": [
+    "browser-smoke.json",
+    "browser-interruption.json"
+  ],
+  "source_hashes_match": true,
+  "distinct_concurrent_sessions": true,
+  "allowlisted_browser_events_only": true,
+  "provider_credentials_absent_from_captured_payloads": true,
+  "demo_suite_passed": 306,
+  "additional_browser_test_passed": 1,
+  "final_browser_tests_passed": 5,
+  "framework_regressions_passed": 302,
+  "historical_rumik_test_in_dedicated_environment": "passed",
+  "ruff": "passed for 75 Python files",
+  "physical_microphone_and_acoustic_latency": "not tested"
+}

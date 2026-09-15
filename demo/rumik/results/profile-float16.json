@@ -1,0 +1,54 @@
+{
+  "dtype": "float16",
+  "device": "mps:0",
+  "model_dtype": "torch.float16",
+  "codec_dtype": "torch.float16",
+  "torch": "2.14.0",
+  "load_seconds": 11.860207541991258,
+  "cases": [
+    {
+      "generation_seconds": 9.23964066701592,
+      "audio_tokens": 145,
+      "codec_seconds": 4.023636833007913,
+      "finite_waveform": true,
+      "text": "Thank you.",
+      "warmup": true,
+      "total_seconds": 13.335089458007133,
+      "audio_seconds": 1.44,
+      "real_time_factor": 9.26047879028273,
+      "peak": 10207,
+      "wav_path": "demo/rumik/results/profile-float16-0.wav",
+      "wav_sha256": "ece62c55234da110c353151882a7514761d837de89577ac641e20f70f7e1b5ee"
+    },
+    {
+      "generation_seconds": 7.170429417019477,
+      "audio_tokens": 145,
+      "codec_seconds": 0.03938612501951866,
+      "finite_waveform": true,
+      "text": "Thank you.",
+      "warmup": false,
+      "total_seconds": 7.213250834000064,
+      "audio_seconds": 1.44,
+      "real_time_factor": 5.0092019680556,
+      "peak": 10207,
+      "wav_path": "demo/rumik/results/profile-float16-1.wav",
+      "wav_sha256": "ece62c55234da110c353151882a7514761d837de89577ac641e20f70f7e1b5ee"
+    },
+    {
+      "generation_seconds": 11.679161625012057,
+      "audio_tokens": 201,
+      "codec_seconds": 1.5043741660192609,
+      "finite_waveform": true,
+      "text": "What did you change first?",
+      "warmup": false,
+      "total_seconds": 13.18952787501621,
+      "audio_seconds": 2.0,
+      "real_time_factor": 6.594763937508105,
+      "peak": 21679,
+      "wav_path": "demo/rumik/results/profile-float16-2.wav",
+      "wav_sha256": "ce7fdd0f9089c2e1687fcaa97955d3727ed8173e0e11838b0fe94512f5c00eca"
+    }
+  ],
+  "captured_at_utc": "2026-09-15T06:12:39.530210+00:00",
+  "mps_allocated_bytes": 6968393472
+}

@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "verified_date": "2026-09-12",
+  "model_repo": "rumik-ai/rumik-oss-1",
+  "model_revision": "0ed3c98684e14350c910129c0efa179841c41ad2",
+  "server_revision": "0ed3c98684e14350c910129c0efa179841c41ad2",
+  "server_path": "server.py",
+  "server_sha256": "48c4eb34c507c2cdfa64941d556ac6c69afa1dfc2dd369a5a756a2fe0c764064",
+  "source_directory": "demo/models/rumik-source/0ed3c98684e14350c910129c0efa179841c41ad2",
+  "source_sha256": {
+    "LICENSE": "23c470ffda9c3f9840f40172ca9a2a25337bda853a18aecf951c5653d03f0cf2",
+    "NOTICE": "2ff3222dcec7b3f3b7b6704bad3f703d8ce3f76f96557fb6a05e83a133587e3c",
+    "README.md": "866fbd9864bfd0e69bd52779d7dc3e9664053675478890a53a3ca9f23e0d45f0",
+    "codec/preprocessor_config.json": "fcb3805e597e786d4067706e602f6688524640f8d3396790e2e09b5942fcbdfb",
+    "config.json": "7bfc3004d5321b36ff96bb604941dc270cae408ba7bab54c35ada6db99100720",
+    "requirements-server.txt": "93e542d912b07720db9c803cbb84bc6662ccb57d1a8b628cad2ba78e097575c6",
+    "requirements.txt": "f01327854fa1305dabb02c24425ae76ef951dcf5d1815c6176acdbf720ae6560",
+    "server.py": "48c4eb34c507c2cdfa64941d556ac6c69afa1dfc2dd369a5a756a2fe0c764064"
+  },
+  "source_url": "https://huggingface.co/rumik-ai/rumik-oss-1/blob/0ed3c98684e14350c910129c0efa179841c41ad2/server.py",
+  "checkpoint_owner_confirmation": "confirmed by local download/run instruction, 2026-09-14",
+  "intended_use": "local private practice prototype",
+  "deployment_authorized": true,
+  "benchmark_host": {
+    "profile": "macos_apple_silicon",
+    "backend": "mps",
+    "device_name": "Apple M5 Pro",
+    "unified_memory_bytes": 51539607552,
+    "os": "macOS-26.6.2-arm64-arm-64bit",
+    "dtype": "float32"
+  },
+  "live_status": "passed: local Mac MPS float32 synthesis and full short-sentence benchmark",
+  "client_host": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "python": "3.12.14",
+    "purpose": "fixture execution only; not inference hardware"
+  },
+  "request": {
+    "method": "POST",
+    "path": "/v1/audio/speech",
+    "content_type": "application/json",
+    "defaults": {
+      "speaker": "Ira",
+      "temperature": 0.8,
+      "top_k": 30,
+      "max_new_tokens": 2048
+    }
+  },
+  "audio": {
+    "content_type": "audio/wav",
+    "sample_rate_hz": 24000,
+    "channels": 1,
+    "sample_width_bytes": 2,
+    "streaming": false
+  },
+  "admission": {
+    "active_capacity": 1,
+    "queue_capacity": 2,
+    "overload": "reject immediately",
+    "ownership": "one exclusive gate for the entire server process",
+    "unknown_remote_completion": "quarantine until verified restart or recovery"
+  },
+  "measurement_status": {
+    "queue_wait": "measured by live client admission; see report",
+    "request_latency": "22.875\u201334.810 seconds for four short sentences, excludes client queue wait",
+    "audio_duration": "2.48\u20133.60 seconds; real nonzero PCM16 mono 24kHz WAVs",
+    "memory": "local server MPS driver allocation and RSS snapshots in host-mac.json; not sampled peak GPU memory"
+  },
+  "deployment_scope": "local loopback on owner-selected Mac",
+  "model_directory": "models/rumik-oss-1/0ed3c98684e14350c910129c0efa179841c41ad2",
+  "compatibility_server": {
+    "path": "demo/rumik/mac_server.py",
+    "sha256": "72bb00abefb464c1621596d41e30ba223be5e27e1cd32311524555c08a22d6cc",
+    "backend": "mps",
+    "dtype": "float32"
+  },
+  "local_endpoint": "http://127.0.0.1:6006",
+  "live_report": "demo/rumik/results/mac-float32.json",
+  "runtime_lock": "demo/rumik/runtime-mac.freeze.txt"
+}

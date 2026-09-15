@@ -1,0 +1,23 @@
+{
+  "endpoint": "http://127.0.0.1:6006/v1/audio/speech",
+  "captured_at_utc": "2026-09-15T06:05:23.862558+00:00",
+  "adapter_source_sha256": "b933fa7dbcba1eb42414564850d197bf1664fff925c40489b3619ba706b75e82",
+  "speaker": "Ira",
+  "text": "Thank you.",
+  "timeout_seconds": 600.0,
+  "audio_path": "demo/rumik/results/adapter-smoke.wav",
+  "audio_bytes": 65280,
+  "context_id": "5911f4d6-ae0f-42cd-9c32-166911489923",
+  "lifecycle": [
+    "TTSStartedFrame",
+    "TTSAudioRawFrame",
+    "TTSTextFrame",
+    "TTSStoppedFrame"
+  ],
+  "metrics": {
+    "queue_wait_seconds": 3.620798815973103e-05,
+    "request_seconds": 13.499893500003964,
+    "audio_seconds": 1.36
+  },
+  "worker_cleaned_up": true
+}

@@ -1,0 +1,4 @@
+# Foundation-only dependencies; no provider SDKs are required.
+pydantic==2.13.5
+pytest==9.1.1
+ruff==0.16.7

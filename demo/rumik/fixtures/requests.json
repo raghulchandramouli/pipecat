@@ -1,0 +1,57 @@
+[
+  {
+    "id": "introduction",
+    "payload": {
+      "input": "Welcome to your practice interview.",
+      "speaker": "Ira"
+    },
+    "expected_status": 200
+  },
+  {
+    "id": "follow_up",
+    "payload": {
+      "input": "What evidence helped you find the cause?",
+      "speaker": "Ira"
+    },
+    "expected_status": 200
+  },
+  {
+    "id": "thinking",
+    "payload": {
+      "input": "Take your time. I am listening.",
+      "speaker": "Ira"
+    },
+    "expected_status": 200
+  },
+  {
+    "id": "closing",
+    "payload": {
+      "input": "Thank you for sharing your experience.",
+      "speaker": "Ira"
+    },
+    "expected_status": 200
+  },
+  {
+    "id": "invalid_speaker",
+    "payload": {
+      "input": "Hello.",
+      "speaker": "NotAVoice"
+    },
+    "expected_status": 400
+  },
+  {
+    "id": "missing_input",
+    "payload": {
+      "speaker": "Ira"
+    },
+    "expected_status": 422
+  },
+  {
+    "id": "empty_input",
+    "payload": {
+      "input": "",
+      "speaker": "Ira"
+    },
+    "expected_status": 422
+  }
+]

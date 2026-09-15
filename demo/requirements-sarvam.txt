@@ -1,0 +1,3 @@
+# Install the prepared local Pipecat snapshot with its Sarvam extra alongside this file.
+-r requirements-dev.txt
+pytest-asyncio==1.3.0

@@ -1,0 +1,23 @@
+sequenceDiagram
+    participant C as Candidate / browser
+    participant V as Input + VAD
+    participant K as Turn controller
+    participant G as Gemini
+    participant R as Rumik adapter
+    participant O as Output transport
+    R->>O: Audio for response generation 7
+    O->>C: Interviewer speaks
+    C->>V: Candidate resumes speaking
+    V->>K: Confirmed speech-start
+    K->>K: Advance response generation to 8
+    K->>G: Cancel obsolete generation 7
+    K->>R: Cancel queued work for generation 7
+    K->>O: Broadcast interruption; clear output
+    O->>C: Request playback stop
+    Note over C,O: Measure actual audible stop at the client
+    Note over V,K: Keep the same pending answer and segment ownership
+    V->>K: Valid delayed STT final for that answer
+    K->>K: Retain final by connection + segment identity
+    R-->>O: Late audio tagged generation 7
+    O->>O: Drop stale audio before playback
+    Note over K,R: Recheck generation before accepting text or audio

@@ -1,0 +1,35 @@
+{
+  "endpoint": "https://api.sarvam.ai/text-to-speech/stream",
+  "captured_at_utc": "2026-09-15T06:18:59.781263+00:00",
+  "adapter_source_sha256": "259f316e5b2a045c54c7bbe1a49fae9d0b054d1ea23d8eb8e53402cb9715ae91",
+  "speaker": "shubh",
+  "text": "Thank you. What did you change first?",
+  "timeout_seconds": 30.0,
+  "audio_path": "demo/sarvam/results/adapter-smoke.wav",
+  "audio_bytes": 98304,
+  "context_id": "9f8d91d9-787f-4647-ad9c-1b70030da392",
+  "lifecycle": [
+    "TTSStartedFrame",
+    "TTSAudioRawFrame",
+    "TTSAudioRawFrame",
+    "TTSAudioRawFrame",
+    "TTSAudioRawFrame",
+    "TTSAudioRawFrame",
+    "TTSAudioRawFrame",
+    "TTSAudioRawFrame",
+    "TTSAudioRawFrame",
+    "TTSAudioRawFrame",
+    "TTSAudioRawFrame",
+    "TTSAudioRawFrame",
+    "TTSAudioRawFrame",
+    "TTSTextFrame",
+    "TTSStoppedFrame"
+  ],
+  "metrics": {
+    "queue_wait_seconds": 5.299999611452222e-05,
+    "first_audio_seconds": 0.5526809169969056,
+    "request_seconds": 0.8225321249919944,
+    "audio_seconds": 2.048
+  },
+  "worker_cleaned_up": true
+}

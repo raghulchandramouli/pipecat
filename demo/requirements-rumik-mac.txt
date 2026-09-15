@@ -1,0 +1,2 @@
+# Runtime resolved and exercised on the local Apple Silicon Mac with Python 3.12.
+-r rumik/runtime-mac.freeze.txt

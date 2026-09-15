@@ -1,0 +1,13 @@
+# Install with the local framework snapshot; application dependencies stay in demo/.
+-r requirements-gate.txt
+-r requirements-tts.txt
+fastapi>=0.115.6,<1
+uvicorn>=0.32.0,<1
+aiortc>=1.14.0,<2
+opencv-python-headless>=4.11.0.86,<5
+
+# Standalone `python -m pipecat.evals` command.
+typer>=0.20.0,<1
+rich>=13.0.0,<14
+jinja2>=3.1.0,<4
+questionary>=2.0.0,<3

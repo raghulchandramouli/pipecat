@@ -1,0 +1,3 @@
+-r requirements-browser.txt
+# Chromium fixture tests and the synthetic-microphone live smoke.
+playwright==1.62.0

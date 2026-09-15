@@ -1,0 +1,239 @@
+{
+  "cases": [
+    {
+      "audio_artifact_path": "demo/rumik/results/mac-float32-audio/d3db5338aae140c5.wav",
+      "expected_status": 200,
+      "id": "introduction",
+      "latency_seconds": {
+        "queue_wait": 4.837499000132084e-05,
+        "request": 22.87507337500574,
+        "total": 22.880556166986935
+      },
+      "ok": true,
+      "status": 200,
+      "wav_duration_seconds": 2.48
+    },
+    {
+      "audio_artifact_path": "demo/rumik/results/mac-float32-audio/ca1e4eae65abf78d.wav",
+      "expected_status": 200,
+      "id": "follow_up",
+      "latency_seconds": {
+        "queue_wait": 22.87511287498637,
+        "request": 27.71624924999196,
+        "total": 50.597427667002194
+      },
+      "ok": true,
+      "status": 200,
+      "wav_duration_seconds": 2.96
+    },
+    {
+      "audio_artifact_path": "demo/rumik/results/mac-float32-audio/6ee16429668c2d82.wav",
+      "expected_status": 200,
+      "id": "thinking",
+      "latency_seconds": {
+        "queue_wait": 27.71023175001028,
+        "request": 24.847423583996715,
+        "total": 52.56520837498829
+      },
+      "ok": true,
+      "status": 200,
+      "wav_duration_seconds": 2.64
+    },
+    {
+      "audio_artifact_path": "demo/rumik/results/mac-float32-audio/6f9a48800d2f3095.wav",
+      "expected_status": 200,
+      "id": "closing",
+      "latency_seconds": {
+        "queue_wait": 24.840460917010205,
+        "request": 34.8098092500004,
+        "total": 59.65484299999662
+      },
+      "ok": true,
+      "status": 200,
+      "wav_duration_seconds": 3.6
+    },
+    {
+      "expected_status": 400,
+      "id": "invalid_speaker",
+      "latency_seconds": {
+        "queue_wait": 34.801403499994194,
+        "request": 0.008275542000774294,
+        "total": 34.81364812498214
+      },
+      "ok": true,
+      "status": 400
+    },
+    {
+      "expected_status": 422,
+      "id": "missing_input",
+      "latency_seconds": {
+        "queue_wait": 0.003258667013142258,
+        "request": 0.0056758330028969795,
+        "total": 0.012599582987604663
+      },
+      "ok": true,
+      "status": 422
+    },
+    {
+      "expected_status": 422,
+      "id": "empty_input",
+      "latency_seconds": {
+        "queue_wait": 0.0016185410204343498,
+        "request": 0.0050717919948510826,
+        "total": 0.006736999988788739
+      },
+      "ok": true,
+      "status": 422
+    }
+  ],
+  "hardware": {
+    "backend": "mps",
+    "device_name": "Apple M5 Pro",
+    "dtype": "float32",
+    "os": "macOS-26.6.2-arm64-arm-64bit",
+    "profile": "macos_apple_silicon",
+    "unified_memory_bytes": 51539607552
+  },
+  "host_provenance": {
+    "attestation": "Local Mac selected by owner; pinned download hashes verified; runtime read from local process health.",
+    "captured_at_utc": "2026-09-14T15:23:52.015037+00:00",
+    "health": {
+      "compatibility": {
+        "local_wrapper_sha256": "72bb00abefb464c1621596d41e30ba223be5e27e1cd32311524555c08a22d6cc",
+        "upstream_server_sha256": "48c4eb34c507c2cdfa64941d556ac6c69afa1dfc2dd369a5a756a2fe0c764064"
+      },
+      "model": "rumik-ai/rumik-oss-1",
+      "runtime": {
+        "cpu_threads": null,
+        "loaded": true,
+        "max_rss_bytes": 13447266304,
+        "mps_current_allocated_bytes": 13938065664,
+        "mps_driver_allocated_bytes": 14279360512,
+        "requested_device": "mps",
+        "requested_dtype": "float32",
+        "resolved_device": "mps",
+        "resolved_dtype": "float32"
+      },
+      "status": "ok"
+    }
+  },
+  "installed_versions": {
+    "fastapi": "0.141.1",
+    "httpx": "0.28.1",
+    "huggingface-hub": "1.31.0",
+    "numpy": "2.5.3",
+    "safetensors": "0.8.0",
+    "torch": "2.14.0",
+    "transformers": "5.17.0",
+    "uvicorn": "0.53.0"
+  },
+  "manifest": {
+    "admission": {
+      "active_capacity": 1,
+      "overload": "reject immediately",
+      "ownership": "one exclusive gate for the entire server process",
+      "queue_capacity": 2,
+      "unknown_remote_completion": "quarantine until verified restart or recovery"
+    },
+    "audio": {
+      "channels": 1,
+      "content_type": "audio/wav",
+      "sample_rate_hz": 24000,
+      "sample_width_bytes": 2,
+      "streaming": false
+    },
+    "benchmark_host": null,
+    "checkpoint_owner_confirmation": "pending",
+    "client_host": {
+      "machine": "arm64",
+      "purpose": "fixture execution only; not inference hardware",
+      "python": "3.12.14",
+      "system": "Darwin"
+    },
+    "deployment_authorized": false,
+    "intended_use": "private practice prototype assumption; owner confirmation pending",
+    "live_status": "blocked_missing_owner_confirmation_and_gpu_host",
+    "measurement_status": {
+      "audio_duration": "synthetic WAV only",
+      "memory": "unavailable; no inference host selected",
+      "queue_wait": "fixture only",
+      "request_latency": "fixture only; includes transport and complete response, not pure GPU synthesis"
+    },
+    "model_repo": "rumik-ai/rumik-oss-1",
+    "model_revision": "0ed3c98684e14350c910129c0efa179841c41ad2",
+    "request": {
+      "content_type": "application/json",
+      "defaults": {
+        "max_new_tokens": 2048,
+        "speaker": "Ira",
+        "temperature": 0.8,
+        "top_k": 30
+      },
+      "method": "POST",
+      "path": "/v1/audio/speech"
+    },
+    "schema_version": 1,
+    "server_path": "server.py",
+    "server_revision": "0ed3c98684e14350c910129c0efa179841c41ad2",
+    "server_sha256": "48c4eb34c507c2cdfa64941d556ac6c69afa1dfc2dd369a5a756a2fe0c764064",
+    "source_directory": "demo/models/rumik-source/0ed3c98684e14350c910129c0efa179841c41ad2",
+    "source_sha256": {
+      "LICENSE": "23c470ffda9c3f9840f40172ca9a2a25337bda853a18aecf951c5653d03f0cf2",
+      "NOTICE": "2ff3222dcec7b3f3b7b6704bad3f703d8ce3f76f96557fb6a05e83a133587e3c",
+      "README.md": "866fbd9864bfd0e69bd52779d7dc3e9664053675478890a53a3ca9f23e0d45f0",
+      "codec/preprocessor_config.json": "fcb3805e597e786d4067706e602f6688524640f8d3396790e2e09b5942fcbdfb",
+      "config.json": "7bfc3004d5321b36ff96bb604941dc270cae408ba7bab54c35ada6db99100720",
+      "requirements-server.txt": "93e542d912b07720db9c803cbb84bc6662ccb57d1a8b628cad2ba78e097575c6",
+      "requirements.txt": "f01327854fa1305dabb02c24425ae76ef951dcf5d1815c6176acdbf720ae6560",
+      "server.py": "48c4eb34c507c2cdfa64941d556ac6c69afa1dfc2dd369a5a756a2fe0c764064"
+    },
+    "source_url": "https://huggingface.co/rumik-ai/rumik-oss-1/blob/0ed3c98684e14350c910129c0efa179841c41ad2/server.py",
+    "verified_date": "2026-09-12"
+  },
+  "memory": {
+    "captured_at_utc": "2026-09-14T15:23:52.015037+00:00",
+    "device": "Apple M5 Pro",
+    "scope": "Metal driver process allocation snapshot",
+    "source": "local /health runtime measurement",
+    "status": "operator_reported_measurement",
+    "units": "bytes",
+    "value": 14279360512
+  },
+  "mode": "live",
+  "pin_verification": {
+    "reason": "Benchmark records operator-attested host metadata and does not probe remote pins.",
+    "remote_verified": false
+  },
+  "planning_snapshot_note": "The embedded manifest preserves the pre-refresh planning snapshot loaded at invocation. Its owner/deployment/live-status/measurement planning fields are obsolete, not descriptions of this measured live run. Immutable model/server pins remain correct. Current execution status is in demo/rumik/manifest.json; measured hardware and runtime are recorded in this report.",
+  "provenance": {
+    "endpoint_host": "127.0.0.1",
+    "kind": "private_live_host"
+  },
+  "queue_capacity": 2,
+  "revisions": {
+    "local_wrapper_sha256": "72bb00abefb464c1621596d41e30ba223be5e27e1cd32311524555c08a22d6cc",
+    "model_revision": "0ed3c98684e14350c910129c0efa179841c41ad2",
+    "server_revision": "0ed3c98684e14350c910129c0efa179841c41ad2",
+    "server_sha256": "48c4eb34c507c2cdfa64941d556ac6c69afa1dfc2dd369a5a756a2fe0c764064"
+  },
+  "run_utc": "2026-09-14T15:27:49.945605+00:00",
+  "save_wav": true,
+  "timeout_seconds": 600.0,
+  "warmups": {
+    "count": 1,
+    "results": [
+      {
+        "expected_status": 200,
+        "id": "introduction",
+        "latency_seconds": {
+          "queue_wait": 3.458300489000976e-05,
+          "request": 19.301704042009078,
+          "total": 19.301825250004185
+        },
+        "ok": true,
+        "status": 200,
+        "wav_duration_seconds": 2.08
+      }
+    ]
+  }
+}

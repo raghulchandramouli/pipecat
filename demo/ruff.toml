@@ -1,0 +1,4 @@
+extend = "../pyproject.toml"
+src = ["..", "../src"]
+# Preserve the byte-for-byte upstream source used by the serving manifest.
+extend-exclude = ["models", ".venv-rumik", ".uv-cache"]

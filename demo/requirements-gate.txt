@@ -1,0 +1,4 @@
+-r requirements-sarvam.txt
+# SDK used by the concrete Google service admission tests (no live requests).
+google-genai==2.23.0
+google-api-core==2.36.0
