@@ -1,0 +1,325 @@
+[
+  {
+    "audio_start_ms": 0,
+    "event_id": "event_0dd2fd0014124a04a98909f935a815e6",
+    "item_id": "item_61a1a5ac0aa5419eb881f5d1596db3f9",
+    "type": "input_audio_buffer.speech_started"
+  },
+  {
+    "event_id": "event_a668dab13320411996dfe68e63ae3eee",
+    "item_id": "item_61a1a5ac0aa5419eb881f5d1596db3f9",
+    "type": "conversation.item.input_audio_transcription.delta",
+    "content_index": 0,
+    "delta": "the",
+    "logprobs": null
+  },
+  {
+    "audio_end_ms": 1568,
+    "event_id": "event_3f9b56a2cb5b4262b58f6721ed5a0528",
+    "item_id": "item_61a1a5ac0aa5419eb881f5d1596db3f9",
+    "type": "input_audio_buffer.speech_stopped"
+  },
+  {
+    "event_id": "event_e443eccc55774612ad2fd60dfc831b08",
+    "item_id": "item_61a1a5ac0aa5419eb881f5d1596db3f9",
+    "type": "conversation.item.input_audio_transcription.delta",
+    "content_index": 0,
+    "delta": " capital",
+    "logprobs": null
+  },
+  {
+    "content_index": 0,
+    "event_id": "event_27fcafd351ee40e79ed0667f0bf55442",
+    "item_id": "item_61a1a5ac0aa5419eb881f5d1596db3f9",
+    "transcript": "the capital of France.",
+    "type": "conversation.item.input_audio_transcription.completed",
+    "usage": {
+      "seconds": 1.568,
+      "type": "duration"
+    },
+    "logprobs": null
+  },
+  {
+    "event_id": "event_c8396137a2134b71a671438a20b72800",
+    "response": {
+      "id": "resp_6bc8250909ea4559907da5557e8901f1",
+      "audio": {
+        "output": {
+          "format": null,
+          "voice": null
+        }
+      },
+      "conversation_id": "conv_50d0d74205a44de4b0954d6a3c1f5f5a",
+      "max_output_tokens": null,
+      "metadata": null,
+      "object": "realtime.response",
+      "output": [],
+      "output_modalities": [
+        "audio"
+      ],
+      "status": "in_progress",
+      "status_details": null,
+      "usage": {
+        "input_token_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "cached_tokens_details": null,
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "input_tokens": 0,
+        "output_token_details": {
+          "audio_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "total_tokens": 0
+      }
+    },
+    "type": "response.created"
+  },
+  {
+    "event_id": "event_b16e38d276ca425891236f2b96aae8c1",
+    "item": {
+      "content": [],
+      "role": "assistant",
+      "type": "message",
+      "id": "item_431750e21c1448fa8360b1456861bd60",
+      "object": "realtime.item",
+      "status": "in_progress"
+    },
+    "output_index": 0,
+    "response_id": "resp_6bc8250909ea4559907da5557e8901f1",
+    "type": "response.output_item.added"
+  },
+  {
+    "content_index": 0,
+    "event_id": "event_523f2dc22b4646a9b7604a531179b894",
+    "item_id": "item_431750e21c1448fa8360b1456861bd60",
+    "output_index": 0,
+    "part": {
+      "audio": "",
+      "text": null,
+      "transcript": "",
+      "type": "audio"
+    },
+    "response_id": "resp_6bc8250909ea4559907da5557e8901f1",
+    "type": "response.content_part.added"
+  },
+  {
+    "content_index": 0,
+    "delta": "The capital of France is Paris.",
+    "event_id": "event_f03c85a9a19c48379c09ab0ab7b1c74f",
+    "item_id": "item_431750e21c1448fa8360b1456861bd60",
+    "output_index": 0,
+    "response_id": "resp_6bc8250909ea4559907da5557e8901f1",
+    "type": "response.output_audio_transcript.delta"
+  },
+  {
+    "content_index": 0,
+    "event_id": "event_b7016018e8ff4a3bbeb72b6d2bf9935f",
+    "item_id": "item_431750e21c1448fa8360b1456861bd60",
+    "output_index": 0,
+    "response_id": "resp_6bc8250909ea4559907da5557e8901f1",
+    "type": "response.output_audio.delta"
+  },
+  {
+    "content_index": 0,
+    "event_id": "event_c42ecd4fee0740688e4faef53c64b02b",
+    "item_id": "item_431750e21c1448fa8360b1456861bd60",
+    "output_index": 0,
+    "response_id": "resp_6bc8250909ea4559907da5557e8901f1",
+    "type": "response.output_audio.delta"
+  },
+  {
+    "content_index": 0,
+    "event_id": "event_6303daef503948b2a5454ef00ffb117a",
+    "item_id": "item_431750e21c1448fa8360b1456861bd60",
+    "output_index": 0,
+    "response_id": "resp_6bc8250909ea4559907da5557e8901f1",
+    "type": "response.output_audio.delta"
+  },
+  {
+    "content_index": 0,
+    "event_id": "event_3ea8dd3c4946451592c4f5731cda5964",
+    "item_id": "item_431750e21c1448fa8360b1456861bd60",
+    "output_index": 0,
+    "response_id": "resp_6bc8250909ea4559907da5557e8901f1",
+    "type": "response.output_audio.delta"
+  },
+  {
+    "content_index": 0,
+    "event_id": "event_35fb94ae8cac4cf8b4927d2507aba420",
+    "item_id": "item_431750e21c1448fa8360b1456861bd60",
+    "output_index": 0,
+    "response_id": "resp_6bc8250909ea4559907da5557e8901f1",
+    "type": "response.output_audio.delta"
+  },
+  {
+    "content_index": 0,
+    "event_id": "event_4adb9b7fc1094de4a4f0a80e51668072",
+    "item_id": "item_431750e21c1448fa8360b1456861bd60",
+    "output_index": 0,
+    "response_id": "resp_6bc8250909ea4559907da5557e8901f1",
+    "type": "response.output_audio.delta"
+  },
+  {
+    "content_index": 0,
+    "event_id": "event_272a93680b364a0a81885a96eccad329",
+    "item_id": "item_431750e21c1448fa8360b1456861bd60",
+    "output_index": 0,
+    "response_id": "resp_6bc8250909ea4559907da5557e8901f1",
+    "type": "response.output_audio.delta"
+  },
+  {
+    "content_index": 0,
+    "event_id": "event_4e9010bbfc904110b17141d5f62034da",
+    "item_id": "item_431750e21c1448fa8360b1456861bd60",
+    "output_index": 0,
+    "response_id": "resp_6bc8250909ea4559907da5557e8901f1",
+    "type": "response.output_audio.delta"
+  },
+  {
+    "content_index": 0,
+    "event_id": "event_52a7864144444886a3dc6a96fa38cdac",
+    "item_id": "item_431750e21c1448fa8360b1456861bd60",
+    "output_index": 0,
+    "response_id": "resp_6bc8250909ea4559907da5557e8901f1",
+    "type": "response.output_audio.delta"
+  },
+  {
+    "content_index": 0,
+    "event_id": "event_86d9a3d1d5774ad7b8e45885486d59fb",
+    "item_id": "item_431750e21c1448fa8360b1456861bd60",
+    "output_index": 0,
+    "response_id": "resp_6bc8250909ea4559907da5557e8901f1",
+    "type": "response.output_audio.delta"
+  },
+  {
+    "content_index": 0,
+    "event_id": "event_e8fdcb7702694ac8953b0699c7359633",
+    "item_id": "item_431750e21c1448fa8360b1456861bd60",
+    "output_index": 0,
+    "response_id": "resp_6bc8250909ea4559907da5557e8901f1",
+    "type": "response.output_audio.delta"
+  },
+  {
+    "content_index": 0,
+    "event_id": "event_d76d218a6d494793b8b6dac6b787d126",
+    "item_id": "item_431750e21c1448fa8360b1456861bd60",
+    "output_index": 0,
+    "response_id": "resp_6bc8250909ea4559907da5557e8901f1",
+    "type": "response.output_audio.delta"
+  },
+  {
+    "content_index": 0,
+    "event_id": "event_1e8a8c13434249d787d3b7e7b1037ad5",
+    "item_id": "item_431750e21c1448fa8360b1456861bd60",
+    "output_index": 0,
+    "response_id": "resp_6bc8250909ea4559907da5557e8901f1",
+    "type": "response.output_audio.done"
+  },
+  {
+    "content_index": 0,
+    "event_id": "event_5699ea5a933e49298f482505f401eb01",
+    "item_id": "item_431750e21c1448fa8360b1456861bd60",
+    "output_index": 0,
+    "response_id": "resp_6bc8250909ea4559907da5557e8901f1",
+    "transcript": "The capital of France is Paris.",
+    "type": "response.output_audio_transcript.done"
+  },
+  {
+    "content_index": 0,
+    "event_id": "event_ac385547499a41ccbfbe1b291b0d9fb4",
+    "item_id": "item_431750e21c1448fa8360b1456861bd60",
+    "output_index": 0,
+    "part": {
+      "audio": "",
+      "text": null,
+      "transcript": "The capital of France is Paris.",
+      "type": "audio"
+    },
+    "response_id": "resp_6bc8250909ea4559907da5557e8901f1",
+    "type": "response.content_part.done"
+  },
+  {
+    "event_id": "event_6119440df6384d8aa6716d6790c45b62",
+    "item": {
+      "content": [
+        {
+          "audio": null,
+          "text": null,
+          "transcript": "The capital of France is Paris.",
+          "type": "output_audio"
+        }
+      ],
+      "role": "assistant",
+      "type": "message",
+      "id": "item_431750e21c1448fa8360b1456861bd60",
+      "object": "realtime.item",
+      "status": "completed"
+    },
+    "output_index": 0,
+    "response_id": "resp_6bc8250909ea4559907da5557e8901f1",
+    "type": "response.output_item.done"
+  },
+  {
+    "event_id": "event_2a107c285b034eb1863c0e58e2404f2a",
+    "response": {
+      "id": "resp_6bc8250909ea4559907da5557e8901f1",
+      "audio": {
+        "output": {
+          "format": null,
+          "voice": null
+        }
+      },
+      "conversation_id": "conv_50d0d74205a44de4b0954d6a3c1f5f5a",
+      "max_output_tokens": null,
+      "metadata": null,
+      "object": "realtime.response",
+      "output": [
+        {
+          "content": [
+            {
+              "audio": null,
+              "text": null,
+              "transcript": "The capital of France is Paris.",
+              "type": "output_audio"
+            }
+          ],
+          "role": "assistant",
+          "type": "message",
+          "id": "item_431750e21c1448fa8360b1456861bd60",
+          "object": "realtime.item",
+          "status": "completed"
+        }
+      ],
+      "output_modalities": [
+        "audio"
+      ],
+      "status": "completed",
+      "status_details": {
+        "error": null,
+        "reason": null,
+        "type": "completed"
+      },
+      "usage": {
+        "input_token_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "cached_tokens_details": null,
+          "image_tokens": 0,
+          "text_tokens": 354
+        },
+        "input_tokens": 354,
+        "output_token_details": {
+          "audio_tokens": 0,
+          "text_tokens": 7
+        },
+        "output_tokens": 7,
+        "total_tokens": 361
+      }
+    },
+    "type": "response.done"
+  }
+]

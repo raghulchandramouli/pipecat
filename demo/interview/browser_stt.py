@@ -40,8 +40,58 @@ class BrowserSarvamSTTService(InterviewSarvamRealtimeSTTService):
         self._sent_pcm_bytes = 0
         self._audio_intervals: dict[int, tuple[float, float | None]] = {}
         self._timestamp_failed = False
+        self._retired_boundary_ids: set[int] = set()
+        self._retired_utterance_idxs: set[int] = set()
+        self._retired_final_count = 0
         self._pre_roll_limit_bytes = int(pre_roll_secs * 16_000 * 2)
         self._pre_roll_pcm = bytearray()
+
+    @property
+    def timestamp_correlation_trusted(self) -> bool:
+        """Return whether this connection has avoided timestamp correlation failure."""
+        return not self._timestamp_failed
+
+    @property
+    def retired_final_count(self) -> int:
+        """Return the number of identifiable late finals dropped after retirement."""
+        return self._retired_final_count
+
+    def can_repair_boundary(self, boundary_id: int) -> bool:
+        """Return whether one closed interval can be selectively repaired safely.
+
+        This remains false after any timestamp send/correlation failure. Repair
+        cannot make a connection trustworthy again.
+        """
+        interval = self._audio_intervals.get(boundary_id)
+        websocket = self._websocket
+        return (
+            not self._timestamp_failed
+            and boundary_id not in self._retired_boundary_ids
+            and boundary_id in self._boundaries
+            and boundary_id not in self._failed_boundary_ids
+            and interval is not None
+            and interval[1] is not None
+            and websocket is not None
+            and getattr(getattr(websocket, "state", None), "name", None) == "OPEN"
+        )
+
+    def retire_boundary(self, boundary_id: int) -> bool:
+        """Retire one known interval so its late final cannot bind fresh speech."""
+        return self.retire_boundaries((boundary_id,))
+
+    def retire_boundaries(self, boundary_ids: tuple[int, ...]) -> bool:
+        """Atomically retire trustworthy closed intervals before a ledger repair."""
+        if not boundary_ids or len(set(boundary_ids)) != len(boundary_ids):
+            return False
+        if not all(self.can_repair_boundary(boundary_id) for boundary_id in boundary_ids):
+            return False
+        self._retired_boundary_ids.update(boundary_ids)
+        self._retired_utterance_idxs.update(
+            utterance_idx
+            for utterance_idx, bound_boundary in self._boundary_by_utterance_idx.items()
+            if bound_boundary in self._retired_boundary_ids
+        )
+        return True
 
     async def process_frame(self, frame: Frame, direction: FrameDirection) -> None:
         """Open Sarvam's manual interval before sending the local VAD pre-roll."""
@@ -102,6 +152,13 @@ class BrowserSarvamSTTService(InterviewSarvamRealtimeSTTService):
     async def _handle_final_transcript(self, message: dict[str, Any]) -> None:
         async with self._wire_lock:
             idx = message.get("utterance_idx")
+            if self._is_utterance_idx(idx) and (
+                idx in self._retired_utterance_idxs
+                or self._boundary_by_utterance_idx.get(idx) in self._retired_boundary_ids
+            ):
+                self._retired_utterance_idxs.add(idx)
+                self._retired_final_count += 1
+                return
             start, end = message.get("start_s"), message.get("end_s")
             valid = all(
                 isinstance(value, (int, float))
@@ -120,19 +177,26 @@ class BrowserSarvamSTTService(InterviewSarvamRealtimeSTTService):
                     and abs(end - right) <= 0.001
                 ]
             if len(matches) == 1 and self._is_utterance_idx(idx):
+                if matches[0] in self._retired_boundary_ids:
+                    self._retired_utterance_idxs.add(idx)
+                    self._retired_final_count += 1
+                    return
                 self._observed_utterance_idxs.add(idx)
                 bound = self._boundary_by_utterance_idx.get(idx)
                 if bound is not None and bound != matches[0]:
+                    self._timestamp_failed = True
                     await self._emit_correlation_failure("timestamp_identity_conflict")
                     return
                 # A boundary may resolve to only one provider utterance.
                 if any(
                     b == matches[0] and i != idx for i, b in self._boundary_by_utterance_idx.items()
                 ):
+                    self._timestamp_failed = True
                     await self._emit_correlation_failure("timestamp_boundary_conflict")
                     return
                 await self.bind_provider_utterance(boundary_id=matches[0], utterance_idx=idx)
             else:
+                self._timestamp_failed = True
                 await self._emit_correlation_failure("unmatched_audio_timestamps")
                 return
             await super()._handle_final_transcript(message)

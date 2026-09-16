@@ -1,0 +1,16 @@
+name: interaction_interrupt
+user: !include ../../../scripts/release-evals/scenarios/user_audio.yaml
+judge: !include ../../../scripts/release-evals/scenarios/judge_audio.yaml
+turns:
+  - user: "My answer is that I would first check the data."
+    expect:
+      - event: llm_started
+      - event: response
+  - user: "Actually, let me correct that: I would first check the assumptions."
+    send_after:
+      event: llm_started
+      delay_ms: 250
+    expect:
+      - event: bot_interrupted
+      - event: tts_response
+        eval: "uses the corrected answer and does not repeat the stale interrupted reply"

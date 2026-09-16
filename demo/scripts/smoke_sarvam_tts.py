@@ -11,7 +11,8 @@ import argparse
 import asyncio
 import hashlib
 import json
-import wave
+import os
+import sys
 from dataclasses import asdict
 from datetime import UTC, datetime
 from pathlib import Path
@@ -20,6 +21,13 @@ from typing import Any
 from demo.interview.contracts import ReplyKind
 from demo.interview.reply_guard import ReplyAuthorization, ReplyGuardProcessor
 from demo.interview.sarvam_tts import InterviewSarvamTTSService
+from demo.scripts.probe_evidence import (
+    ProbeEvidence,
+    ProbeFailure,
+    classify_failure,
+    require_credential,
+    write_pcm16_wav,
+)
 from pipecat.frames.frames import (
     ErrorFrame,
     LLMFullResponseEndFrame,
@@ -40,11 +48,8 @@ _ADAPTER_SOURCE = _DEMO_ROOT / "interview" / "sarvam_tts.py"
 
 
 def _output_dir(value: str) -> Path:
-    """Resolve a requested artifact directory while keeping output under ``demo/``."""
-    path = Path(value).expanduser().resolve()
-    if path != _DEMO_ROOT and _DEMO_ROOT not in path.parents:
-        raise argparse.ArgumentTypeError("output directory must be under demo/")
-    return path
+    """Resolve the parent directory used to reserve one evidence run."""
+    return Path(value).expanduser().resolve()
 
 
 def _parser() -> argparse.ArgumentParser:
@@ -60,8 +65,8 @@ def _parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--output-dir",
         type=_output_dir,
-        default=_DEMO_ROOT / "sarvam" / "results",
-        help="artifact directory under demo/",
+        default=None,
+        help="an empty, caller-owned run directory; omitted creates a fresh run under demo/sarvam/results",
     )
     parser.add_argument(
         "--timeout",
@@ -72,7 +77,7 @@ def _parser() -> argparse.ArgumentParser:
     return parser
 
 
-async def _run(args: argparse.Namespace) -> dict[str, Any]:
+async def _run(args: argparse.Namespace, evidence: ProbeEvidence) -> dict[str, Any]:
     """Run a real guard-to-adapter pipeline and persist its PCM as a valid WAV."""
     if args.timeout <= 0:
         raise ValueError("--timeout must be positive")
@@ -92,11 +97,10 @@ async def _run(args: argparse.Namespace) -> dict[str, Any]:
         is_current=lambda candidate: candidate == authorization,
         output_metadata=lambda: {"interview_playback_epoch": epoch},
     )
-    import os
-
     from dotenv import load_dotenv
 
     load_dotenv(_DEMO_ROOT / ".env", override=False)
+    require_credential(os.environ.get("SARVAM_API_KEY"), name="SARVAM_API_KEY")
     tts = InterviewSarvamTTSService(
         api_key=os.environ.get("SARVAM_API_KEY", ""),
         speaker=args.speaker,
@@ -124,7 +128,7 @@ async def _run(args: argparse.Namespace) -> dict[str, Any]:
         if isinstance(frame, (TTSStartedFrame, TTSAudioRawFrame, TTSTextFrame, TTSStoppedFrame))
     ]
     if errors:
-        raise RuntimeError("Sarvam TTS returned an error: " + "; ".join(errors))
+        raise ProbeFailure("tts", "provider", "Check the provider service and retry once.")
     if (
         not audio
         or not isinstance(lifecycle[0], TTSStartedFrame)
@@ -140,14 +144,9 @@ async def _run(args: argparse.Namespace) -> dict[str, Any]:
     if hashlib.sha256(_ADAPTER_SOURCE.read_bytes()).hexdigest() != adapter_source_sha256:
         raise RuntimeError("adapter source changed while the smoke request was running")
 
-    args.output_dir.mkdir(parents=True, exist_ok=True)
-    wav_path = args.output_dir / "adapter-smoke.wav"
+    wav_path = evidence.artifact("adapter-smoke.wav")
     pcm = b"".join(frame.audio for frame in audio)
-    with wave.open(str(wav_path), "wb") as writer:
-        writer.setnchannels(1)
-        writer.setsampwidth(2)
-        writer.setframerate(24_000)
-        writer.writeframes(pcm)
+    write_pcm16_wav(wav_path, pcm, sample_rate=24_000)
     report = {
         "endpoint": "https://api.sarvam.ai/text-to-speech/stream",
         "captured_at_utc": captured_at,
@@ -155,29 +154,67 @@ async def _run(args: argparse.Namespace) -> dict[str, Any]:
         "speaker": args.speaker,
         "model": "bulbul:v3",
         "language_code": args.language,
-        "text": args.text.strip(),
+        "text_sha256": hashlib.sha256(args.text.strip().encode()).hexdigest(),
+        "text_characters": len(args.text.strip()),
         "timeout_seconds": args.timeout,
-        "audio_path": str(wav_path.relative_to(_ROOT)),
+        "audio_path": str(wav_path.relative_to(_ROOT))
+        if _ROOT in wav_path.parents
+        else str(wav_path),
         "audio_bytes": len(pcm),
         "context_id": context_ids.pop(),
         "lifecycle": [type(frame).__name__ for frame in lifecycle],
         "metrics": asdict(tts.last_metrics) if tts.last_metrics is not None else None,
         "worker_cleaned_up": tts._worker is None,
     }
-    report_path = args.output_dir / "adapter-smoke.json"
-    report_path.write_text(json.dumps(report, indent=2) + "\n")
     return report
 
 
 def main() -> int:
     """Parse explicit CLI input, run one request, and print its local artifacts."""
     args = _parser().parse_args()
+    output_dir = args.output_dir or _DEMO_ROOT / "sarvam" / "results"
+    evidence = ProbeEvidence(
+        output_dir,
+        "sarvam-tts",
+        {
+            "language_code": args.language,
+            "speaker": args.speaker,
+            "text_sha256": hashlib.sha256(args.text.strip().encode()).hexdigest(),
+            "text_characters": len(args.text.strip()),
+            "timeout_seconds": args.timeout,
+        },
+        reserve_run_directory=args.output_dir is None,
+    )
     try:
-        report = asyncio.run(_run(args))
-    except (RuntimeError, ValueError) as error:
-        print(f"Sarvam adapter smoke failed: {error}")
+        evidence.begin()
+        if args.timeout <= 0:
+            raise ProbeFailure(
+                "configuration", "configuration", "Set --timeout to a positive value."
+            )
+        report = asyncio.run(asyncio.wait_for(_run(args, evidence), timeout=args.timeout + 5.0))
+        evidence.finish(stage="tts", outcome="success", details=report)
+    except BaseException as error:
+        failure = classify_failure(error, stage="tts")
+        if evidence.directory is not None:
+            try:
+                evidence.finish(
+                    stage=failure.stage,
+                    outcome="failure",
+                    category=failure.category,
+                    action=failure.action,
+                )
+            except ProbeFailure:
+                print(
+                    "output failed: output. Choose a writable output directory and inspect stderr.",
+                    file=sys.stderr,
+                )
+        print(
+            f"{failure.stage} failed: {failure.category}. {failure.action} "
+            f"Artifact: {evidence.directory}",
+            file=sys.stderr,
+        )
         return 1
-    print(json.dumps(report, indent=2))
+    print(json.dumps({"artifact_path": str(evidence.directory), "outcome": "success"}, indent=2))
     return 0
 
 

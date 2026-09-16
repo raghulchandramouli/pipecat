@@ -1,0 +1,15 @@
+name: interaction_explicit_controls
+turns:
+  - user: "Repeat the question."
+    expect:
+      - event: response
+        eval: "repeats or restates the current question without advancing"
+  - user: "Skip this question."
+    expect:
+      - event: response
+        eval: "confirms the skip and moves to the next question"
+  - user: "End the interview."
+    expect:
+      - event: response
+        eval: "closes the interview politely"
+

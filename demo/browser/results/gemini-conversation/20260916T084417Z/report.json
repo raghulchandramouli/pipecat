@@ -1,0 +1,682 @@
+{
+  "model": "gemini-3.8-live",
+  "passed": true,
+  "scope": "Live WebRTC with synthetic microphone audio; audio receipt is not a listening assessment.",
+  "stage": "end",
+  "received_audio": [
+    {
+      "bytesReceived": 669421,
+      "totalSamplesReceived": 2707680
+    }
+  ],
+  "events": [
+    {
+      "at": 463.5,
+      "v": 1,
+      "session_id": "d76c1457f49549d78844e7919ad2ed31",
+      "connection_generation": 1,
+      "seq": 1,
+      "type": "interview.status",
+      "status": "Reconnecting"
+    },
+    {
+      "at": 515.2999999970198,
+      "v": 1,
+      "session_id": "d76c1457f49549d78844e7919ad2ed31",
+      "connection_generation": 1,
+      "seq": 2,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 1,
+      "state_revision": 1,
+      "question_text": "Practice prompt: Tell me about a time you worked with others to achieve a shared goal.",
+      "interaction_state": "generating",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 3066.2999999970198,
+      "v": 1,
+      "session_id": "d76c1457f49549d78844e7919ad2ed31",
+      "connection_generation": 1,
+      "seq": 3,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 1,
+      "state_revision": 2,
+      "question_text": "Practice prompt: Tell me about a time you worked with others to achieve a shared goal.",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 20510.39999999851,
+      "v": 1,
+      "session_id": "d76c1457f49549d78844e7919ad2ed31",
+      "connection_generation": 1,
+      "seq": 4,
+      "type": "interview.reply",
+      "text": "Hello, good morning! Epdi irukeenga? Indha interview-la ungaloda experience pathi therinjukalam. Modhal kelvi... Neenga friends or family-odavo, illa vera yaroodavo serndhu, oru vishayatha senju mudicha time pathi sollunga. Oru shared goal-ah achieve panna sila details share pannunga.",
+      "dispatch_id": 1
+    },
+    {
+      "at": 20583,
+      "v": 1,
+      "session_id": "d76c1457f49549d78844e7919ad2ed31",
+      "connection_generation": 1,
+      "seq": 5,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 1,
+      "state_revision": 3,
+      "question_text": "Practice prompt: Tell me about a time you worked with others to achieve a shared goal.",
+      "interaction_state": "listening",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 20609.09999999404,
+      "v": 1,
+      "session_id": "d76c1457f49549d78844e7919ad2ed31",
+      "connection_generation": 1,
+      "seq": 6,
+      "type": "interview.command_result",
+      "prompt_revision": 1,
+      "command_id": 1,
+      "outcome": "applied",
+      "code": "ok"
+    },
+    {
+      "at": 20609.19999999553,
+      "v": 1,
+      "session_id": "d76c1457f49549d78844e7919ad2ed31",
+      "connection_generation": 1,
+      "seq": 7,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 1,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 1,
+      "state_revision": 4,
+      "question_text": "Practice prompt: Tell me about a time you worked with others to achieve a shared goal.",
+      "interaction_state": "generating",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 20609.29999999702,
+      "v": 1,
+      "session_id": "d76c1457f49549d78844e7919ad2ed31",
+      "connection_generation": 1,
+      "seq": 8,
+      "type": "interview.interruption",
+      "playback_epoch": 1,
+      "prompt_revision": 1,
+      "state_revision": 4,
+      "question_text": "Practice prompt: Tell me about a time you worked with others to achieve a shared goal.",
+      "interaction_state": "generating",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 21533.69999999553,
+      "v": 1,
+      "session_id": "d76c1457f49549d78844e7919ad2ed31",
+      "connection_generation": 1,
+      "seq": 9,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 1,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 1,
+      "state_revision": 5,
+      "question_text": "Practice prompt: Tell me about a time you worked with others to achieve a shared goal.",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 31771.5,
+      "v": 1,
+      "session_id": "d76c1457f49549d78844e7919ad2ed31",
+      "connection_generation": 1,
+      "seq": 10,
+      "type": "interview.reply",
+      "text": "Simple-ah sollanum-na, neenga yaarkoooda serndhu, oru velai-ya mudikka help panni irupeenga illa work panni irupeenga, adhupathi sollunga. Yaarkooda serndhu velai senjeenga?",
+      "dispatch_id": 2
+    },
+    {
+      "at": 31803.19999999553,
+      "v": 1,
+      "session_id": "d76c1457f49549d78844e7919ad2ed31",
+      "connection_generation": 1,
+      "seq": 11,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 1,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 1,
+      "state_revision": 6,
+      "question_text": "Practice prompt: Tell me about a time you worked with others to achieve a shared goal.",
+      "interaction_state": "listening",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 31834,
+      "v": 1,
+      "session_id": "d76c1457f49549d78844e7919ad2ed31",
+      "connection_generation": 1,
+      "seq": 12,
+      "type": "interview.command_result",
+      "prompt_revision": 1,
+      "command_id": 2,
+      "outcome": "applied",
+      "code": "ok"
+    },
+    {
+      "at": 31834.09999999404,
+      "v": 1,
+      "session_id": "d76c1457f49549d78844e7919ad2ed31",
+      "connection_generation": 1,
+      "seq": 13,
+      "type": "interview.status",
+      "status": "Giving you time",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 2,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 1,
+      "state_revision": 7,
+      "question_text": "Practice prompt: Tell me about a time you worked with others to achieve a shared goal.",
+      "interaction_state": "thinking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 31834.19999999553,
+      "v": 1,
+      "session_id": "d76c1457f49549d78844e7919ad2ed31",
+      "connection_generation": 1,
+      "seq": 14,
+      "type": "interview.interruption",
+      "playback_epoch": 2,
+      "prompt_revision": 1,
+      "state_revision": 7,
+      "question_text": "Practice prompt: Tell me about a time you worked with others to achieve a shared goal.",
+      "interaction_state": "thinking",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 34700.79999999702,
+      "v": 1,
+      "session_id": "d76c1457f49549d78844e7919ad2ed31",
+      "connection_generation": 1,
+      "seq": 15,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 2,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 1,
+      "state_revision": 8,
+      "question_text": "Practice prompt: Tell me about a time you worked with others to achieve a shared goal.",
+      "interaction_state": "listening",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 34703.39999999851,
+      "v": 1,
+      "session_id": "d76c1457f49549d78844e7919ad2ed31",
+      "connection_generation": 1,
+      "seq": 16,
+      "type": "interview.interruption",
+      "playback_epoch": 2,
+      "prompt_revision": 1,
+      "state_revision": 8,
+      "question_text": "Practice prompt: Tell me about a time you worked with others to achieve a shared goal.",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 52636.59999999404,
+      "v": 1,
+      "session_id": "d76c1457f49549d78844e7919ad2ed31",
+      "connection_generation": 1,
+      "seq": 17,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 2,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 1,
+      "state_revision": 9,
+      "question_text": "Practice prompt: Tell me about a time you worked with others to achieve a shared goal.",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 53638.29999999702,
+      "v": 1,
+      "session_id": "d76c1457f49549d78844e7919ad2ed31",
+      "connection_generation": 1,
+      "seq": 18,
+      "type": "interview.caption",
+      "text": "குழுவில் ஒரு வேலை முடிக்க தாமதம் ஆச்சு.  எல்லார்கிட்டயும் என்ன பிரச்சனைன்னு கேட்டேன்.  மீதி வேலையை பிரிச்சு கொடுத்தேன்.  ஒரு நண்பருக்கு கடினமான பகுதியை முடிக்க உதவி பண்ணேன்.  நாங்க நேரத்துக்கு வேலையை முடிச்சோம்.",
+      "final": true,
+      "segment_id": "native-input-1"
+    },
+    {
+      "at": 62491.39999999851,
+      "v": 1,
+      "session_id": "d76c1457f49549d78844e7919ad2ed31",
+      "connection_generation": 1,
+      "seq": 19,
+      "type": "interview.reply",
+      "text": "Romba nalla answer! Ungaloda effort-nala ellarum serndhu time-ku velaiya mudichrukkeenga. Indha situation-la, unga friends-oda reaction epdi irundhudhu? Adhaiyum share pannunga.",
+      "dispatch_id": 3
+    },
+    {
+      "at": 62523.39999999851,
+      "v": 1,
+      "session_id": "d76c1457f49549d78844e7919ad2ed31",
+      "connection_generation": 1,
+      "seq": 20,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 2,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 1,
+      "state_revision": 10,
+      "question_text": "Practice prompt: Tell me about a time you worked with others to achieve a shared goal.",
+      "interaction_state": "listening",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 62667.39999999851,
+      "v": 1,
+      "session_id": "d76c1457f49549d78844e7919ad2ed31",
+      "connection_generation": 1,
+      "seq": 21,
+      "type": "interview.command_result",
+      "prompt_revision": 1,
+      "command_id": 3,
+      "outcome": "applied",
+      "code": "ok"
+    },
+    {
+      "at": 62667.39999999851,
+      "v": 1,
+      "session_id": "d76c1457f49549d78844e7919ad2ed31",
+      "connection_generation": 1,
+      "seq": 22,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 3,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 1,
+      "state_revision": 11,
+      "question_text": "Practice prompt: Tell me about a time you worked with others to achieve a shared goal.",
+      "interaction_state": "generating",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 62667.39999999851,
+      "v": 1,
+      "session_id": "d76c1457f49549d78844e7919ad2ed31",
+      "connection_generation": 1,
+      "seq": 23,
+      "type": "interview.interruption",
+      "playback_epoch": 3,
+      "prompt_revision": 1,
+      "state_revision": 11,
+      "question_text": "Practice prompt: Tell me about a time you worked with others to achieve a shared goal.",
+      "interaction_state": "generating",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 63500.29999999702,
+      "v": 1,
+      "session_id": "d76c1457f49549d78844e7919ad2ed31",
+      "connection_generation": 1,
+      "seq": 24,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 3,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 1,
+      "state_revision": 12,
+      "question_text": "Practice prompt: Tell me about a time you worked with others to achieve a shared goal.",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 68983,
+      "v": 1,
+      "session_id": "d76c1457f49549d78844e7919ad2ed31",
+      "connection_generation": 1,
+      "seq": 25,
+      "type": "interview.reply",
+      "text": "Adhuve, unga friends unga help-ah pathu epdi feel pannanga? Romba happy-ah irundhangala?",
+      "dispatch_id": 4
+    },
+    {
+      "at": 68983.69999999553,
+      "v": 1,
+      "session_id": "d76c1457f49549d78844e7919ad2ed31",
+      "connection_generation": 1,
+      "seq": 26,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 3,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 1,
+      "state_revision": 13,
+      "question_text": "Practice prompt: Tell me about a time you worked with others to achieve a shared goal.",
+      "interaction_state": "listening",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 69009,
+      "v": 1,
+      "session_id": "d76c1457f49549d78844e7919ad2ed31",
+      "connection_generation": 1,
+      "seq": 27,
+      "type": "interview.command_result",
+      "prompt_revision": 2,
+      "command_id": 4,
+      "outcome": "applied",
+      "code": "ok"
+    },
+    {
+      "at": 69009.09999999404,
+      "v": 1,
+      "session_id": "d76c1457f49549d78844e7919ad2ed31",
+      "connection_generation": 1,
+      "seq": 28,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 2,
+      "question_count": 5,
+      "playback_epoch": 4,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 14,
+      "question_text": "Practice prompt: Tell me about a time you explained something difficult to another person.",
+      "interaction_state": "generating",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 69009.09999999404,
+      "v": 1,
+      "session_id": "d76c1457f49549d78844e7919ad2ed31",
+      "connection_generation": 1,
+      "seq": 29,
+      "type": "interview.interruption",
+      "playback_epoch": 4,
+      "prompt_revision": 2,
+      "state_revision": 14,
+      "question_text": "Practice prompt: Tell me about a time you explained something difficult to another person.",
+      "interaction_state": "generating",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 69737.5,
+      "v": 1,
+      "session_id": "d76c1457f49549d78844e7919ad2ed31",
+      "connection_generation": 1,
+      "seq": 30,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_index": 2,
+      "question_count": 5,
+      "playback_epoch": 4,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 15,
+      "question_text": "Practice prompt: Tell me about a time you explained something difficult to another person.",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 80104.59999999404,
+      "v": 1,
+      "session_id": "d76c1457f49549d78844e7919ad2ed31",
+      "connection_generation": 1,
+      "seq": 31,
+      "type": "interview.reply",
+      "text": "Next question... Neenga yepavadhu oru tough topic-ah illa complicated vishayatha, vera yaarukavadhu puriyara madhiri easy-ah sollirukeenga? Adhu epdi nadandhudhu?",
+      "dispatch_id": 5
+    },
+    {
+      "at": 80143.5,
+      "v": 1,
+      "session_id": "d76c1457f49549d78844e7919ad2ed31",
+      "connection_generation": 1,
+      "seq": 32,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 2,
+      "question_count": 5,
+      "playback_epoch": 4,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 16,
+      "question_text": "Practice prompt: Tell me about a time you explained something difficult to another person.",
+      "interaction_state": "listening",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    }
+  ],
+  "page_errors": [],
+  "notice": ""
+}

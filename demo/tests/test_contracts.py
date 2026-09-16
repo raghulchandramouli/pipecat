@@ -12,6 +12,7 @@ from demo.interview.config import (
     ProviderCredentials,
     RumikTTSConfig,
     SarvamSTTConfig,
+    SarvamTTSConfig,
 )
 from demo.interview.contracts import (
     CompletionDecision,
@@ -25,6 +26,7 @@ from demo.interview.contracts import (
     SegmentFinalOutcome,
     SegmentId,
 )
+from demo.interview.languages import STT_LANGUAGES, TTS_LANGUAGES
 from demo.interview.providers import (
     FakeReasoningProvider,
     FakeSpeechProvider,
@@ -57,6 +59,20 @@ def test_offline_configuration_and_explicit_provider_choices() -> None:
     assert config.providers.rumik.provisional is True
     assert config.deadlines.candidate_pause == 2.5
     assert config.deadlines.thinking_grace == 30.0
+
+
+@pytest.mark.parametrize("language_code", STT_LANGUAGES)
+def test_stt_config_accepts_every_documented_language(language_code: str) -> None:
+    """Realtime STT validation follows the supported provider languages."""
+    assert SarvamSTTConfig(language_code=language_code).language_code == language_code
+
+
+@pytest.mark.parametrize("language_code", TTS_LANGUAGES)
+def test_tts_config_accepts_every_documented_language_and_pace(language_code: str) -> None:
+    """Streaming TTS keeps the requested pace with every supported language."""
+    config = SarvamTTSConfig(language_code=language_code, pace=1.2)
+    assert config.language_code == language_code
+    assert config.pace == 1.2
 
 
 @pytest.mark.parametrize("field", ["role", "difficulty", "duration_minutes", "question_rubric"])

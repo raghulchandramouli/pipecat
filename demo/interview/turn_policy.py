@@ -63,6 +63,7 @@ class TurnPolicy:
         self._watchdog_consumed = False
         self._retry_at: float | None = None
         self._retry_reason: str | None = None
+        self._retry_kind: PolicyActionKind = PolicyActionKind.CHECK_IN
         self._thinking_requested_at: float | None = None
         self._thinking_deadline: float | None = None
 
@@ -97,6 +98,7 @@ class TurnPolicy:
         self._watchdog_consumed = False
         self._retry_at = None
         self._retry_reason = None
+        self._retry_kind = PolicyActionKind.CHECK_IN
         self._thinking_requested_at = None
         self._thinking_deadline = None
 
@@ -161,6 +163,16 @@ class TurnPolicy:
         )
         self._retry_at = self._clock() + delay
         self._retry_reason = "incomplete_long_retry" if long else "incomplete_short_retry"
+        self._retry_kind = PolicyActionKind.CHECK_IN
+
+    def retry_answer(self) -> None:
+        """Schedule one fresh authorized answer attempt for the unchanged source."""
+        if self._speaking or self._thinking_deadline is not None:
+            return
+        self._response_pending = False
+        self._retry_at = self._clock()
+        self._retry_reason = "reply_retry"
+        self._retry_kind = PolicyActionKind.SEMANTIC_PROBE
 
     def poll(self) -> PolicyAction | None:
         """Consume and return one currently due policy action, if any."""
@@ -190,7 +202,11 @@ class TurnPolicy:
             self._retry_reason = None
             self._consume_overdue_check_ins(now)
             return PolicyAction(
-                PolicyActionKind.CHECK_IN, reason or "incomplete_retry", ReplyKind.CHECK_IN
+                self._retry_kind,
+                reason or "incomplete_retry",
+                ReplyKind.FOLLOW_UP
+                if self._retry_kind is PolicyActionKind.SEMANTIC_PROBE
+                else ReplyKind.CHECK_IN,
             )
         if (
             not self._initial_probe_consumed
@@ -236,6 +252,7 @@ class TurnPolicy:
         self._response_pending = True
         self._retry_at = None
         self._retry_reason = None
+        self._retry_kind = PolicyActionKind.CHECK_IN
         self._thinking_deadline = None
         self._thinking_requested_at = None
 

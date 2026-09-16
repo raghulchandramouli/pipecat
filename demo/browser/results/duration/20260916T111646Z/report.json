@@ -1,0 +1,565 @@
+{
+  "passed": true,
+  "duration_minutes": 5,
+  "checkpoints": [
+    {
+      "status": "Listening",
+      "ended": false,
+      "elapsed_seconds": 30.00410000000149
+    },
+    {
+      "status": "Listening",
+      "ended": false,
+      "elapsed_seconds": 60.005
+    },
+    {
+      "status": "Listening",
+      "ended": false,
+      "elapsed_seconds": 90.00370000000298
+    },
+    {
+      "status": "Listening",
+      "ended": false,
+      "elapsed_seconds": 120.00239999999852
+    },
+    {
+      "status": "Listening",
+      "ended": false,
+      "elapsed_seconds": 150.003
+    },
+    {
+      "status": "Listening",
+      "ended": false,
+      "elapsed_seconds": 180.0035
+    },
+    {
+      "status": "Listening",
+      "ended": false,
+      "elapsed_seconds": 210.0021000000015
+    },
+    {
+      "status": "Listening",
+      "ended": false,
+      "elapsed_seconds": 240.00280000000447
+    },
+    {
+      "status": "Listening",
+      "ended": false,
+      "elapsed_seconds": 270.00330000000446
+    },
+    {
+      "status": "Speaking",
+      "ended": false,
+      "elapsed_seconds": 295.0023999999985
+    }
+  ],
+  "elapsed_seconds": 300.003200000003,
+  "media_closed": true,
+  "restart_visible": true,
+  "page_errors": [],
+  "events": [
+    {
+      "at": 449.3999999985099,
+      "v": 1,
+      "session_id": "7c7a2ef1026c4aaeb7342716df87b77a",
+      "connection_generation": 1,
+      "seq": 1,
+      "type": "interview.status",
+      "status": "Reconnecting"
+    },
+    {
+      "at": 501.20000000298023,
+      "v": 1,
+      "session_id": "7c7a2ef1026c4aaeb7342716df87b77a",
+      "connection_generation": 1,
+      "seq": 2,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 1,
+      "state_revision": 1,
+      "interaction_state": "generating",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 2329.89999999851,
+      "v": 1,
+      "session_id": "7c7a2ef1026c4aaeb7342716df87b77a",
+      "connection_generation": 1,
+      "seq": 3,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 1,
+      "state_revision": 2,
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 7184.20000000298,
+      "v": 1,
+      "session_id": "7c7a2ef1026c4aaeb7342716df87b77a",
+      "connection_generation": 1,
+      "seq": 4,
+      "type": "interview.reply",
+      "text": "வணக்கம்! நீங்க என்ன வேலை செய்றீங்க, இல்ல உங்க நாள் எப்படி போகுதுன்னு சொல்ல முடியுமா?",
+      "dispatch_id": 1
+    },
+    {
+      "at": 7184.29999999702,
+      "v": 1,
+      "session_id": "7c7a2ef1026c4aaeb7342716df87b77a",
+      "connection_generation": 1,
+      "seq": 5,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 3,
+      "question_text": "வணக்கம்! நீங்க என்ன வேலை செய்றீங்க, இல்ல உங்க நாள் எப்படி போகுதுன்னு சொல்ல முடியுமா?",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 7327.39999999851,
+      "v": 1,
+      "session_id": "7c7a2ef1026c4aaeb7342716df87b77a",
+      "connection_generation": 1,
+      "seq": 6,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 4,
+      "question_text": "வணக்கம்! நீங்க என்ன வேலை செய்றீங்க, இல்ல உங்க நாள் எப்படி போகுதுன்னு சொல்ல முடியுமா?",
+      "interaction_state": "listening",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 90531.29999999702,
+      "v": 1,
+      "session_id": "7c7a2ef1026c4aaeb7342716df87b77a",
+      "connection_generation": 1,
+      "seq": 7,
+      "type": "interview.command_result",
+      "prompt_revision": 2,
+      "command_id": 1,
+      "outcome": "applied",
+      "code": "ok"
+    },
+    {
+      "at": 90531.5,
+      "v": 1,
+      "session_id": "7c7a2ef1026c4aaeb7342716df87b77a",
+      "connection_generation": 1,
+      "seq": 8,
+      "type": "interview.status",
+      "status": "Giving you time",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 1,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 5,
+      "question_text": "வணக்கம்! நீங்க என்ன வேலை செய்றீங்க, இல்ல உங்க நாள் எப்படி போகுதுன்னு சொல்ல முடியுமா?",
+      "interaction_state": "thinking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 90531.60000000149,
+      "v": 1,
+      "session_id": "7c7a2ef1026c4aaeb7342716df87b77a",
+      "connection_generation": 1,
+      "seq": 9,
+      "type": "interview.interruption",
+      "playback_epoch": 2,
+      "prompt_revision": 2,
+      "state_revision": 6,
+      "question_text": "வணக்கம்! நீங்க என்ன வேலை செய்றீங்க, இல்ல உங்க நாள் எப்படி போகுதுன்னு சொல்ல முடியுமா?",
+      "interaction_state": "thinking",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 180532.20000000298,
+      "v": 1,
+      "session_id": "7c7a2ef1026c4aaeb7342716df87b77a",
+      "connection_generation": 1,
+      "seq": 10,
+      "type": "interview.command_result",
+      "prompt_revision": 2,
+      "command_id": 2,
+      "outcome": "applied",
+      "code": "ok"
+    },
+    {
+      "at": 180532.3999999985,
+      "v": 1,
+      "session_id": "7c7a2ef1026c4aaeb7342716df87b77a",
+      "connection_generation": 1,
+      "seq": 11,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 3,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 7,
+      "question_text": "வணக்கம்! நீங்க என்ன வேலை செய்றீங்க, இல்ல உங்க நாள் எப்படி போகுதுன்னு சொல்ல முடியுமா?",
+      "interaction_state": "generating",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 180532.3999999985,
+      "v": 1,
+      "session_id": "7c7a2ef1026c4aaeb7342716df87b77a",
+      "connection_generation": 1,
+      "seq": 12,
+      "type": "interview.interruption",
+      "playback_epoch": 4,
+      "prompt_revision": 2,
+      "state_revision": 8,
+      "question_text": "வணக்கம்! நீங்க என்ன வேலை செய்றீங்க, இல்ல உங்க நாள் எப்படி போகுதுன்னு சொல்ல முடியுமா?",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 181622.79999999702,
+      "v": 1,
+      "session_id": "7c7a2ef1026c4aaeb7342716df87b77a",
+      "connection_generation": 1,
+      "seq": 13,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 4,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 9,
+      "question_text": "வணக்கம்! நீங்க என்ன வேலை செய்றீங்க, இல்ல உங்க நாள் எப்படி போகுதுன்னு சொல்ல முடியுமா?",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 187355.8999999985,
+      "v": 1,
+      "session_id": "7c7a2ef1026c4aaeb7342716df87b77a",
+      "connection_generation": 1,
+      "seq": 14,
+      "type": "interview.reply",
+      "text": "மன்னிக்கணும். வணக்கம்! நீங்க என்ன வேலை செய்றீங்க, இல்ல உங்க நாள் எப்படி போகுதுன்னு சொல்ல முடியுமா?",
+      "dispatch_id": 2
+    },
+    {
+      "at": 187356.1000000015,
+      "v": 1,
+      "session_id": "7c7a2ef1026c4aaeb7342716df87b77a",
+      "connection_generation": 1,
+      "seq": 15,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 4,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 3,
+      "state_revision": 10,
+      "question_text": "மன்னிக்கணும். வணக்கம்! நீங்க என்ன வேலை செய்றீங்க, இல்ல உங்க நாள் எப்படி போகுதுன்னு சொல்ல முடியுமா?",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 187457.8999999985,
+      "v": 1,
+      "session_id": "7c7a2ef1026c4aaeb7342716df87b77a",
+      "connection_generation": 1,
+      "seq": 16,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 4,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 3,
+      "state_revision": 11,
+      "question_text": "மன்னிக்கணும். வணக்கம்! நீங்க என்ன வேலை செய்றீங்க, இல்ல உங்க நாள் எப்படி போகுதுன்னு சொல்ல முடியுமா?",
+      "interaction_state": "listening",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 288502.6000000015,
+      "v": 1,
+      "session_id": "7c7a2ef1026c4aaeb7342716df87b77a",
+      "connection_generation": 1,
+      "seq": 17,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 4,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 3,
+      "state_revision": 12,
+      "question_text": "மன்னிக்கணும். வணக்கம்! நீங்க என்ன வேலை செய்றீங்க, இல்ல உங்க நாள் எப்படி போகுதுன்னு சொல்ல முடியுமா?",
+      "interaction_state": "generating",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "end"
+      ]
+    },
+    {
+      "at": 288502.8999999985,
+      "v": 1,
+      "session_id": "7c7a2ef1026c4aaeb7342716df87b77a",
+      "connection_generation": 1,
+      "seq": 18,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 4,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 3,
+      "state_revision": 12,
+      "question_text": "மன்னிக்கணும். வணக்கம்! நீங்க என்ன வேலை செய்றீங்க, இல்ல உங்க நாள் எப்படி போகுதுன்னு சொல்ல முடியுமா?",
+      "interaction_state": "generating",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "end"
+      ]
+    },
+    {
+      "at": 288507.8999999985,
+      "v": 1,
+      "session_id": "7c7a2ef1026c4aaeb7342716df87b77a",
+      "connection_generation": 1,
+      "seq": 19,
+      "type": "interview.interruption",
+      "playback_epoch": 5,
+      "prompt_revision": 3,
+      "state_revision": 13,
+      "question_text": "மன்னிக்கணும். வணக்கம்! நீங்க என்ன வேலை செய்றீங்க, இல்ல உங்க நாள் எப்படி போகுதுன்னு சொல்ல முடியுமா?",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "end"
+      ]
+    },
+    {
+      "at": 290271.700000003,
+      "v": 1,
+      "session_id": "7c7a2ef1026c4aaeb7342716df87b77a",
+      "connection_generation": 1,
+      "seq": 20,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 5,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 3,
+      "state_revision": 14,
+      "question_text": "மன்னிக்கணும். வணக்கம்! நீங்க என்ன வேலை செய்றீங்க, இல்ல உங்க நாள் எப்படி போகுதுன்னு சொல்ல முடியுமா?",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "end"
+      ]
+    },
+    {
+      "at": 297434.6000000015,
+      "v": 1,
+      "session_id": "7c7a2ef1026c4aaeb7342716df87b77a",
+      "connection_generation": 1,
+      "seq": 21,
+      "type": "interview.reply",
+      "text": "நேரம் முடிஞ்சது. உங்க வேலை, அனுபவம், எண்ணங்களைப் பகிர்ந்ததுக்கு நன்றி. இந்த நேர்காணல் இத்துடன் முடிந்தது.",
+      "dispatch_id": 3
+    },
+    {
+      "at": 297434.799999997,
+      "v": 1,
+      "session_id": "7c7a2ef1026c4aaeb7342716df87b77a",
+      "connection_generation": 1,
+      "seq": 22,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 5,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 15,
+      "question_text": "நேரம் முடிஞ்சது. உங்க வேலை, அனுபவம், எண்ணங்களைப் பகிர்ந்ததுக்கு நன்றி. இந்த நேர்காணல் இத்துடன் முடிந்தது.",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "end"
+      ]
+    },
+    {
+      "at": 297467.200000003,
+      "v": 1,
+      "session_id": "7c7a2ef1026c4aaeb7342716df87b77a",
+      "connection_generation": 1,
+      "seq": 23,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 5,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 16,
+      "question_text": "நேரம் முடிஞ்சது. உங்க வேலை, அனுபவம், எண்ணங்களைப் பகிர்ந்ததுக்கு நன்றி. இந்த நேர்காணல் இத்துடன் முடிந்தது.",
+      "interaction_state": "listening",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "end"
+      ]
+    },
+    {
+      "at": 300503.1000000015,
+      "v": 1,
+      "session_id": "7c7a2ef1026c4aaeb7342716df87b77a",
+      "connection_generation": 1,
+      "seq": 24,
+      "type": "interview.ended",
+      "phase": "ended",
+      "question_count": 5,
+      "message": "நேரம் முடிஞ்சது. உங்க வேலை, அனுபவம், எண்ணங்களைப் பகிர்ந்ததுக்கு நன்றி. இந்த நேர்காணல் இத்துடன் முடிந்தது.",
+      "prompt_revision": 4,
+      "state_revision": 17,
+      "question_text": "நேரம் முடிஞ்சது. உங்க வேலை, அனுபவம், எண்ணங்களைப் பகிர்ந்ததுக்கு நன்றி. இந்த நேர்காணல் இத்துடன் முடிந்தது.",
+      "interaction_state": "ended",
+      "permitted_actions": []
+    },
+    {
+      "at": 300510.8999999985,
+      "v": 1,
+      "session_id": "7c7a2ef1026c4aaeb7342716df87b77a",
+      "connection_generation": 1,
+      "seq": 25,
+      "type": "interview.command_result",
+      "prompt_revision": 4,
+      "command_id": 3,
+      "outcome": "rejected",
+      "code": "unavailable"
+    }
+  ]
+}

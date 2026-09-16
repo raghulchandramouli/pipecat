@@ -1,0 +1,14 @@
+name: interaction_tanglish
+turns:
+  - user: "Naan oru release problem-a debug panni, team-ku clear-a plan communicate panninen."
+    expect:
+      - event: response
+        eval: "responds naturally to a Tanglish answer and keeps the interview controlled"
+  - user: "Indha question-ku enakku personal example illa."
+    expect:
+      - event: response
+        eval: "responds supportively in Tanglish without asking the candidate to invent experience"
+  - user: "Process improve panninen, aana enna detail sollanum?"
+    expect:
+      - event: response
+        eval: "explains what detail would help in Tanglish while preserving the unfinished answer"

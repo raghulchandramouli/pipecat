@@ -1,0 +1,14 @@
+name: interaction_english
+turns:
+  - user: "In English: I handled a failed launch by finding the root cause and communicating the plan."
+    expect:
+      - event: response
+        eval: "responds naturally in English and asks a relevant follow-up"
+  - user: "I do not have a personal example for the next question."
+    expect:
+      - event: response
+        eval: "responds supportively in English without asking the candidate to invent experience"
+  - user: "I improved delivery, but what detail should I add?"
+    expect:
+      - event: response
+        eval: "explains what detail would help while preserving the unfinished answer"

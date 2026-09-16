@@ -1,0 +1,15 @@
+name: interaction_hesitation
+turns:
+  - user: "I am still thinking about that example."
+    expect:
+      - event: user_stopped_speaking
+      - event: response
+        absent: true
+        within_ms: 1500
+  - user: "I can finish: I clarified the requirements with the team."
+    send_after:
+      event: user_stopped_speaking
+      delay_ms: 1500
+    expect:
+      - event: response
+        eval: "answers the completed thought and does not answer the earlier hesitation fragment"

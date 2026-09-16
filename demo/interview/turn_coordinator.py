@@ -47,6 +47,7 @@ class InterviewTurnCoordinator(TranscriptLedgerProcessor):
         self._action: PolicyAction | None = None
         self._authorization: ReplyAuthorization | None = None
         self._terminal_authorization: ReplyAuthorization | None = None
+        self._failed_authorization: ReplyAuthorization | None = None
         self._speaking = False
         self._stopped = False
         self._register_event_handler("on_reply_decision", sync=True)
@@ -61,6 +62,7 @@ class InterviewTurnCoordinator(TranscriptLedgerProcessor):
         self._stopped = False
         self._action = None
         self._authorization = None
+        self._failed_authorization = None
         self._provider_deadline = None
         super().speech_started()
 
@@ -68,6 +70,7 @@ class InterviewTurnCoordinator(TranscriptLedgerProcessor):
         """Arm quiet-time notifications when the controller finishes asking a question."""
         self.policy.begin_waiting()
         self._authorization = None
+        self._failed_authorization = None
         self._provider_deadline = None
         self._pending = None
         self._action = None
@@ -89,6 +92,7 @@ class InterviewTurnCoordinator(TranscriptLedgerProcessor):
         self._action = None
         self._pending = None
         self._authorization = None
+        self._failed_authorization = None
         self._provider_deadline = None
         self._serial += 1
         self._cancel_requested = True
@@ -113,6 +117,7 @@ class InterviewTurnCoordinator(TranscriptLedgerProcessor):
             self.speech_stopped()
         if isinstance(frame, InterruptionFrame):
             self._authorization = None
+            self._failed_authorization = None
             self._provider_deadline = None
             self._pending = None
             self._action = None
@@ -140,12 +145,9 @@ class InterviewTurnCoordinator(TranscriptLedgerProcessor):
         if self._provider_deadline is not None and self._clock() >= self._provider_deadline:
             authorization = self._authorization
             self._provider_deadline = None
-            self._authorization = None
             self._pending = None
             self._action = None
-            self._serial += 1
             self._cancel_requested = True
-            self.policy.incomplete()
             self.create_task(self._report_timeout(authorization), name="interview-response-timeout")
         action = self.policy.poll()
         if action is not None:
@@ -154,7 +156,15 @@ class InterviewTurnCoordinator(TranscriptLedgerProcessor):
             self.create_task(
                 self._call_event_handler("on_policy_action", action), name="interview-policy-event"
             )
+            if action.reply_kind is ReplyKind.CHECK_IN and self.start_local_check_in(action):
+                self._action = None
+                self.policy.response_completed()
+                return
             super().request_dispatch(LLMContextFrame(self.context))
+
+    def start_local_check_in(self, action: PolicyAction) -> bool:
+        """Optionally emit a fixed check-in without adding a provider round trip."""
+        return False
 
     def _dispatch_is_ready(self) -> bool:
         return self.ledger.readiness and self.policy.can_dispatch() and self._action is not None
@@ -173,6 +183,7 @@ class InterviewTurnCoordinator(TranscriptLedgerProcessor):
             answer_allowed=(action.kind is PolicyActionKind.SEMANTIC_PROBE and bool(snapshot.text)),
         )
         self._terminal_authorization = None
+        self._failed_authorization = None
         frame.metadata["interview_reply_kind"] = action.reply_kind.value
         frame.metadata["interview_policy_reason"] = action.reason
         if action.reply_kind is ReplyKind.CHECK_IN:
@@ -190,15 +201,41 @@ class InterviewTurnCoordinator(TranscriptLedgerProcessor):
 
     async def _report_timeout(self, authorization: ReplyAuthorization | None) -> None:
         await self.push_error("Interview response watchdog expired; pending answer retained")
-        await self._call_event_handler(
-            "on_reply_rejected", ReplyRejection(authorization, "provider_timeout")
-        )
+        await self._reject_authorized_attempt(ReplyRejection(authorization, "provider_timeout"))
 
     def _dispatch_failed(self) -> None:
         if self._provider_task is asyncio.current_task():
+            authorization = self._authorization
             self._provider_deadline = None
-            self._authorization = None
+            self.create_task(
+                self._reject_authorized_attempt(ReplyRejection(authorization, "provider_error")),
+                name="interview-provider-rejection",
+            )
+
+    async def _reject_authorized_attempt(self, result: ReplyRejection) -> None:
+        """Retire one current provider attempt and admit at most one replacement."""
+        authorization = result.authorization
+        if (
+            authorization is None
+            or not self._owns_policy_response(authorization)
+            or not self.rejection_is_current(authorization)
+            or authorization == self._terminal_authorization
+        ):
+            return
+        self._terminal_authorization = authorization
+        self._failed_authorization = authorization
+        self._provider_deadline = None
+        self._pending = None
+        self._action = None
+        if self.retry_rejected_response(result):
+            self.policy.retry_answer()
+        else:
             self.policy.incomplete()
+        await self._call_event_handler("on_reply_rejected", result)
+        if self._authorization == authorization:
+            self._authorization = None
+            self._serial += 1
+        self.changed()
 
     def lookup_authorization(self, metadata: dict[str, Any]) -> ReplyAuthorization | None:
         """Resolve trusted admission records without accepting model-supplied reply kinds."""
@@ -214,6 +251,13 @@ class InterviewTurnCoordinator(TranscriptLedgerProcessor):
 
     def authorization_is_current(self, authorization: ReplyAuthorization) -> bool:
         """Validate response and transcript identity immediately before output or mutation."""
+        return (
+            self.rejection_is_current(authorization)
+            and authorization != self._failed_authorization
+        )
+
+    def rejection_is_current(self, authorization: ReplyAuthorization) -> bool:
+        """Validate the identity of a failed attempt before its recovery path mutates state."""
         return (
             authorization == self._authorization
             and self.response_is_current(authorization.response_token, authorization.dispatch_id)
@@ -248,25 +292,17 @@ class InterviewTurnCoordinator(TranscriptLedgerProcessor):
 
         @guard.event_handler("on_rejected")
         async def rejected(_guard, result: ReplyRejection):
-            if (
-                result.authorization is None
-                or not self._owns_policy_response(result.authorization)
-                or not self.authorization_is_current(result.authorization)
-                or result.authorization == self._terminal_authorization
-            ):
-                return
-            self._terminal_authorization = result.authorization
-            self._provider_deadline = None
-            self.policy.incomplete()
-            self._authorization = None
-            self.changed()
-            await self._call_event_handler("on_reply_rejected", result)
+            await self._reject_authorized_attempt(result)
 
         return guard
 
     def _owns_policy_response(self, authorization: ReplyAuthorization) -> bool:
         """Distinguish timed inference from application-owned local prompt delivery."""
         return True
+
+    def retry_rejected_response(self, rejection: ReplyRejection) -> bool:
+        """Allow a subclass to spend one bounded retry on the same source snapshot."""
+        return False
 
     def create_user_aggregator(self, **kwargs: Any) -> InterviewUserAggregator:
         """Use VAD start and external stop with response timers owned by this coordinator."""

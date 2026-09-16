@@ -66,10 +66,43 @@ class FakeManaged:
             ),
             config=SimpleNamespace(question_rubric=(object(), object())),
         )
+        self.session.interaction_snapshot = self.interaction_snapshot
+        self.session.apply_interaction_action = self.apply_interaction_action
         self.worker = object()
         self.session_id = session_id
         self.ready_calls = 0
         self.close_calls = 0
+        self.actions: list[tuple[str, str | None]] = []
+        self.prompt_revision = 3
+        self.state_revision = 4
+        self.recovery_token: str | None = None
+
+    def interaction_snapshot(self) -> dict[str, object]:
+        """Expose the core session protocol seam used by browser controls."""
+        actions = ["repeat", "explain", "thinking", "skip", "end"]
+        if self.recovery_token is not None:
+            actions.extend(("retry_response", "retry_transcription", "restart_answer"))
+        return {
+            "prompt_revision": self.prompt_revision,
+            "state_revision": self.state_revision,
+            "question_text": "Tell me about teamwork.",
+            "interaction_state": "listening",
+            "permitted_actions": actions,
+            "recovery_token": self.recovery_token,
+        }
+
+    def apply_interaction_action(self, action: str, *, recovery_token: str | None = None) -> None:
+        """Apply a deterministic, provider-free action for channel ingress coverage."""
+        if action not in self.interaction_snapshot()["permitted_actions"]:
+            raise ValueError("action unavailable")
+        if action.startswith("retry_") or action == "restart_answer":
+            if recovery_token != self.recovery_token:
+                raise ValueError("stale recovery token")
+            self.recovery_token = None
+        self.actions.append((action, recovery_token))
+        self.state_revision += 1
+        if action == "skip":
+            self.prompt_revision += 1
 
     async def ready(self) -> None:
         """Record browser media/data-channel readiness."""
@@ -155,6 +188,20 @@ def offer(client: TestClient, session_id: str):
     return client.post(f"/api/sessions/{session_id}/offer", json={"sdp": "v=0", "type": "offer"})
 
 
+def command(session_id: str, command_id: int, action: str = "repeat", **extra) -> dict[str, object]:
+    """Build a valid current browser command with optional recovery credentials."""
+    return {
+        "v": 1,
+        "type": "interview.command",
+        "session_id": session_id,
+        "connection_generation": 1,
+        "command_id": command_id,
+        "prompt_revision": 3,
+        "action": action,
+        **extra,
+    }
+
+
 def test_setup_validation_and_status_payload_never_echo_provider_secrets(monkeypatch):
     """Browser REST bodies expose setup and progress only, never backend configuration."""
     client, _app, _factory, _transports = make_client(monkeypatch)
@@ -168,11 +215,19 @@ def test_setup_validation_and_status_payload_never_echo_provider_secrets(monkeyp
         assert status.status_code == 200
         assert status.json() == {
             "session_id": session_id,
+            "connection_generation": 1,
             "status": "Reconnecting",
             "phase": "connecting",
             "question_index": 0,
             "question_count": 5,
             "provisional_caption": None,
+            "capabilities": [],
+            "prompt_revision": 0,
+            "state_revision": 0,
+            "question_text": None,
+            "interaction_state": "connecting",
+            "permitted_actions": [],
+            "recovery_token": None,
         }
         assert "api_key" not in status.text and "endpoint" not in status.text
 
@@ -199,6 +254,163 @@ def test_offer_waits_for_explicit_ready_and_duplicate_ready_is_idempotent(monkey
         assert managed.ready_calls == 1
         assert transport.output().messages[0]["status"] == "Reconnecting"
         assert client.get(f"/api/sessions/{session_id}").json()["question_index"] == 2
+
+
+def test_old_unknown_and_malformed_handshakes_preserve_legacy_voice_behavior(monkeypatch):
+    """Only a valid common capability enables controls; all other clients still start normally."""
+    client, app, factory, transports = make_client(monkeypatch)
+    with client:
+        app.state.interview.runner.add_workers = AsyncMock()
+        session_id = create_session(client)
+        assert offer(client, session_id).status_code == 200
+        transport = transports[0]
+        client.portal.call(
+            transport.fire,
+            "on_app_message",
+            {
+                "v": 1,
+                "type": "interview.ready",
+                "session_id": session_id,
+                "capabilities": "malformed",
+            },
+        )
+        assert factory.created[0].ready_calls == 1
+        assert transport.output().messages[-1]["type"] == "interview.error"
+        assert "voice" in transport.output().messages[-1]["message"]
+        assert client.get(f"/api/sessions/{session_id}").json()["capabilities"] == []
+        client.portal.call(transport.fire, "on_app_message", command(session_id, 1))
+        assert factory.created[0].actions == []
+
+
+def test_ready_rejects_a_foreign_session_identity_without_starting_the_interview(monkeypatch):
+    """A browser ready payload remains bound to the opaque session that owns its peer."""
+    client, app, factory, transports = make_client(monkeypatch)
+    with client:
+        app.state.interview.runner.add_workers = AsyncMock()
+        session_id = create_session(client)
+        assert offer(client, session_id).status_code == 200
+        client.portal.call(
+            transports[0].fire,
+            "on_app_message",
+            {
+                "v": 1,
+                "type": "interview.ready",
+                "session_id": "another-session",
+                "capabilities": ["interaction_controls_v1"],
+            },
+        )
+        assert factory.created[0].ready_calls == 0
+        assert "another interview" in transports[0].output().messages[-1]["message"]
+
+
+def test_negotiated_commands_are_bound_deduplicated_and_reemit_fresh_results(monkeypatch):
+    """A resend replays its result envelope without applying a control twice or restoring state."""
+    client, app, factory, transports = make_client(monkeypatch)
+    with client:
+        app.state.interview.runner.add_workers = AsyncMock()
+        session_id = create_session(client)
+        assert offer(client, session_id).status_code == 200
+        transport = transports[0]
+        client.portal.call(
+            transport.fire,
+            "on_app_message",
+            {
+                "v": 1,
+                "type": "interview.ready",
+                "session_id": session_id,
+                "capabilities": ["interaction_controls_v1"],
+            },
+        )
+        snapshot = client.get(f"/api/sessions/{session_id}").json()
+        assert snapshot["capabilities"] == ["interaction_controls_v1"]
+        assert snapshot["state_revision"] == 4
+        first = command(session_id, 1)
+        client.portal.call(transport.fire, "on_app_message", first)
+        assert factory.created[0].actions == [("repeat", None)]
+        first_result = transport.output().messages[-1]
+        assert first_result["outcome"] == "applied"
+        assert first_result["prompt_revision"] == 3
+
+        factory.created[0].prompt_revision = 4
+        client.portal.call(
+            factory.emits[0],
+            browser_server.InterviewBrowserEvent(type="interview.status", status="Listening"),
+        )
+        newer_status = transport.output().messages[-1]
+        client.portal.call(transport.fire, "on_app_message", first)
+        replay = transport.output().messages[-1]
+        assert replay["seq"] > newer_status["seq"] > first_result["seq"]
+        assert replay["prompt_revision"] == 3
+        assert factory.created[0].actions == [("repeat", None)]
+
+
+def test_command_rejects_foreign_stale_conflicting_and_stale_recovery_requests(monkeypatch):
+    """Invalid channel requests leave the current session state and recovery notice intact."""
+    client, app, factory, transports = make_client(monkeypatch)
+    with client:
+        app.state.interview.runner.add_workers = AsyncMock()
+        session_id = create_session(client)
+        assert offer(client, session_id).status_code == 200
+        transport = transports[0]
+        client.portal.call(
+            transport.fire,
+            "on_app_message",
+            {
+                "v": 1,
+                "type": "interview.ready",
+                "session_id": session_id,
+                "capabilities": ["interaction_controls_v1"],
+            },
+        )
+        managed = factory.created[0]
+        for payload, code in (
+            (command("another-session", 1), "foreign_session"),
+            (command(session_id, 1, prompt_revision=2), "stale_prompt"),
+        ):
+            client.portal.call(transport.fire, "on_app_message", payload)
+            assert transport.output().messages[-1]["code"] == code
+        client.portal.call(transport.fire, "on_app_message", command(session_id, 2))
+        client.portal.call(transport.fire, "on_app_message", command(session_id, 2, "skip"))
+        assert transport.output().messages[-1]["code"] == "command_id_conflict"
+        managed.recovery_token = "failure-b"
+        stale = command(
+            session_id,
+            3,
+            "retry_response",
+            recovery_token="failure-a",
+        )
+        client.portal.call(transport.fire, "on_app_message", stale)
+        assert transport.output().messages[-1]["code"] == "unavailable"
+        assert managed.recovery_token == "failure-b"
+        assert managed.actions == [("repeat", None)]
+
+
+def test_evicted_command_ids_are_never_reexecuted(monkeypatch):
+    """The bounded cache retains a high-water mark after old outcome entries are evicted."""
+    client, app, factory, transports = make_client(monkeypatch)
+    with client:
+        app.state.interview.runner.add_workers = AsyncMock()
+        session_id = create_session(client)
+        assert offer(client, session_id).status_code == 200
+        transport = transports[0]
+        client.portal.call(
+            transport.fire,
+            "on_app_message",
+            {
+                "v": 1,
+                "type": "interview.ready",
+                "session_id": session_id,
+                "capabilities": ["interaction_controls_v1"],
+            },
+        )
+        for command_id in range(1, 130):
+            client.portal.call(
+                transport.fire, "on_app_message", command(session_id, command_id, "end")
+            )
+        applied = len(factory.created[0].actions)
+        client.portal.call(transport.fire, "on_app_message", command(session_id, 1, "end"))
+        assert transport.output().messages[-1]["code"] == "command_id_expired"
+        assert len(factory.created[0].actions) == applied
 
 
 def test_sessions_bind_distinct_resources_and_reject_peer_connection_reuse(monkeypatch):
@@ -280,3 +492,13 @@ def test_offer_and_ice_reject_cross_session_or_unsupported_input(monkeypatch):
             ).status_code
             == 422
         )
+
+
+def test_default_browser_factory_uses_native_gemini_without_sarvam(monkeypatch):
+    """The browser entry point needs only its native audio provider credential."""
+    from demo.interview.gemini_conversation import GeminiConversationPipelineFactory
+
+    monkeypatch.setenv("GOOGLE_API_KEY", "test-google-key")
+    monkeypatch.delenv("SARVAM_API_KEY", raising=False)
+    app = create_interview_app()
+    assert isinstance(app.state.interview.factory, GeminiConversationPipelineFactory)

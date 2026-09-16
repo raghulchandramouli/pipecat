@@ -43,6 +43,8 @@ class ParsedCompletion:
         validity: Freshness field, left valid by this generation-independent parser.
             The guard separately rejects stale response authorization.
         is_valid: Whether the full response satisfies the completion-marker syntax.
+        accept_answer: Optional application narrowing. ``False`` prevents this
+            otherwise complete reply from accepting the pending candidate text.
     """
 
     status: CompletionStatus
@@ -50,6 +52,7 @@ class ParsedCompletion:
     long_wait: bool
     validity: CompletionValidity
     is_valid: bool
+    accept_answer: bool | None = None
 
 
 @dataclass(frozen=True)
@@ -295,6 +298,7 @@ class ReplyGuardProcessor(FrameProcessor):
                 completion.status is CompletionStatus.COMPLETE
                 and authorization.reply_kind is ReplyKind.FOLLOW_UP
                 and authorization.answer_allowed
+                and completion.accept_answer is not False
             ),
         )
         await self._call_event_handler("on_decision", decision)

@@ -3,41 +3,66 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#101827" />
-    <title>Interview practice</title>
+    <meta name="theme-color" content="#101010" />
+    <title>Casual conversation</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
+    <header class="site-header"><a class="wordmark" href="/">interview<span aria-hidden="true"> / </span><span class="wordmark-detail">a little more human</span></a><span class="header-note">VOICE PRACTICE</span></header>
     <main class="shell">
-      <section class="hero">
-        <p class="eyebrow">INTERVIEW PRACTICE</p>
-        <h1>Tell your story.</h1>
-        <p class="lede">Practise non-technical behavioural questions about teamwork, communication, and real-life experiences.</p>
+      <section id="hero" class="hero">
+        <p class="eyebrow">YOUR SPACE TO SPEAK</p>
+        <h1>A conversation.<br />At your pace.</h1>
+        <p class="lede">A little about your day. A little about what you do.<br />No perfect answers needed.</p>
       </section>
 
       <section id="setup" class="card setup-card" aria-labelledby="setup-title">
-        <div class="section-heading"><div><p class="eyebrow">01 / SETUP</p><h2 id="setup-title">Shape your practice</h2></div><span id="language-label" class="language-pill">Tanglish</span></div>
+        <div class="section-heading"><div><p class="eyebrow">MAKE IT YOURS</p><h2 id="setup-title">Set up your conversation</h2></div><span id="language-label" class="language-pill">தமிழ்</span></div>
         <form id="setup-form">
-          <label>Interview language<select id="language-select" name="language"><option value="tanglish" selected>Tanglish — தமிழ் + English</option><option value="hinglish">Hinglish — हिन्दी + English</option><option value="english">English</option></select></label>
+          <div class="form-grid setup-languages">
+            <label>Interview language<select id="language-select" name="language"><option value="tanglish">Tanglish — தமிழ் + English</option><option value="hinglish">Hinglish — हिन्दी + English</option><option value="english">English</option><option value="hindi">Hindi — हिन्दी</option><option value="bengali">Bengali — বাংলা</option><option value="kannada">Kannada — ಕನ್ನಡ</option><option value="malayalam">Malayalam — മലയാളം</option><option value="marathi">Marathi — मराठी</option><option value="odia">Odia — ଓଡ଼ିଆ</option><option value="punjabi">Punjabi — ਪੰਜਾਬੀ</option><option value="tamil" selected>Tamil — தமிழ்</option><option value="telugu">Telugu — తెలుగు</option><option value="gujarati">Gujarati — ગુજરાતી</option></select></label>
+          </div>
           <div class="form-grid">
-            <label>Role or round<input name="role" value="Behavioural interview" required maxlength="120" /></label>
+            <label>Conversation style<input name="role" value="Gentle conversation" required maxlength="120" /></label>
             <label>Difficulty<select name="difficulty"><option value="junior" selected>Simple</option><option value="mid">Standard</option><option value="senior">Detailed</option></select></label>
             <label>Duration<select name="duration_minutes"><option value="5" selected>5 min</option><option value="15">15 min</option><option value="30">30 min</option><option value="45">45 min</option></select></label>
           </div>
-          <label>What should the interviewer listen for?<textarea name="rubric" rows="3" required maxlength="1000">Simple answers about helping others, speaking politely, doing work carefully, and handling everyday problems. No English or school qualifications needed.</textarea></label>
-          <button class="primary" type="submit">Continue to microphone <span aria-hidden="true">↗</span></button>
+          <button class="primary" type="submit">Continue to conversation <span aria-hidden="true">↗</span></button>
         </form>
       </section>
 
-      <section id="room" class="card room-card" hidden aria-live="polite">
-        <div class="room-top"><div><p class="eyebrow">LIVE PRACTICE</p><h2 id="room-title">Behavioural interview</h2></div><button id="speaker-button" class="quiet-button" type="button">Enable speaker</button><button id="end-button" class="quiet-button" type="button">End session</button></div>
-        <div class="status-row"><span id="status-dot" class="status-dot"></span><strong id="status-label">Waiting for microphone</strong><span id="question-count" class="muted"></span></div>
-        <div id="permission" class="permission-box"><div><h3>Ready when you are</h3><p>Allow microphone and playback once. Your mic stays on while the interviewer speaks, with echo cancellation enabled.</p></div><button id="permission-button" class="primary" type="button">பேச ஆரம்பிக்கலாம் / Start</button></div>
-        <div id="conversation" class="conversation" aria-label="Interview captions"></div>
+      <section id="room" class="card room-card" hidden aria-labelledby="room-title">
+        <div class="room-top"><div><p class="eyebrow">LIVE CONVERSATION</p><h2 id="room-title">Gentle conversation</h2></div><div class="room-header-actions"><button id="speaker-button" class="quiet-button" type="button">Enable speaker</button><button id="end-button" class="quiet-button end-button" type="button">End conversation</button></div></div>
+        <div class="voice-stage" aria-hidden="true"><div id="voice-orb" class="voice-orb"><div class="orb-ring ring-outer"></div><div class="orb-ring ring-middle"></div><div class="orb-core"><div class="voice-bars"><i></i><i></i><i></i><i></i><i></i></div></div></div><span class="voice-caption">ROOM TO THINK. SPACE TO SPEAK.</span></div>
+        <div class="status-row"><span id="status-dot" class="status-dot"></span><strong id="status-label" role="status" aria-live="polite">Waiting to talk</strong><span id="question-count" class="muted" hidden></span></div>
+        <div id="permission" class="permission-box"><div><h3>Ready when you are</h3><p>Turn on your microphone, settle in, and start wherever you are. You can pause or interrupt at any time.</p></div><button id="permission-button" class="primary" type="button">பேச ஆரம்பிக்கலாம் / Start</button></div>
+        <section id="active-prompt" class="active-prompt" hidden aria-labelledby="active-prompt-title">
+          <p class="eyebrow" id="active-prompt-title">LET’S TALK</p>
+          <p id="question-text" class="question-text">Getting the conversation ready.</p>
+          <p id="state-text" class="state-text">Start speaking when you are ready.</p>
+        </section>
+        <section id="interaction-controls" class="interaction-controls" hidden aria-label="Interview actions">
+          <p id="controls-help" class="controls-help">You can also answer naturally at any time.</p>
+          <div id="action-buttons" class="action-buttons">
+            <button type="button" data-action="repeat">Repeat</button>
+            <button type="button" data-action="explain">Explain</button>
+            <button type="button" data-action="thinking">Give me time</button>
+            <button type="button" data-action="skip">New topic</button>
+          </div>
+          <div id="recovery" class="recovery" hidden>
+            <p id="recovery-message"></p>
+            <div id="recovery-buttons" class="action-buttons recovery-buttons"></div>
+          </div>
+        </section>
+        <div class="conversation-heading"><h3>Latest exchange</h3><button id="jump-latest" class="text-button" type="button" hidden>Jump to latest</button></div>
+        <div id="conversation" class="conversation" role="region" tabindex="0" aria-label="Interview captions"></div>
+        <p id="caption-announcements" class="sr-only" aria-live="polite" aria-atomic="true"></p>
         <p id="audio-help" class="text-continuation">குரல் கேட்கலைன்னா மேலே உள்ள “Enable speaker” பட்டனை அழுத்துங்க. நீங்க தொடர்ந்து பேசலாம்.</p>
+        <button id="restart-button" class="primary restart-button" type="button" hidden>Start another practice</button>
       </section>
       <p id="notice" class="notice" role="status"></p>
     </main>
+    <script src="./voice-visual.js" defer></script>
     <script src="./app.js" defer></script>
   </body>
 </html>

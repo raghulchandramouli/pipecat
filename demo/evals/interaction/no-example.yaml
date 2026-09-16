@@ -1,0 +1,7 @@
+name: interaction_no_example
+turns:
+  - user: "I do not have a work example for that question."
+    expect:
+      - event: response
+        eval: "responds supportively and offers a safe way to answer without inventing experience"
+

@@ -1,0 +1,87 @@
+{
+  "questions": [
+    "வணக்கம்! நீங்க என்ன வேலை செய்றீங்க அல்லது உங்க நாட்களை எப்படி செலவிடுவீங்க?",
+    "நீங்க பெரும்பாலும் என்ன பொருட்கள் செய்றீங்க அல்லது பழுது பாக்குறீங்க?",
+    "அந்த குறிப்பிட்ட இடத்துக்கு வாடிக்கையாளருக்கு என்ன தேவைங்கறதை நீங்க எப்படி புரிஞ்சுப்பீங்க?",
+    "அளவுகள் மற்றும் தேவைகளுக்கு ஏற்ப, நீங்க மரத்தை எப்படி தேர்ந்தெடுப்பீங்க?",
+    "இந்த அலமாரிகளை உருவாக்கும்போது, நீங்க எதிர்கொள்ற முக்கியமான சவால் என்ன?",
+    "வேலை மாற்றத்தை செய்யும் போது, உங்களுக்கு ஏற்பட்ட தயக்கம் அல்லது பயம் எதையாவது உணர்ந்தீங்களா?",
+    "குடும்ப வாழ்க்கையையும் வேலையையும் சமமா கொண்டு போறது, உங்க மனசுக்கு எப்படி இருக்கு?",
+    "இந்த தொழில்ல உங்களுடைய சுயமரியாதை எதை சார்ந்து இருக்குன்னு நீங்க நினைக்கிறீங்க?",
+    "அதை ஒரு சிறந்த தீர்வா முடிவு பண்ணும்போது, உங்க மனதில் என்னென்ன யோசனைகள் ஓடியது?",
+    "அந்த இரண்டு வழிகளில் ஒன்றை தேர்ந்தெடுக்கும்போது, எது உங்களுக்கு அதிக திருப்தியைத் தரும்னு நினைப்பீங்க?",
+    "ஒரு வேலையை முடிச்ச பிறகு, அந்தப் பணியிலிருந்து நீங்க புதுசா என்ன கத்துக்கிட்டீங்கன்னு கவனிப்பீங்களா?",
+    "வாடிக்கையாளர் திருப்தியா இருக்காங்கங்கறதை உறுதிப்படுத்த, நீங்க அடுத்து என்ன செய்வீங்க?"
+  ],
+  "tool_calls": [
+    {
+      "name": "next_interview_question",
+      "args": {},
+      "questions_before_call": 0
+    },
+    {
+      "name": "next_interview_question",
+      "args": {},
+      "questions_before_call": 1
+    },
+    {
+      "name": "next_interview_question",
+      "args": {},
+      "questions_before_call": 2
+    },
+    {
+      "name": "next_interview_question",
+      "args": {},
+      "questions_before_call": 3
+    },
+    {
+      "name": "next_interview_question",
+      "args": {},
+      "questions_before_call": 4
+    },
+    {
+      "name": "next_interview_question",
+      "args": {},
+      "questions_before_call": 5
+    },
+    {
+      "name": "next_interview_question",
+      "args": {},
+      "questions_before_call": 6
+    },
+    {
+      "name": "next_interview_question",
+      "args": {},
+      "questions_before_call": 7
+    },
+    {
+      "name": "next_interview_question",
+      "args": {},
+      "questions_before_call": 8
+    },
+    {
+      "name": "next_interview_question",
+      "args": {},
+      "questions_before_call": 9
+    },
+    {
+      "name": "next_interview_question",
+      "args": {},
+      "questions_before_call": 10
+    },
+    {
+      "name": "next_interview_question",
+      "args": {},
+      "questions_before_call": 11
+    },
+    {
+      "name": "finish_interview",
+      "args": {
+        "reason": "completed"
+      },
+      "questions_before_call": 12
+    }
+  ],
+  "closed": true,
+  "closing_note": "உங்க நேரத்துக்கும் அனுபவங்களைப் பகிர்ந்ததுக்கும் நன்றி. இந்த நேர்காணல் இத்துடன் முடிந்தது."
+}

@@ -1,0 +1,7 @@
+name: interaction_thinking
+turns:
+  - user: "Give me a moment to think."
+    expect:
+      - event: response
+        eval: "acknowledges the request to think and does not advance to a new question"
+

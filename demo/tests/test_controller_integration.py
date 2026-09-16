@@ -12,6 +12,7 @@ import pytest
 from demo.interview.config import InterviewConfig
 from demo.interview.contracts import ReplyKind, SegmentFinal, SegmentFinalOutcome, SegmentId
 from demo.interview.controller import InterviewPhase
+from demo.interview.reply_guard import ReplyRejection
 from demo.interview.sarvam_events import ManualBoundaryEvent, SarvamManualBoundary
 from demo.interview.session import InterviewSession
 from pipecat.frames.frames import (
@@ -64,7 +65,7 @@ def _config() -> InterviewConfig:
 class ScriptedProvider:
     """Provider boundary that emits guarded response frames from a test script."""
 
-    def __init__(self, session: InterviewSession, replies: list[str | None]) -> None:
+    def __init__(self, session: InterviewSession, replies: list[str | Exception | None]) -> None:
         """Store a session boundary and responses to emit in admission order."""
         self.session = session
         self.replies = replies
@@ -75,6 +76,8 @@ class ScriptedProvider:
         """Capture one admitted call and either hold or emit its scripted result."""
         self.calls.append((frame, direction))
         reply = self.replies.pop(0)
+        if isinstance(reply, Exception):
+            raise reply
         if reply is None:
             self.held.append((frame, direction))
             return
@@ -92,7 +95,10 @@ class ScriptedProvider:
 
 
 async def _session(
-    replies: tuple[str | None, ...] = (), *, drain: bool = True, language: str = "english"
+    replies: tuple[str | Exception | None, ...] = (),
+    *,
+    drain: bool = True,
+    language: str = "english",
 ):
     """Start a real session through its managed setup and capture released frames."""
     clock = Clock()
@@ -115,13 +121,15 @@ async def _session(
     return clock, session, provider, captured
 
 
-async def _final_answer(session: InterviewSession, clock: Clock, text: str) -> int:
+async def _final_answer(
+    session: InterviewSession, clock: Clock, text: str, *, boundary_id: int | None = None
+) -> int:
     """Bind and finalize one substantive candidate segment for the active question."""
     snapshot = session.ledger.snapshot
     assert snapshot.candidate_turn_id is not None
     candidate_turn_id = snapshot.candidate_turn_id
-    boundary_id = candidate_turn_id
-    segment = SegmentId(session.ledger.connection_generation, candidate_turn_id)
+    boundary_id = candidate_turn_id if boundary_id is None else boundary_id
+    segment = SegmentId(session.ledger.connection_generation, boundary_id)
     session.speech_started()
     assert session.ledger.record_boundary(
         SarvamManualBoundary(
@@ -152,8 +160,10 @@ async def _final_answer(session: InterviewSession, clock: Clock, text: str) -> i
     return candidate_turn_id
 
 
-async def _control_final(session: InterviewSession, clock: Clock, text: str) -> int:
-    """Deliver one exact voice-control segment after an earlier substantive segment."""
+async def _control_final(
+    session: InterviewSession, clock: Clock, text: str, *, settle: bool = True
+) -> int:
+    """Deliver one exact voice-control segment after its pause floor when requested."""
     snapshot = session.ledger.snapshot
     assert snapshot.candidate_turn_id is not None
     candidate_turn_id = snapshot.candidate_turn_id
@@ -185,6 +195,8 @@ async def _control_final(session: InterviewSession, clock: Clock, text: str) -> 
     assert session.record_final(
         SegmentFinal(segment, candidate_turn_id, SegmentFinalOutcome.TEXT, text)
     )
+    if settle:
+        clock.now += session.config.deadlines.candidate_pause
     session.changed()
     return candidate_turn_id
 
@@ -346,8 +358,8 @@ async def test_interrupted_stream_between_start_and_end_cannot_accept_or_speak()
 
 
 @pytest.mark.asyncio
-async def test_repeat_and_thinking_controls_cancel_provider_but_keep_earlier_evidence() -> None:
-    """Exact control segments never become evidence and invalidate output already admitted."""
+async def test_new_command_interval_is_not_merged_into_an_earlier_answer() -> None:
+    """A whole later speech interval can control the room without becoming evidence."""
     for control in ("repeat the question", "let me think"):
         clock, session, provider, captured = await _session((None,))
         try:
@@ -360,7 +372,6 @@ async def test_repeat_and_thinking_controls_cancel_provider_but_keep_earlier_evi
             await _control_final(session, clock, control)
             await _drain()
             assert session.ledger.snapshot.text == "I found the failing cache key."
-            assert control not in session.ledger.snapshot.text
             assert session.controller.current_prompt is None
             assert session.controller.accepted_answers == ()
             assert session.lookup_authorization(provider.calls[0][0].metadata) is None
@@ -413,6 +424,27 @@ async def test_skip_end_and_control_only_final_do_not_accept_a_candidate_answer(
         assert session.controller.phase is InterviewPhase.ENDED
         assert session.controller.accepted_answers == ()
         assert any(isinstance(frame, EndFrame) for frame, _ in captured)
+    finally:
+        await session.cleanup()
+
+
+@pytest.mark.asyncio
+async def test_whole_turn_control_waits_for_its_own_pause_floor() -> None:
+    """A fresh command final at time zero cannot skip until that interval is quiet."""
+    clock, session, _provider, _captured = await _session()
+    try:
+        await _control_final(session, clock, "skip this question", settle=False)
+        await _drain()
+        assert session.controller.current_question is not None
+        assert session.controller.current_question.question_id == "question-1"
+        assert session.ledger.snapshot.text == "skip this question"
+
+        clock.now = 2.5
+        session.changed()
+        await _drain()
+        assert session.controller.current_question is not None
+        assert session.controller.current_question.question_id == "question-2"
+        assert session.ledger.snapshot.text == ""
     finally:
         await session.cleanup()
 
@@ -506,11 +538,91 @@ async def test_malformed_or_fabricated_model_payload_keeps_question_and_answer_p
         clock.now = 2.5
         session.changed()
         await _drain()
-        assert len(provider.calls) == 1
+        assert len(provider.calls) == 2
         assert session.controller.phase is InterviewPhase.QUESTION
         assert session.controller.accepted_answers == ()
         assert session.ledger.snapshot.text == "I inspected the cache logs."
         assert not any("fabricated" in text for text in _spoken(captured))
+    finally:
+        await session.cleanup()
+
+
+@pytest.mark.asyncio
+async def test_two_invalid_responses_exhaust_answer_retry_and_require_restart() -> None:
+    """A failed response budget includes automatic and browser-initiated retries."""
+    clock, session, provider, _captured = await _session(("bad response", "still bad"))
+    try:
+        await _final_answer(session, clock, "I inspected the cache logs.")
+        clock.now = 2.5
+        session.changed()
+        await _drain()
+        assert len(provider.calls) == 2
+        snapshot = session.interaction_snapshot()
+        assert "retry_response" not in snapshot["permitted_actions"]
+        assert "restart_answer" in snapshot["permitted_actions"]
+        assert snapshot["recovery_token"] is not None
+        with pytest.raises(ValueError, match="unavailable"):
+            session.apply_interaction_action(
+                "retry_response", recovery_token=snapshot["recovery_token"]
+            )
+        session.apply_interaction_action(
+            "restart_answer", recovery_token=snapshot["recovery_token"]
+        )
+        await _drain()
+        assert len(provider.calls) == 2
+        assert session.ledger.snapshot.text == ""
+    finally:
+        await session.cleanup()
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize(
+    ("replies", "timeouts"),
+    [
+        ((RuntimeError("provider failed"), RuntimeError("provider failed again")), ()),
+        ((None, None), (47.5, 92.5)),
+    ],
+)
+async def test_provider_failure_paths_are_bounded_and_expose_restart_only(
+    replies: tuple[str | Exception | None, ...], timeouts: tuple[float, ...]
+) -> None:
+    """Provider exceptions and watchdog expiry share the two-attempt recovery budget."""
+    clock, session, provider, _captured = await _session(replies)
+    try:
+        await _final_answer(session, clock, "I inspected the cache logs.")
+        clock.now = 2.5
+        session.changed()
+        await _drain()
+        for timeout in timeouts:
+            clock.now = timeout
+            session.changed()
+            await _drain()
+        assert len(provider.calls) == 2
+        snapshot = session.interaction_snapshot()
+        assert snapshot["interaction_state"] == "recovering"
+        assert "retry_response" not in snapshot["permitted_actions"]
+        assert "restart_answer" in snapshot["permitted_actions"]
+        assert snapshot["recovery_token"] is not None
+    finally:
+        await session.cleanup()
+
+
+@pytest.mark.asyncio
+async def test_stale_provider_failure_cannot_create_a_recovery_grant() -> None:
+    """A late failure from an invalidated request cannot alter the new candidate state."""
+    clock, session, provider, _captured = await _session((None,))
+    try:
+        await _final_answer(session, clock, "I inspected the cache logs.")
+        clock.now = 2.5
+        session.changed()
+        await _drain()
+        assert len(provider.calls) == 1
+        authorization = session._authorization
+        assert authorization is not None
+        session.speech_started()
+        await session._reject_authorized_attempt(ReplyRejection(authorization, "provider_error"))
+        assert session.interaction_snapshot()["recovery_token"] is None
+        assert session.controller.accepted_answers == ()
     finally:
         await session.cleanup()
 
@@ -529,13 +641,219 @@ async def test_timed_checkin_replaces_model_json_or_grading_with_neutral_control
         clock.now = 10.5
         session.changed()
         await _drain()
-        assert len(provider.calls) == 2
-        assert provider.calls[-1][0].metadata["interview_reply_kind"] == ReplyKind.CHECK_IN.value
-        assert _spoken(captured)[-1] == "Take your time. Is there anything you would like to add?"
+        assert len(provider.calls) == 1
+        assert _spoken(captured)[-1] == "I’m still here. Would you like a little more time?"
         assert "hiring" not in _spoken(captured)[-1]
         assert session.controller.phase is InterviewPhase.QUESTION
         assert session.controller.accepted_answers == ()
         assert session.ledger.snapshot.text == "I explained the incident timeline."
+    finally:
+        await session.cleanup()
+
+
+@pytest.mark.asyncio
+async def test_question_idle_timing_starts_after_matching_playback_stops() -> None:
+    """Long current-question playback cannot consume the candidate idle interval."""
+    clock, session, provider, captured = await _session()
+    try:
+        epoch = session.playback_epoch
+        session.playback_started(epoch)
+        clock.now = 30
+        session.changed()
+        await _drain()
+        assert provider.calls == []
+        spoken_before_stop = list(_spoken(captured))
+
+        session.playback_stopped(epoch)
+        clock.now = 44.9
+        session.changed()
+        await _drain()
+        assert provider.calls == []
+        assert _spoken(captured) == spoken_before_stop
+        clock.now = 45
+        session.changed()
+        await _drain()
+        assert provider.calls == []
+        assert _spoken(captured)[-1] == "I’m still here. Would you like a little more time?"
+    finally:
+        await session.cleanup()
+
+
+@pytest.mark.asyncio
+async def test_interaction_snapshot_and_actions_use_session_owned_state() -> None:
+    """Browser controls receive state only through the validated session ingress."""
+    _clock, session, _provider, _captured = await _session()
+    try:
+        snapshot = session.interaction_snapshot()
+        assert set(snapshot) == {
+            "prompt_revision",
+            "state_revision",
+            "question_text",
+            "interaction_state",
+            "permitted_actions",
+            "recovery_token",
+            "question_delivery",
+        }
+        assert "repeat" in snapshot["permitted_actions"]
+        with pytest.raises(ValueError, match="unknown"):
+            session.apply_interaction_action("invent_progress")
+        session.apply_interaction_action("repeat")
+        assert session.interaction_snapshot()["state_revision"] > snapshot["state_revision"]
+    finally:
+        await session.cleanup()
+
+
+@pytest.mark.asyncio
+async def test_mixed_help_excludes_help_and_requires_substantive_continuation() -> None:
+    """A brief acknowledgment cannot accept answer material retained across a help reply."""
+    source = "I handled customer complaints. What do you mean by conflict?"
+    answer_end = source.index(" What")
+    help_reply = "● " + json.dumps(
+        {
+            "kind": "mixed_help",
+            "speak": "Conflict means a disagreement where people need a fair way forward.",
+            "spans": [
+                {"start": 0, "end": answer_end, "disposition": "answer"},
+                {"start": answer_end, "end": len(source), "disposition": "help"},
+            ],
+        }
+    )
+    clock, session, provider, _captured = await _session((help_reply,))
+    try:
+        await _final_answer(session, clock, source)
+        clock.now = 2.5
+        session.changed()
+        await _drain()
+        assert len(provider.calls) == 1
+        assert session.ledger.snapshot.text == "I handled customer complaints."
+
+        await _final_answer(session, clock, "Okay, got it.", boundary_id=99)
+        clock.now = 5
+        session.changed()
+        await _drain()
+        assert len(provider.calls) == 1
+        assert session.controller.accepted_answers == ()
+    finally:
+        await session.cleanup()
+
+
+@pytest.mark.asyncio
+async def test_prior_pure_help_does_not_shift_later_mixed_help_span_offsets() -> None:
+    """A later model reply indexes the current derived source after help was excluded."""
+    initial_help = "What does conflict mean?"
+    continuation = "I would listen to both sides. What is a fair solution?"
+    answer_end = continuation.index(" What")
+    pure_help = "● " + json.dumps({"kind": "explain", "speak": "Conflict is a disagreement."})
+    mixed_help = "● " + json.dumps(
+        {
+            "kind": "mixed_help",
+            "speak": "A fair solution considers both people’s needs.",
+            "spans": [
+                {"start": 0, "end": answer_end, "disposition": "answer"},
+                {"start": answer_end, "end": len(continuation), "disposition": "help"},
+            ],
+        }
+    )
+    clock, session, provider, _captured = await _session((pure_help, mixed_help))
+    try:
+        await _final_answer(session, clock, initial_help)
+        clock.now = 2.5
+        session.changed()
+        await _drain()
+        assert session.ledger.snapshot.text == ""
+
+        await _final_answer(session, clock, continuation, boundary_id=99)
+        clock.now = 5
+        session.changed()
+        await _drain()
+        assert len(provider.calls) == 2
+        assert session.ledger.snapshot.text == "I would listen to both sides."
+        assert session.controller.accepted_answers == ()
+    finally:
+        await session.cleanup()
+
+
+@pytest.mark.asyncio
+async def test_continuation_acknowledgment_cannot_accept_retained_answer() -> None:
+    """A model-classified acknowledgment asks for clarification without accepting evidence."""
+    source = "I handled customer complaints. What do you mean by conflict?"
+    answer_end = source.index(" What")
+    help_reply = "● " + json.dumps(
+        {
+            "kind": "mixed_help",
+            "speak": "Conflict means a disagreement where people need a fair way forward.",
+            "spans": [
+                {"start": 0, "end": answer_end, "disposition": "answer"},
+                {"start": answer_end, "end": len(source), "disposition": "help"},
+            ],
+        }
+    )
+    acknowledged = "● " + json.dumps(
+        {
+            "speak": "What would you do first?",
+            "evidence": [],
+            "continuation": "acknowledgment",
+        }
+    )
+    clock, session, provider, captured = await _session((help_reply, acknowledged))
+    try:
+        await _final_answer(session, clock, source)
+        clock.now = 2.5
+        session.changed()
+        await _drain()
+        await _final_answer(session, clock, "I see why that matters now.", boundary_id=99)
+        clock.now = 5
+        session.changed()
+        await _drain()
+        assert len(provider.calls) == 2
+        assert session.controller.accepted_answers == ()
+        assert _spoken(captured)[-1] == "What would you do first?"
+    finally:
+        await session.cleanup()
+
+
+@pytest.mark.asyncio
+async def test_recovery_control_uses_only_the_fresh_interval_before_retry() -> None:
+    """A repeat remains available while an earlier transcript gap blocks readiness."""
+    clock, session, provider, captured = await _session()
+    try:
+        snapshot = session.ledger.snapshot
+        candidate_turn_id = snapshot.candidate_turn_id
+        assert candidate_turn_id is not None
+        missing_boundary = 73
+        session.speech_started()
+        assert session.ledger.record_boundary(
+            SarvamManualBoundary(
+                session.ledger.connection_generation,
+                missing_boundary,
+                candidate_turn_id,
+                ManualBoundaryEvent.SPEECH_START,
+                True,
+            ),
+            now=clock.now,
+        )
+        assert session.ledger.record_boundary(
+            SarvamManualBoundary(
+                session.ledger.connection_generation,
+                missing_boundary,
+                candidate_turn_id,
+                ManualBoundaryEvent.SPEECH_END,
+                True,
+            ),
+            now=clock.now,
+        )
+        session.speech_stopped()
+        clock.now = 10.1
+        session.changed()
+        await _drain()
+        assert session.ledger.recovery_error == "transcript_final_timeout"
+
+        await _control_final(session, clock, "repeat the question")
+        assert session._next_wake_deadline() == 12.6
+        await _drain()
+        assert provider.calls == []
+        assert "question" in _spoken(captured)[-1].casefold()
+        assert session.controller.phase is InterviewPhase.QUESTION
     finally:
         await session.cleanup()
 
@@ -759,7 +1077,7 @@ async def test_bound_control_replaces_a_pending_new_question_without_losing_the_
                 "Design",
             )
         )
-        clock.now = 7.5
+        clock.now = 10.0
         session.changed()
         await _drain()
         assert len(session.controller.accepted_answers) == 3
@@ -777,19 +1095,16 @@ async def test_bound_control_replaces_a_pending_new_question_without_losing_the_
         "எனக்கு  அனுபவம் இல்லை.",
     ],
 )
-async def test_no_experience_gets_guarded_tamil_follow_up_without_provider(answer):
-    """Lack of experience receives an everyday question without a model dependency."""
-    clock, session, provider, captured = await _session(language="tanglish")
+async def test_no_experience_is_not_an_exact_language_shortcut(answer):
+    """Lack of experience stays on the typed guarded provider path in every language."""
+    clock, session, provider, captured = await _session((None,), language="tanglish")
     try:
         await _final_answer(session, clock, answer)
         clock.now = 2.5
         session.changed()
         await _drain()
-        assert not provider.calls
-        assert session.controller.phase is InterviewPhase.FOLLOW_UP
-        assert "வீட்டுல ஒருத்தர் உதவி கேட்டா" in _spoken(captured)[-1]
-        assert answer in _spoken(captured)[-1]
-        assert session.controller.accepted_answers[-1].transcript == answer
-        assert session.coaching[-1].evidence[0].quote == answer
+        assert len(provider.calls) == 1
+        assert session.controller.phase is InterviewPhase.QUESTION
+        assert session.controller.accepted_answers == ()
     finally:
         await session.cleanup()

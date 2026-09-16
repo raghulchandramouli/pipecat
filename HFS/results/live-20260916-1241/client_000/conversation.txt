@@ -1,0 +1,7 @@
+# Synthetic conversation, client=0, session=session_e10a5eb98d854d9ba2b4c9a0d85fff05
+# Target turns=2, interval=2.0s
+
+[turn 1/2] USER: What is the capital of France?
+[turn 1/2] ERROR: response_timeout
+
+[turn 2/2] USER: Tell me a joke about robots.

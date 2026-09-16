@@ -1,0 +1,15 @@
+{
+  "model": "gemini-3.8-live",
+  "turns": [
+    {
+      "input": "Greet the person briefly, then ask what work they do or how they spend their days. Ask only this occupation question and wait for their answer.",
+      "reply": "Hello! Ungala meet pannathula happy. Neenga enna work panreenga illa eppadi unga days spend panreenga?",
+      "audio_bytes": 325440
+    },
+    {
+      "input": "நான் ஒரு சின்ன மளிகை கடை நடத்துறேன். வீட்டுக்குப் பக்கத்துல கடை இருக்கு.",
+      "reply": "Romba nalla vishayam! Unga shop-ku regular-ah varuvanunga, avungakooda pesurathu eppadi irukkum?",
+      "audio_bytes": 264960
+    }
+  ]
+}

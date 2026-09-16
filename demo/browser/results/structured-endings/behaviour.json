@@ -1,0 +1,281 @@
+{
+  "passed": true,
+  "case": "behaviour",
+  "events": [
+    {
+      "at": 417.8999999985099,
+      "v": 1,
+      "session_id": "235cde7119014cd4b1dfddb1dc45f823",
+      "connection_generation": 1,
+      "seq": 1,
+      "type": "interview.status",
+      "status": "Reconnecting"
+    },
+    {
+      "at": 444.8999999985099,
+      "v": 1,
+      "session_id": "235cde7119014cd4b1dfddb1dc45f823",
+      "connection_generation": 1,
+      "seq": 2,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 1,
+      "state_revision": 1,
+      "interaction_state": "generating",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 1953.5999999940395,
+      "v": 1,
+      "session_id": "235cde7119014cd4b1dfddb1dc45f823",
+      "connection_generation": 1,
+      "seq": 3,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 1,
+      "state_revision": 2,
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 7269.5999999940395,
+      "v": 1,
+      "session_id": "235cde7119014cd4b1dfddb1dc45f823",
+      "connection_generation": 1,
+      "seq": 4,
+      "type": "interview.reply",
+      "text": "வணக்கம்! நீங்க என்ன வேலை செய்றீங்க, அல்லது உங்க நாட்களை எப்படி செலவிடுறீங்கன்னு சொல்ல முடியுமா?",
+      "dispatch_id": 1
+    },
+    {
+      "at": 7269.79999999702,
+      "v": 1,
+      "session_id": "235cde7119014cd4b1dfddb1dc45f823",
+      "connection_generation": 1,
+      "seq": 5,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 3,
+      "question_text": "வணக்கம்! நீங்க என்ன வேலை செய்றீங்க, அல்லது உங்க நாட்களை எப்படி செலவிடுறீங்கன்னு சொல்ல முடியுமா?",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 7306.69999999553,
+      "v": 1,
+      "session_id": "235cde7119014cd4b1dfddb1dc45f823",
+      "connection_generation": 1,
+      "seq": 6,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 4,
+      "question_text": "வணக்கம்! நீங்க என்ன வேலை செய்றீங்க, அல்லது உங்க நாட்களை எப்படி செலவிடுறீங்கன்னு சொல்ல முடியுமா?",
+      "interaction_state": "listening",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 7799.79999999702,
+      "v": 1,
+      "session_id": "235cde7119014cd4b1dfddb1dc45f823",
+      "connection_generation": 1,
+      "seq": 7,
+      "type": "interview.interruption",
+      "playback_epoch": 1,
+      "prompt_revision": 2,
+      "state_revision": 5,
+      "question_text": "வணக்கம்! நீங்க என்ன வேலை செய்றீங்க, அல்லது உங்க நாட்களை எப்படி செலவிடுறீங்கன்னு சொல்ல முடியுமா?",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 16760.09999999404,
+      "v": 1,
+      "session_id": "235cde7119014cd4b1dfddb1dc45f823",
+      "connection_generation": 1,
+      "seq": 8,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 1,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 6,
+      "question_text": "வணக்கம்! நீங்க என்ன வேலை செய்றீங்க, அல்லது உங்க நாட்களை எப்படி செலவிடுறீங்கன்னு சொல்ல முடியுமா?",
+      "interaction_state": "generating",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "end"
+      ]
+    },
+    {
+      "at": 17431.19999999553,
+      "v": 1,
+      "session_id": "235cde7119014cd4b1dfddb1dc45f823",
+      "connection_generation": 1,
+      "seq": 9,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 1,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 7,
+      "question_text": "வணக்கம்! நீங்க என்ன வேலை செய்றீங்க, அல்லது உங்க நாட்களை எப்படி செலவிடுறீங்கன்னு சொல்ல முடியுமா?",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "end"
+      ]
+    },
+    {
+      "at": 18374.79999999702,
+      "v": 1,
+      "session_id": "235cde7119014cd4b1dfddb1dc45f823",
+      "connection_generation": 1,
+      "seq": 10,
+      "type": "interview.caption",
+      "text": "வாடிக்கையாளர்கள் கொடுத்த பணத்தை திருடுறேன்.  அது தவறுன்னு தெரியும்.  ஆனாலும் தொடர்ந்து திருட போறேன்.",
+      "final": true,
+      "segment_id": "native-input-1"
+    },
+    {
+      "at": 22868.79999999702,
+      "v": 1,
+      "session_id": "235cde7119014cd4b1dfddb1dc45f823",
+      "connection_generation": 1,
+      "seq": 11,
+      "type": "interview.reply",
+      "text": "நீங்க சொன்ன நடத்தையை அடிப்படையா வைத்து இந்த நேர்காணலைத் தொடர முடியாது. இத்துடன் முடிக்கிறோம்.",
+      "dispatch_id": 2
+    },
+    {
+      "at": 22868.89999999851,
+      "v": 1,
+      "session_id": "235cde7119014cd4b1dfddb1dc45f823",
+      "connection_generation": 1,
+      "seq": 12,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 1,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 3,
+      "state_revision": 8,
+      "question_text": "நீங்க சொன்ன நடத்தையை அடிப்படையா வைத்து இந்த நேர்காணலைத் தொடர முடியாது. இத்துடன் முடிக்கிறோம்.",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "end"
+      ]
+    },
+    {
+      "at": 22906.69999999553,
+      "v": 1,
+      "session_id": "235cde7119014cd4b1dfddb1dc45f823",
+      "connection_generation": 1,
+      "seq": 13,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "ended",
+      "question_count": 5,
+      "playback_epoch": 2,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 3,
+      "state_revision": 10,
+      "question_text": "நீங்க சொன்ன நடத்தையை அடிப்படையா வைத்து இந்த நேர்காணலைத் தொடர முடியாது. இத்துடன் முடிக்கிறோம்.",
+      "interaction_state": "ended",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": []
+    },
+    {
+      "at": 22906.89999999851,
+      "v": 1,
+      "session_id": "235cde7119014cd4b1dfddb1dc45f823",
+      "connection_generation": 1,
+      "seq": 14,
+      "type": "interview.ended",
+      "phase": "ended",
+      "question_count": 5,
+      "message": "நீங்க சொன்ன நடத்தையை அடிப்படையா வைத்து இந்த நேர்காணலைத் தொடர முடியாது. இத்துடன் முடிக்கிறோம்.",
+      "prompt_revision": 3,
+      "state_revision": 10,
+      "question_text": "நீங்க சொன்ன நடத்தையை அடிப்படையா வைத்து இந்த நேர்காணலைத் தொடர முடியாது. இத்துடன் முடிக்கிறோம்.",
+      "interaction_state": "ended",
+      "permitted_actions": []
+    }
+  ],
+  "page_errors": [],
+  "note": "நீங்க சொன்ன நடத்தையை அடிப்படையா வைத்து இந்த நேர்காணலைத் தொடர முடியாது. இத்துடன் முடிக்கிறோம்.",
+  "notice": ""
+}

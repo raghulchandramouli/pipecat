@@ -184,3 +184,32 @@ def test_post_followup_prompt_has_one_unambiguous_response_shape():
     assert "without asking a question" in prompt
     assert "Ask exactly one" not in prompt
     assert '"uncertainty": string' in prompt
+
+
+def test_coaching_instructions_do_not_duplicate_unbounded_transcript_history():
+    """The latest user message supplies source; instructions carry only its identity."""
+    prompt = build_coaching_prompt(
+        role=RoleConfig(title="Backend Engineer"),
+        difficulty=Difficulty.MID,
+        duration_minutes=30,
+        current_question="What did you learn?",
+        rubric=_rubric(),
+        accepted_answers=[_answer(n, "old evidence " * 2500) for n in range(20)],
+        current_answer=_answer(21, "current evidence " * 2000),
+    )
+    assert len(prompt.encode("utf-8")) < 8_000
+    assert "old evidence" not in prompt
+    assert "current evidence" not in prompt
+    assert '"candidate_turn_id": 21' in prompt
+
+
+def test_past_answer_cannot_supply_evidence_for_current_acknowledgment():
+    """Historical context cannot be scored as fresh candidate material."""
+    with pytest.raises(ValueError, match="current candidate"):
+        validate_coaching_reply(
+            _reply(speak="Thank you for explaining."),
+            rubric=_rubric(),
+            accepted_answers=[_answer()],
+            current_answer=_answer(8, "I learned to communicate earlier."),
+            require_follow_up=False,
+        )

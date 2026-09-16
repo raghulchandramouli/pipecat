@@ -1,0 +1,14 @@
+name: interaction_hinglish
+turns:
+  - user: "Maine ek difficult bug solve kiya aur team ko clearly update diya."
+    expect:
+      - event: response
+        eval: "responds naturally to a Hinglish answer and asks a relevant follow-up"
+  - user: "Is sawaal ka mere paas personal example nahi hai."
+    expect:
+      - event: response
+        eval: "responds supportively in Hinglish without asking the candidate to invent experience"
+  - user: "Process improve kiya, par kaunsi detail deni chahiye?"
+    expect:
+      - event: response
+        eval: "explains what detail would help in Hinglish while preserving the unfinished answer"

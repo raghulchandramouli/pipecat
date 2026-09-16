@@ -1,0 +1,15 @@
+name: interaction_mixed_help
+turns:
+  - user: "I improved the process, but can you remind me what kind of detail you want?"
+    expect:
+      - event: user_stopped_speaking
+      - event: response
+        absent: true
+        within_ms: 1500
+  - user: "The detail is that reporting became faster for the team."
+    send_after:
+      event: user_stopped_speaking
+      delay_ms: 1500
+    expect:
+      - event: response
+        eval: "answers the guidance request while preserving and engaging with the completed answer"

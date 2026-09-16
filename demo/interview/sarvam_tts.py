@@ -9,9 +9,16 @@ from typing import Any
 
 import httpx
 
-from pipecat.frames.frames import TTSAudioRawFrame, TTSStartedFrame, TTSStoppedFrame, TTSTextFrame
+from pipecat.frames.frames import (
+    ErrorFrame,
+    TTSAudioRawFrame,
+    TTSStartedFrame,
+    TTSStoppedFrame,
+    TTSTextFrame,
+)
 from pipecat.utils.text.base_text_aggregator import AggregationType
 
+from .languages import TTS_LANGUAGES
 from .rumik import RumikTTSService, _Request
 
 
@@ -42,6 +49,7 @@ class InterviewSarvamTTSService(RumikTTSService):
         speaker: str = "shubh",
         model: str = "bulbul:v3",
         language_code: str = "en-IN",
+        pace: float = 0.85,
         timeout: float = 30.0,
         http_transport: httpx.AsyncBaseTransport | None = None,
         **kwargs: Any,
@@ -49,8 +57,10 @@ class InterviewSarvamTTSService(RumikTTSService):
         """Configure streamed PCM24k speech and an optional mock HTTP transport."""
         if not api_key.strip():
             raise ValueError("Sarvam TTS requires an API key")
-        if model != "bulbul:v3" or language_code not in {"en-IN", "hi-IN", "ta-IN"}:
-            raise ValueError("the demo requires bulbul:v3 with en-IN, hi-IN, or ta-IN")
+        if model != "bulbul:v3" or language_code not in TTS_LANGUAGES:
+            raise ValueError("the demo requires bulbul:v3 with a supported language")
+        if not isinstance(pace, (int, float)) or isinstance(pace, bool) or not 0.5 <= pace <= 2.0:
+            raise ValueError("Sarvam TTS pace must be between 0.5 and 2.0")
         super().__init__(
             endpoint="https://api.sarvam.ai/text-to-speech/stream",
             current_playback_epoch=current_playback_epoch,
@@ -63,6 +73,7 @@ class InterviewSarvamTTSService(RumikTTSService):
         self._api_key = api_key
         self._model = model
         self._language = language_code
+        self._pace = float(pace)
         self._client = httpx.AsyncClient(
             transport=http_transport, trust_env=False, timeout=timeout, follow_redirects=False
         )
@@ -101,6 +112,18 @@ class InterviewSarvamTTSService(RumikTTSService):
         """Label inherited admission errors with the active provider."""
         await super().push_error(error_msg.replace("Rumik TTS", "Sarvam TTS"), **kwargs)
 
+    async def _request_failed(self, request: _Request, message: str) -> None:
+        """Report a synthesis failure only to the reply that still owns it."""
+        if not self._eligible(request):
+            return
+        error = ErrorFrame(error=message)
+        error.metadata.update(
+            interview_playback_epoch=request.playback_epoch,
+            interview_dispatch_id=request.dispatch_id,
+            interview_response_token=request.response_token,
+        )
+        await self.push_error_frame(error)
+
     async def _stream(self, request: _Request) -> None:
         start = time.monotonic()
         started = False
@@ -122,12 +145,15 @@ class InterviewSarvamTTSService(RumikTTSService):
                         "model": self._model,
                         "speaker": self._speaker,
                         "language_code": self._language,
+                        "pace": self._pace,
                         "speech_sample_rate": 24000,
                         "output_audio_codec": "linear16",
                     },
                 ) as response:
                     if response.status_code != 200:
-                        await self.push_error(f"Sarvam TTS returned HTTP {response.status_code}")
+                        await self._request_failed(
+                            request, f"Sarvam TTS returned HTTP {response.status_code}"
+                        )
                         return
                     content_type = response.headers.get("content-type", "").split(";")[0]
                     if content_type not in {
@@ -180,7 +206,7 @@ class InterviewSarvamTTSService(RumikTTSService):
             )
             await self._call_event_handler("on_sarvam_metrics", self._last_metrics)
         except (httpx.HTTPError, TimeoutError, ValueError):
-            await self.push_error("Sarvam TTS stream failed; retry with a new reply")
+            await self._request_failed(request, "Sarvam TTS stream failed; repeat the question")
         finally:
             await self.stop_ttfb_metrics()
             if started and self._eligible(request):

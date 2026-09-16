@@ -89,3 +89,7 @@ repeat/skip/thinking/end transitions while output is pending, duration closure,
 control exclusion from evidence, grounded coaching, and preservation of state after
 invalid replies. These checks do not establish browser playback, TTS quality,
 provider latency, or live model behavior.
+
+Runnable interaction fixtures and the human acceptance procedure are in
+[interaction-acceptance.md](interaction-acceptance.md). A guarded reply event
+proves application release, while only playback samples prove when it was heard.

@@ -111,6 +111,13 @@ class ReplyKind(StrEnum):
     CLOSING = "closing"
 
 
+class AnswerBasis(StrEnum):
+    """Origin of accepted interview material."""
+
+    REPORTED_EXPERIENCE = "reported_experience"
+    HYPOTHETICAL = "hypothetical"
+
+
 @dataclass(frozen=True, order=True)
 class ResponseGeneration:
     """Monotonic identifier for one Gemini/Rumik response attempt.
@@ -162,12 +169,14 @@ class AcceptedAnswer:
         question_id: Interview question answered.
         segment_ids: Final segments that compose the answer.
         transcript: Validated final transcript text.
+        basis: Whether the answer reports experience or answers a practice scenario.
     """
 
     candidate_turn_id: int
     question_id: str
     segment_ids: tuple[SegmentId, ...]
     transcript: str
+    basis: AnswerBasis = AnswerBasis.REPORTED_EXPERIENCE
 
     def __post_init__(self) -> None:
         if self.candidate_turn_id < 0:

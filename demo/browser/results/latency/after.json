@@ -1,0 +1,406 @@
+{
+  "label": "after",
+  "turns": [
+    {
+      "paused": false,
+      "input_playback_end_to_speaking_seconds": 3.168
+    },
+    {
+      "paused": true,
+      "input_playback_end_to_speaking_seconds": 2.879
+    }
+  ],
+  "passed": true,
+  "page_errors": [],
+  "events": [
+    {
+      "at": 379.8999999985099,
+      "v": 1,
+      "session_id": "a1ec3e4363e4428dbe9bb985e61562e8",
+      "connection_generation": 1,
+      "seq": 1,
+      "type": "interview.status",
+      "status": "Reconnecting"
+    },
+    {
+      "at": 429.5,
+      "v": 1,
+      "session_id": "a1ec3e4363e4428dbe9bb985e61562e8",
+      "connection_generation": 1,
+      "seq": 2,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 1,
+      "state_revision": 1,
+      "interaction_state": "generating",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 2319.89999999851,
+      "v": 1,
+      "session_id": "a1ec3e4363e4428dbe9bb985e61562e8",
+      "connection_generation": 1,
+      "seq": 3,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 1,
+      "state_revision": 2,
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 7228,
+      "v": 1,
+      "session_id": "a1ec3e4363e4428dbe9bb985e61562e8",
+      "connection_generation": 1,
+      "seq": 4,
+      "type": "interview.reply",
+      "text": "வணக்கம்! நீங்க என்ன வேலை செய்றீங்க அல்லது உங்க நாட்களை எப்படி கழிப்பீங்க?",
+      "dispatch_id": 1
+    },
+    {
+      "at": 7228.20000000298,
+      "v": 1,
+      "session_id": "a1ec3e4363e4428dbe9bb985e61562e8",
+      "connection_generation": 1,
+      "seq": 5,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 3,
+      "question_text": "வணக்கம்! நீங்க என்ன வேலை செய்றீங்க அல்லது உங்க நாட்களை எப்படி கழிப்பீங்க?",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 7259.39999999851,
+      "v": 1,
+      "session_id": "a1ec3e4363e4428dbe9bb985e61562e8",
+      "connection_generation": 1,
+      "seq": 6,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 4,
+      "question_text": "வணக்கம்! நீங்க என்ன வேலை செய்றீங்க அல்லது உங்க நாட்களை எப்படி கழிப்பீங்க?",
+      "interaction_state": "listening",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 8132,
+      "v": 1,
+      "session_id": "a1ec3e4363e4428dbe9bb985e61562e8",
+      "connection_generation": 1,
+      "seq": 7,
+      "type": "interview.interruption",
+      "playback_epoch": 1,
+      "prompt_revision": 2,
+      "state_revision": 5,
+      "question_text": "வணக்கம்! நீங்க என்ன வேலை செய்றீங்க அல்லது உங்க நாட்களை எப்படி கழிப்பீங்க?",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 22853.89999999851,
+      "v": 1,
+      "session_id": "a1ec3e4363e4428dbe9bb985e61562e8",
+      "connection_generation": 1,
+      "seq": 8,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 1,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 6,
+      "question_text": "வணக்கம்! நீங்க என்ன வேலை செய்றீங்க அல்லது உங்க நாட்களை எப்படி கழிப்பீங்க?",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 23854.89999999851,
+      "v": 1,
+      "session_id": "a1ec3e4363e4428dbe9bb985e61562e8",
+      "connection_generation": 1,
+      "seq": 9,
+      "type": "interview.caption",
+      "text": "ஒரு வேலை முடிக்க தாமதம் ஆச்சு.  எல்லார்கிட்டயும் என்ன பிரச்சனைன்னு கேட்டேன்.  மீதி வேலையை பிரிச்சு கொடுத்தேன்.  ஒரு நண்பருக்கு கடினமான பகுதியை முடிக்க உதவி பண்ணேன்.  நாங்க நேரத்துக்கு வேலையை முடிச்சோம்.",
+      "final": true,
+      "segment_id": "native-input-1"
+    },
+    {
+      "at": 27906,
+      "v": 1,
+      "session_id": "a1ec3e4363e4428dbe9bb985e61562e8",
+      "connection_generation": 1,
+      "seq": 10,
+      "type": "interview.reply",
+      "text": "ரொம்ப நல்ல விஷயம்! உங்க நண்பர் எதிர்கொண்ட அந்த கடினமான பகுதி என்னன்னு சொல்ல முடியுமா?",
+      "dispatch_id": 2
+    },
+    {
+      "at": 27906.10000000149,
+      "v": 1,
+      "session_id": "a1ec3e4363e4428dbe9bb985e61562e8",
+      "connection_generation": 1,
+      "seq": 11,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 1,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 3,
+      "state_revision": 7,
+      "question_text": "ரொம்ப நல்ல விஷயம்! உங்க நண்பர் எதிர்கொண்ட அந்த கடினமான பகுதி என்னன்னு சொல்ல முடியுமா?",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 27939.29999999702,
+      "v": 1,
+      "session_id": "a1ec3e4363e4428dbe9bb985e61562e8",
+      "connection_generation": 1,
+      "seq": 12,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 1,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 3,
+      "state_revision": 8,
+      "question_text": "ரொம்ப நல்ல விஷயம்! உங்க நண்பர் எதிர்கொண்ட அந்த கடினமான பகுதி என்னன்னு சொல்ல முடியுமா?",
+      "interaction_state": "listening",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 28793.60000000149,
+      "v": 1,
+      "session_id": "a1ec3e4363e4428dbe9bb985e61562e8",
+      "connection_generation": 1,
+      "seq": 13,
+      "type": "interview.interruption",
+      "playback_epoch": 2,
+      "prompt_revision": 3,
+      "state_revision": 9,
+      "question_text": "ரொம்ப நல்ல விஷயம்! உங்க நண்பர் எதிர்கொண்ட அந்த கடினமான பகுதி என்னன்னு சொல்ல முடியுமா?",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 37011.5,
+      "v": 1,
+      "session_id": "a1ec3e4363e4428dbe9bb985e61562e8",
+      "connection_generation": 1,
+      "seq": 14,
+      "type": "interview.interruption",
+      "playback_epoch": 3,
+      "prompt_revision": 3,
+      "state_revision": 10,
+      "question_text": "ரொம்ப நல்ல விஷயம்! உங்க நண்பர் எதிர்கொண்ட அந்த கடினமான பகுதி என்னன்னு சொல்ல முடியுமா?",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 44767.39999999851,
+      "v": 1,
+      "session_id": "a1ec3e4363e4428dbe9bb985e61562e8",
+      "connection_generation": 1,
+      "seq": 15,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 3,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 3,
+      "state_revision": 11,
+      "question_text": "ரொம்ப நல்ல விஷயம்! உங்க நண்பர் எதிர்கொண்ட அந்த கடினமான பகுதி என்னன்னு சொல்ல முடியுமா?",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 45767.10000000149,
+      "v": 1,
+      "session_id": "a1ec3e4363e4428dbe9bb985e61562e8",
+      "connection_generation": 1,
+      "seq": 16,
+      "type": "interview.caption",
+      "text": "குழுவில் ஒரு வேலை முடிக்க தாமதம் ஆச்சு.  எல்லார்கிட்டயும் என்ன பிரச்சனைன்னு கேட்டேன்.  மீதி வேலையை பிரிச்சு கொடுத்தேன்.  ஒரு நண்பருக்கு கடினமான பகுதியை முடிக்க உதவி பண்ணேன்.  நாங்க நேரத்துக்கு வேலையை முடிச்சோம்.",
+      "final": true,
+      "segment_id": "native-input-2"
+    },
+    {
+      "at": 48977.79999999702,
+      "v": 1,
+      "session_id": "a1ec3e4363e4428dbe9bb985e61562e8",
+      "connection_generation": 1,
+      "seq": 17,
+      "type": "interview.reply",
+      "text": "அந்த கடினமான பகுதியை முடிக்க நீங்க எப்படி உதவினீங்கன்னு சொல்ல முடியுமா?",
+      "dispatch_id": 3
+    },
+    {
+      "at": 48977.89999999851,
+      "v": 1,
+      "session_id": "a1ec3e4363e4428dbe9bb985e61562e8",
+      "connection_generation": 1,
+      "seq": 18,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 3,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 12,
+      "question_text": "அந்த கடினமான பகுதியை முடிக்க நீங்க எப்படி உதவினீங்கன்னு சொல்ல முடியுமா?",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 49079.10000000149,
+      "v": 1,
+      "session_id": "a1ec3e4363e4428dbe9bb985e61562e8",
+      "connection_generation": 1,
+      "seq": 19,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 3,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 13,
+      "question_text": "அந்த கடினமான பகுதியை முடிக்க நீங்க எப்படி உதவினீங்கன்னு சொல்ல முடியுமா?",
+      "interaction_state": "listening",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    }
+  ]
+}

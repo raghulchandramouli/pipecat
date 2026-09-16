@@ -1,0 +1,373 @@
+[
+  {
+    "audio_start_ms": 2444,
+    "event_id": "event_d088aef4df904644b05753976200a39f",
+    "item_id": "item_615499c3b0324cb0885263f95552ed65",
+    "type": "input_audio_buffer.speech_started"
+  },
+  {
+    "audio_end_ms": 4480,
+    "event_id": "event_9fc2fe34714b4d7ab2b86e27db8d74ca",
+    "item_id": "item_615499c3b0324cb0885263f95552ed65",
+    "type": "input_audio_buffer.speech_stopped"
+  },
+  {
+    "event_id": "event_a9c77835d88b4e50a3066651c54ebc4e",
+    "item_id": "item_615499c3b0324cb0885263f95552ed65",
+    "type": "conversation.item.input_audio_transcription.delta",
+    "content_index": 0,
+    "delta": "Joke",
+    "logprobs": null
+  },
+  {
+    "event_id": "event_7e1b25861bf94349b4c77861418be3a1",
+    "item_id": "item_615499c3b0324cb0885263f95552ed65",
+    "type": "conversation.item.input_audio_transcription.delta",
+    "content_index": 0,
+    "delta": " about",
+    "logprobs": null
+  },
+  {
+    "content_index": 0,
+    "event_id": "event_6ff92149504648c98c57ff8e069ab14b",
+    "item_id": "item_615499c3b0324cb0885263f95552ed65",
+    "transcript": "joke about robots?",
+    "type": "conversation.item.input_audio_transcription.completed",
+    "usage": {
+      "seconds": 2.036,
+      "type": "duration"
+    },
+    "logprobs": null
+  },
+  {
+    "event_id": "event_cdab3f5073854ecaa90d84a3466c31ea",
+    "response": {
+      "id": "resp_ce244cda709c42d7a1da9624191f7d14",
+      "audio": {
+        "output": {
+          "format": null,
+          "voice": null
+        }
+      },
+      "conversation_id": "conv_50d0d74205a44de4b0954d6a3c1f5f5a",
+      "max_output_tokens": null,
+      "metadata": null,
+      "object": "realtime.response",
+      "output": [],
+      "output_modalities": [
+        "audio"
+      ],
+      "status": "in_progress",
+      "status_details": null,
+      "usage": {
+        "input_token_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "cached_tokens_details": null,
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "input_tokens": 0,
+        "output_token_details": {
+          "audio_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "total_tokens": 0
+      }
+    },
+    "type": "response.created"
+  },
+  {
+    "event_id": "event_59cc9c82fff54af68a0e2f1505f50d01",
+    "item": {
+      "content": [],
+      "role": "assistant",
+      "type": "message",
+      "id": "item_0b535033d5784824b76f1c120a2dedd6",
+      "object": "realtime.item",
+      "status": "in_progress"
+    },
+    "output_index": 0,
+    "response_id": "resp_ce244cda709c42d7a1da9624191f7d14",
+    "type": "response.output_item.added"
+  },
+  {
+    "content_index": 0,
+    "event_id": "event_07aca8b5cc2e4ab0af7754c63a63ea51",
+    "item_id": "item_0b535033d5784824b76f1c120a2dedd6",
+    "output_index": 0,
+    "part": {
+      "audio": "",
+      "text": null,
+      "transcript": "",
+      "type": "audio"
+    },
+    "response_id": "resp_ce244cda709c42d7a1da9624191f7d14",
+    "type": "response.content_part.added"
+  },
+  {
+    "content_index": 0,
+    "delta": "Why did the robot go on vacation? To recharge its batteries!",
+    "event_id": "event_a2a9975dd03b4238a5ae8fa2bbfb7131",
+    "item_id": "item_0b535033d5784824b76f1c120a2dedd6",
+    "output_index": 0,
+    "response_id": "resp_ce244cda709c42d7a1da9624191f7d14",
+    "type": "response.output_audio_transcript.delta"
+  },
+  {
+    "content_index": 0,
+    "event_id": "event_207792a3cc0e45d48619e60678380f75",
+    "item_id": "item_0b535033d5784824b76f1c120a2dedd6",
+    "output_index": 0,
+    "response_id": "resp_ce244cda709c42d7a1da9624191f7d14",
+    "type": "response.output_audio.delta"
+  },
+  {
+    "content_index": 0,
+    "event_id": "event_28db47a2505d4371807962778716c4f3",
+    "item_id": "item_0b535033d5784824b76f1c120a2dedd6",
+    "output_index": 0,
+    "response_id": "resp_ce244cda709c42d7a1da9624191f7d14",
+    "type": "response.output_audio.delta"
+  },
+  {
+    "content_index": 0,
+    "event_id": "event_513c3cb58294403586c4d83388c8ac0a",
+    "item_id": "item_0b535033d5784824b76f1c120a2dedd6",
+    "output_index": 0,
+    "response_id": "resp_ce244cda709c42d7a1da9624191f7d14",
+    "type": "response.output_audio.delta"
+  },
+  {
+    "content_index": 0,
+    "event_id": "event_88d288c6e3af4e2581ff6d27141cbbd8",
+    "item_id": "item_0b535033d5784824b76f1c120a2dedd6",
+    "output_index": 0,
+    "response_id": "resp_ce244cda709c42d7a1da9624191f7d14",
+    "type": "response.output_audio.delta"
+  },
+  {
+    "content_index": 0,
+    "event_id": "event_6bd280f6c0704bbdb0790d7a5765d3e5",
+    "item_id": "item_0b535033d5784824b76f1c120a2dedd6",
+    "output_index": 0,
+    "response_id": "resp_ce244cda709c42d7a1da9624191f7d14",
+    "type": "response.output_audio.delta"
+  },
+  {
+    "content_index": 0,
+    "event_id": "event_4e5e02629803441498c7ec005eea73a2",
+    "item_id": "item_0b535033d5784824b76f1c120a2dedd6",
+    "output_index": 0,
+    "response_id": "resp_ce244cda709c42d7a1da9624191f7d14",
+    "type": "response.output_audio.delta"
+  },
+  {
+    "content_index": 0,
+    "event_id": "event_989649784f1d403bb66c7cded5affbd2",
+    "item_id": "item_0b535033d5784824b76f1c120a2dedd6",
+    "output_index": 0,
+    "response_id": "resp_ce244cda709c42d7a1da9624191f7d14",
+    "type": "response.output_audio.delta"
+  },
+  {
+    "content_index": 0,
+    "event_id": "event_2b91fdc69376400ea096fec941cce283",
+    "item_id": "item_0b535033d5784824b76f1c120a2dedd6",
+    "output_index": 0,
+    "response_id": "resp_ce244cda709c42d7a1da9624191f7d14",
+    "type": "response.output_audio.delta"
+  },
+  {
+    "content_index": 0,
+    "event_id": "event_81c6d07ba5e4488f982980a63f9c7f8a",
+    "item_id": "item_0b535033d5784824b76f1c120a2dedd6",
+    "output_index": 0,
+    "response_id": "resp_ce244cda709c42d7a1da9624191f7d14",
+    "type": "response.output_audio.delta"
+  },
+  {
+    "content_index": 0,
+    "event_id": "event_35019682f5ec4cf0ad059fc98d26a8c8",
+    "item_id": "item_0b535033d5784824b76f1c120a2dedd6",
+    "output_index": 0,
+    "response_id": "resp_ce244cda709c42d7a1da9624191f7d14",
+    "type": "response.output_audio.delta"
+  },
+  {
+    "content_index": 0,
+    "event_id": "event_b2a57ab027c64200b6a730835e35b2f6",
+    "item_id": "item_0b535033d5784824b76f1c120a2dedd6",
+    "output_index": 0,
+    "response_id": "resp_ce244cda709c42d7a1da9624191f7d14",
+    "type": "response.output_audio.delta"
+  },
+  {
+    "content_index": 0,
+    "event_id": "event_39f80f4bb8ab42419c6a0a9386412a9f",
+    "item_id": "item_0b535033d5784824b76f1c120a2dedd6",
+    "output_index": 0,
+    "response_id": "resp_ce244cda709c42d7a1da9624191f7d14",
+    "type": "response.output_audio.delta"
+  },
+  {
+    "content_index": 0,
+    "event_id": "event_7c09faaf2ca74ea583accc90a80b0212",
+    "item_id": "item_0b535033d5784824b76f1c120a2dedd6",
+    "output_index": 0,
+    "response_id": "resp_ce244cda709c42d7a1da9624191f7d14",
+    "type": "response.output_audio.delta"
+  },
+  {
+    "content_index": 0,
+    "event_id": "event_9f81722119d74398946b4b2fa688e59f",
+    "item_id": "item_0b535033d5784824b76f1c120a2dedd6",
+    "output_index": 0,
+    "response_id": "resp_ce244cda709c42d7a1da9624191f7d14",
+    "type": "response.output_audio.delta"
+  },
+  {
+    "content_index": 0,
+    "event_id": "event_91901d8dad774a5eb253967fc5473958",
+    "item_id": "item_0b535033d5784824b76f1c120a2dedd6",
+    "output_index": 0,
+    "response_id": "resp_ce244cda709c42d7a1da9624191f7d14",
+    "type": "response.output_audio.delta"
+  },
+  {
+    "content_index": 0,
+    "event_id": "event_1315b73edab241e8a438b5a87c699ceb",
+    "item_id": "item_0b535033d5784824b76f1c120a2dedd6",
+    "output_index": 0,
+    "response_id": "resp_ce244cda709c42d7a1da9624191f7d14",
+    "type": "response.output_audio.delta"
+  },
+  {
+    "content_index": 0,
+    "event_id": "event_bd0fc7c096174002a197c2c49d781043",
+    "item_id": "item_0b535033d5784824b76f1c120a2dedd6",
+    "output_index": 0,
+    "response_id": "resp_ce244cda709c42d7a1da9624191f7d14",
+    "type": "response.output_audio.delta"
+  },
+  {
+    "content_index": 0,
+    "event_id": "event_eca1979bb75e42d7beb2204d6a1e1e8e",
+    "item_id": "item_0b535033d5784824b76f1c120a2dedd6",
+    "output_index": 0,
+    "response_id": "resp_ce244cda709c42d7a1da9624191f7d14",
+    "type": "response.output_audio.delta"
+  },
+  {
+    "content_index": 0,
+    "event_id": "event_d31b6fc092b44c6cae18d83b78d64865",
+    "item_id": "item_0b535033d5784824b76f1c120a2dedd6",
+    "output_index": 0,
+    "response_id": "resp_ce244cda709c42d7a1da9624191f7d14",
+    "type": "response.output_audio.done"
+  },
+  {
+    "content_index": 0,
+    "event_id": "event_064321ffd6b045e3aaecd3dfe41233fa",
+    "item_id": "item_0b535033d5784824b76f1c120a2dedd6",
+    "output_index": 0,
+    "response_id": "resp_ce244cda709c42d7a1da9624191f7d14",
+    "transcript": "Why did the robot go on vacation? To recharge its batteries!",
+    "type": "response.output_audio_transcript.done"
+  },
+  {
+    "content_index": 0,
+    "event_id": "event_96defe4647294f2586958d3f3c88e3c7",
+    "item_id": "item_0b535033d5784824b76f1c120a2dedd6",
+    "output_index": 0,
+    "part": {
+      "audio": "",
+      "text": null,
+      "transcript": "Why did the robot go on vacation? To recharge its batteries!",
+      "type": "audio"
+    },
+    "response_id": "resp_ce244cda709c42d7a1da9624191f7d14",
+    "type": "response.content_part.done"
+  },
+  {
+    "event_id": "event_4b512e8ed32b403b95f33679e4cc6eb3",
+    "item": {
+      "content": [
+        {
+          "audio": null,
+          "text": null,
+          "transcript": "Why did the robot go on vacation? To recharge its batteries!",
+          "type": "output_audio"
+        }
+      ],
+      "role": "assistant",
+      "type": "message",
+      "id": "item_0b535033d5784824b76f1c120a2dedd6",
+      "object": "realtime.item",
+      "status": "completed"
+    },
+    "output_index": 0,
+    "response_id": "resp_ce244cda709c42d7a1da9624191f7d14",
+    "type": "response.output_item.done"
+  },
+  {
+    "event_id": "event_f622593921f04408bf76de90ec4eb291",
+    "response": {
+      "id": "resp_ce244cda709c42d7a1da9624191f7d14",
+      "audio": {
+        "output": {
+          "format": null,
+          "voice": null
+        }
+      },
+      "conversation_id": "conv_50d0d74205a44de4b0954d6a3c1f5f5a",
+      "max_output_tokens": null,
+      "metadata": null,
+      "object": "realtime.response",
+      "output": [
+        {
+          "content": [
+            {
+              "audio": null,
+              "text": null,
+              "transcript": "Why did the robot go on vacation? To recharge its batteries!",
+              "type": "output_audio"
+            }
+          ],
+          "role": "assistant",
+          "type": "message",
+          "id": "item_0b535033d5784824b76f1c120a2dedd6",
+          "object": "realtime.item",
+          "status": "completed"
+        }
+      ],
+      "output_modalities": [
+        "audio"
+      ],
+      "status": "completed",
+      "status_details": {
+        "error": null,
+        "reason": null,
+        "type": "completed"
+      },
+      "usage": {
+        "input_token_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "cached_tokens_details": null,
+          "image_tokens": 0,
+          "text_tokens": 367
+        },
+        "input_tokens": 367,
+        "output_token_details": {
+          "audio_tokens": 0,
+          "text_tokens": 13
+        },
+        "output_tokens": 13,
+        "total_tokens": 380
+      }
+    },
+    "type": "response.done"
+  }
+]

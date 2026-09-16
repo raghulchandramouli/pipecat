@@ -1,0 +1,948 @@
+{
+  "model": "gemini-3.8-live",
+  "passed": true,
+  "scope": "Live WebRTC with synthetic microphone audio; audio receipt is not a listening assessment.",
+  "stage": "end",
+  "received_audio": [
+    {
+      "bytesReceived": 424514,
+      "totalSamplesReceived": 1823040
+    }
+  ],
+  "events": [
+    {
+      "at": 375.19999999552965,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 1,
+      "type": "interview.status",
+      "status": "Reconnecting"
+    },
+    {
+      "at": 412.19999999552965,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 2,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 1,
+      "state_revision": 1,
+      "interaction_state": "generating",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 2499.39999999851,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 3,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 1,
+      "state_revision": 2,
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 6683.69999999553,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 4,
+      "type": "interview.reply",
+      "text": "Hello! Neenga enna work panreenga, illa how do you spend your days?",
+      "dispatch_id": 1
+    },
+    {
+      "at": 6683.79999999702,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 5,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 3,
+      "question_text": "Hello! Neenga enna work panreenga, illa how do you spend your days?",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 6715.29999999702,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 6,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 4,
+      "question_text": "Hello! Neenga enna work panreenga, illa how do you spend your days?",
+      "interaction_state": "listening",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 6745.39999999851,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 7,
+      "type": "interview.command_result",
+      "prompt_revision": 2,
+      "command_id": 1,
+      "outcome": "applied",
+      "code": "ok"
+    },
+    {
+      "at": 6745.5,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 8,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 1,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 5,
+      "question_text": "Hello! Neenga enna work panreenga, illa how do you spend your days?",
+      "interaction_state": "generating",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 6745.5,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 9,
+      "type": "interview.interruption",
+      "playback_epoch": 1,
+      "prompt_revision": 2,
+      "state_revision": 5,
+      "question_text": "Hello! Neenga enna work panreenga, illa how do you spend your days?",
+      "interaction_state": "generating",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 7831.29999999702,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 10,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 1,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 6,
+      "question_text": "Hello! Neenga enna work panreenga, illa how do you spend your days?",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 12728.79999999702,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 11,
+      "type": "interview.reply",
+      "text": "I mean, daily routine enna nu sollunga. So, neenga enna work panreenga?",
+      "dispatch_id": 2
+    },
+    {
+      "at": 12728.89999999851,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 12,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 1,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 3,
+      "state_revision": 7,
+      "question_text": "I mean, daily routine enna nu sollunga. So, neenga enna work panreenga?",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 12765.19999999553,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 13,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 1,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 3,
+      "state_revision": 8,
+      "question_text": "I mean, daily routine enna nu sollunga. So, neenga enna work panreenga?",
+      "interaction_state": "listening",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 12794.39999999851,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 14,
+      "type": "interview.command_result",
+      "prompt_revision": 3,
+      "command_id": 2,
+      "outcome": "applied",
+      "code": "ok"
+    },
+    {
+      "at": 12794.5,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 15,
+      "type": "interview.status",
+      "status": "Giving you time",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 2,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 3,
+      "state_revision": 9,
+      "question_text": "I mean, daily routine enna nu sollunga. So, neenga enna work panreenga?",
+      "interaction_state": "thinking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 12794.5,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 16,
+      "type": "interview.interruption",
+      "playback_epoch": 2,
+      "prompt_revision": 3,
+      "state_revision": 9,
+      "question_text": "I mean, daily routine enna nu sollunga. So, neenga enna work panreenga?",
+      "interaction_state": "thinking",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 15668,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 17,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 2,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 3,
+      "state_revision": 10,
+      "question_text": "I mean, daily routine enna nu sollunga. So, neenga enna work panreenga?",
+      "interaction_state": "listening",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 15668.5,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 18,
+      "type": "interview.interruption",
+      "playback_epoch": 2,
+      "prompt_revision": 3,
+      "state_revision": 10,
+      "question_text": "I mean, daily routine enna nu sollunga. So, neenga enna work panreenga?",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 33637.29999999702,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 19,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 2,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 3,
+      "state_revision": 11,
+      "question_text": "I mean, daily routine enna nu sollunga. So, neenga enna work panreenga?",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 34638.29999999702,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 20,
+      "type": "interview.caption",
+      "text": "ஒரு வேலை முடிக்க தாமதம் ஆச்சு.  எல்லார்கிட்டயும் என்ன பிரச்சனைன்னு கேட்டேன்.  மீதி வேலையை பிரிச்சு கொடுத்தேன்.  ஒரு நண்பருக்கு கடினமான பகுதியை முடிக்க உதவி பண்ணேன்.  நாங்க நேரத்துக்கு வேலையை முடிச்சோம்.",
+      "final": true,
+      "segment_id": "native-input-1"
+    },
+    {
+      "at": 41564.89999999851,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 21,
+      "type": "interview.reply",
+      "text": "Oh, super! Team ah guide panni work finish pannathu great. Andha challenge time la ungalukku toughest part edhu va irundhadhu?",
+      "dispatch_id": 3
+    },
+    {
+      "at": 41565,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 22,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 2,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 12,
+      "question_text": "Oh, super! Team ah guide panni work finish pannathu great. Andha challenge time la ungalukku toughest part edhu va irundhadhu?",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 41604.69999999553,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 23,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 2,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 13,
+      "question_text": "Oh, super! Team ah guide panni work finish pannathu great. Andha challenge time la ungalukku toughest part edhu va irundhadhu?",
+      "interaction_state": "listening",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 43088.79999999702,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 24,
+      "type": "interview.interruption",
+      "playback_epoch": 2,
+      "prompt_revision": 4,
+      "state_revision": 13,
+      "question_text": "Oh, super! Team ah guide panni work finish pannathu great. Andha challenge time la ungalukku toughest part edhu va irundhadhu?",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 50615.09999999404,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 25,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 2,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 14,
+      "question_text": "Oh, super! Team ah guide panni work finish pannathu great. Andha challenge time la ungalukku toughest part edhu va irundhadhu?",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 51615.79999999702,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 26,
+      "type": "interview.caption",
+      "text": "Naan ippo varaikkum vazhkaiyila onnumae pannathilla.",
+      "final": true,
+      "segment_id": "native-input-2"
+    },
+    {
+      "at": 58502.5,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 27,
+      "type": "interview.reply",
+      "text": "Appadi solladeenga, life la ellarume edhavadhu oru stage la dhan irukkom. Unga time epdi spend panreenga nu sollunga, we can talk about that.",
+      "dispatch_id": 4
+    },
+    {
+      "at": 58502.79999999702,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 28,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 2,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 5,
+      "state_revision": 15,
+      "question_text": "Appadi solladeenga, life la ellarume edhavadhu oru stage la dhan irukkom. Unga time epdi spend panreenga nu sollunga, we can talk about that.",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 58576.09999999404,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 29,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 2,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 5,
+      "state_revision": 16,
+      "question_text": "Appadi solladeenga, life la ellarume edhavadhu oru stage la dhan irukkom. Unga time epdi spend panreenga nu sollunga, we can talk about that.",
+      "interaction_state": "listening",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 58677.79999999702,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 30,
+      "type": "interview.command_result",
+      "prompt_revision": 5,
+      "command_id": 3,
+      "outcome": "applied",
+      "code": "ok"
+    },
+    {
+      "at": 58678,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 31,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 3,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 5,
+      "state_revision": 17,
+      "question_text": "Appadi solladeenga, life la ellarume edhavadhu oru stage la dhan irukkom. Unga time epdi spend panreenga nu sollunga, we can talk about that.",
+      "interaction_state": "generating",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 58678.09999999404,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 32,
+      "type": "interview.interruption",
+      "playback_epoch": 3,
+      "prompt_revision": 5,
+      "state_revision": 17,
+      "question_text": "Appadi solladeenga, life la ellarume edhavadhu oru stage la dhan irukkom. Unga time epdi spend panreenga nu sollunga, we can talk about that.",
+      "interaction_state": "generating",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 59412.5,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 33,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 3,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 5,
+      "state_revision": 18,
+      "question_text": "Appadi solladeenga, life la ellarume edhavadhu oru stage la dhan irukkom. Unga time epdi spend panreenga nu sollunga, we can talk about that.",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 63684.59999999404,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 34,
+      "type": "interview.reply",
+      "text": "Neenga daily time epdi spend panreenga nu sollunga, adhupathi pesalam.",
+      "dispatch_id": 5
+    },
+    {
+      "at": 63684.79999999702,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 35,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 3,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 6,
+      "state_revision": 19,
+      "question_text": "Neenga daily time epdi spend panreenga nu sollunga, adhupathi pesalam.",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 63726.09999999404,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 36,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 3,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 6,
+      "state_revision": 20,
+      "question_text": "Neenga daily time epdi spend panreenga nu sollunga, adhupathi pesalam.",
+      "interaction_state": "listening",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 63752.59999999404,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 37,
+      "type": "interview.command_result",
+      "prompt_revision": 6,
+      "command_id": 4,
+      "outcome": "applied",
+      "code": "ok"
+    },
+    {
+      "at": 63752.69999999553,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 38,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 4,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 6,
+      "state_revision": 21,
+      "question_text": "Neenga daily time epdi spend panreenga nu sollunga, adhupathi pesalam.",
+      "interaction_state": "generating",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 63752.79999999702,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 39,
+      "type": "interview.interruption",
+      "playback_epoch": 4,
+      "prompt_revision": 6,
+      "state_revision": 21,
+      "question_text": "Neenga daily time epdi spend panreenga nu sollunga, adhupathi pesalam.",
+      "interaction_state": "generating",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 64578.89999999851,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 40,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 4,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 6,
+      "state_revision": 22,
+      "question_text": "Neenga daily time epdi spend panreenga nu sollunga, adhupathi pesalam.",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 69297.09999999404,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 41,
+      "type": "interview.reply",
+      "text": "Okay, vera topics pesalam. Neenga enjoy panra hobbies edhavadhu irukka?",
+      "dispatch_id": 6
+    },
+    {
+      "at": 69297.29999999702,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 42,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 4,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 7,
+      "state_revision": 23,
+      "question_text": "Okay, vera topics pesalam. Neenga enjoy panra hobbies edhavadhu irukka?",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 69336,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 43,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 4,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 7,
+      "state_revision": 24,
+      "question_text": "Okay, vera topics pesalam. Neenga enjoy panra hobbies edhavadhu irukka?",
+      "interaction_state": "listening",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 69368.89999999851,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 44,
+      "type": "interview.command_result",
+      "prompt_revision": 7,
+      "command_id": 5,
+      "outcome": "applied",
+      "code": "ok"
+    },
+    {
+      "at": 69368.89999999851,
+      "v": 1,
+      "session_id": "c4854dbfff8a4f3bae789a218d75eff7",
+      "connection_generation": 1,
+      "seq": 45,
+      "type": "interview.ended",
+      "phase": "ended",
+      "question_count": 5,
+      "prompt_revision": 7,
+      "state_revision": 25,
+      "question_text": "Okay, vera topics pesalam. Neenga enjoy panra hobbies edhavadhu irukka?",
+      "interaction_state": "ended",
+      "permitted_actions": []
+    }
+  ],
+  "page_errors": [],
+  "notice": ""
+}

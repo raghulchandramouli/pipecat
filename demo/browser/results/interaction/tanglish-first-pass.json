@@ -1,0 +1,2729 @@
+{
+  "utc": "2026-09-16T06:52:02.661725+00:00",
+  "scope": "Chromium UI, synthetic split microphone audio, real WebRTC and live providers",
+  "timing_note": "Client event arrival deltas; not proof of physical microphone or audible playback.",
+  "url": "http://127.0.0.1:7871",
+  "language": "tanglish",
+  "candidate_sha256": "d2f149a4de8a55e194d2acd4ad5fb24db7ca8e15dab1a715d98e603498fe2c0a",
+  "audio_split": {
+    "split_frame": 176185,
+    "sample_rate": 24000,
+    "total_frames": 290816
+  },
+  "passed": true,
+  "stage": "ended",
+  "opening_question": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+  "explain_same_question": true,
+  "no_reply_during_pause": true,
+  "timings_ms": {
+    "last_final_at_ms": 82312.20000000298,
+    "thinking_at_ms": 84651.30000000075,
+    "reply_at_ms": 87656.5,
+    "speaking_at_ms": 88039,
+    "last_final_to_thinking_ms": 2339.099999997765,
+    "thinking_to_reply_ms": 3005.199999999255,
+    "reply_to_speaking_ms": 382.5,
+    "synthetic_input_stop_to_reply_ms": 5618.39999999851
+  },
+  "grounded_reply": "ரொம்ப நல்லது. \"slow database queries की problem solve की\" பண்ணும்போது உங்க team கூட எப்படி சேர்ந்து வேலை செஞ்சீங்க?",
+  "grounding": {
+    "candidate_final_before_reply": true,
+    "follow_up_phase_after_reply": true,
+    "question_before_answer": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+    "question_after_reply": "ரொம்ப நல்லது. \"slow database queries की problem solve की\" பண்ணும்போது உங்க team கூட எப்படி சேர்ந்து வேலை செஞ்சீங்க?"
+  },
+  "end_closed": true,
+  "events": [
+    {
+      "at": 454.80000000074506,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 1,
+      "type": "interview.status",
+      "status": "Reconnecting"
+    },
+    {
+      "at": 495.1000000014901,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 2,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "introduction",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 0,
+      "state_revision": 0,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "connecting",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking"
+      ]
+    },
+    {
+      "at": 544.7000000029802,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 3,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "introduction",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 1,
+      "state_revision": 1,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "generating",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking"
+      ]
+    },
+    {
+      "at": 545.1000000014901,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 4,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 2,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "generating",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 545.7000000029802,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 5,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 3,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "generating",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 546,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 6,
+      "type": "interview.reply",
+      "text": "வணக்கம்! நாம கொஞ்ச நேரம் பேசலாம். வீட்டுலயோ வேலை செய்யும் இடத்துலயோ நடந்த விஷயங்களைப் பத்தி கேட்பேன். இங்கிலீஷ் பேசணும்னு அவசியம் இல்ல. உங்களுக்கு வசதியா தமிழ்ல பேசுங்க.",
+      "dispatch_id": 1
+    },
+    {
+      "at": 547.1000000014901,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 7,
+      "type": "interview.reply",
+      "text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "dispatch_id": 3
+    },
+    {
+      "at": 958.6000000014901,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 8,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 4,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "speaking",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 959.6000000014901,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 9,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 4,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "speaking",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 11394.5,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 10,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 5,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 11394.70000000298,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 11,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 6,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "speaking",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 11395.20000000298,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 12,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 5,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 11395.20000000298,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 13,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 6,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "speaking",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 16955,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 14,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 7,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 16955.20000000298,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 15,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 7,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 17093,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 16,
+      "type": "interview.command_result",
+      "prompt_revision": 3,
+      "command_id": 1,
+      "outcome": "applied",
+      "code": "ok"
+    },
+    {
+      "at": 17093.20000000298,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 17,
+      "type": "interview.interruption",
+      "playback_epoch": 1
+    },
+    {
+      "at": 17093.70000000298,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 18,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 1,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 3,
+      "state_revision": 8,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "generating",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 17093.800000000745,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 19,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 1,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 3,
+      "state_revision": 9,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "generating",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 17093.800000000745,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 20,
+      "type": "interview.reply",
+      "text": "ஒருவருடன் சேர்ந்து ஒரு common goal அடைய முயன்ற ஒரு situation நினைத்துப் பாருங்கள்.",
+      "dispatch_id": 7
+    },
+    {
+      "at": 31954.70000000298,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 21,
+      "type": "interview.status",
+      "status": "Giving you time",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 1,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 10,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "generating",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 31954.800000000745,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 22,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 1,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 10,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "generating",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 31955.10000000149,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 23,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 1,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 11,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "generating",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 31955.10000000149,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 24,
+      "type": "interview.reply",
+      "text": "நான் இங்கே இருக்கிறேன். இன்னும் கொஞ்சம் time வேண்டுமா?",
+      "dispatch_id": 8
+    },
+    {
+      "at": 32356.300000000745,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 25,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 1,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 12,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "speaking",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 32356.70000000298,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 26,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 1,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 12,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "speaking",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 35354.300000000745,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 27,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 1,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 13,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 35354.400000002235,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 28,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 1,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 13,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 35384.60000000149,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 29,
+      "type": "interview.command_result",
+      "prompt_revision": 5,
+      "command_id": 2,
+      "outcome": "applied",
+      "code": "ok"
+    },
+    {
+      "at": 35384.60000000149,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 30,
+      "type": "interview.interruption",
+      "playback_epoch": 2
+    },
+    {
+      "at": 35384.900000002235,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 31,
+      "type": "interview.status",
+      "status": "Giving you time",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 2,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 5,
+      "state_revision": 14,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "thinking",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 35385,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 32,
+      "type": "interview.status",
+      "status": "Giving you time",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 2,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 5,
+      "state_revision": 15,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "thinking",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 35385,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 33,
+      "type": "interview.status",
+      "status": "Giving you time",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 2,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 5,
+      "state_revision": 16,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "thinking",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 35385,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 34,
+      "type": "interview.reply",
+      "text": "Take your time. Let me know when you are ready to continue.",
+      "dispatch_id": 12
+    },
+    {
+      "at": 65379.60000000149,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 35,
+      "type": "interview.status",
+      "status": "Giving you time",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 2,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 6,
+      "state_revision": 17,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "generating",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 65379.70000000298,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 36,
+      "type": "interview.status",
+      "status": "Giving you time",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 2,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 6,
+      "state_revision": 17,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "generating",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 65380,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 37,
+      "type": "interview.status",
+      "status": "Giving you time",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 2,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 6,
+      "state_revision": 18,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "generating",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 65380,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 38,
+      "type": "interview.reply",
+      "text": "நான் இங்கே இருக்கிறேன். இன்னும் கொஞ்சம் time வேண்டுமா?",
+      "dispatch_id": 13
+    },
+    {
+      "at": 65784.20000000298,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 39,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 2,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 6,
+      "state_revision": 19,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "speaking",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 65784.40000000224,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 40,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 2,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 6,
+      "state_revision": 19,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "speaking",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 68343.80000000075,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 41,
+      "type": "interview.status",
+      "status": "Giving you time",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 2,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 6,
+      "state_revision": 20,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 68343.90000000224,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 42,
+      "type": "interview.status",
+      "status": "Giving you time",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 2,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 6,
+      "state_revision": 20,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 68867.70000000298,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 43,
+      "type": "interview.interruption",
+      "playback_epoch": 3
+    },
+    {
+      "at": 68868.5,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 44,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 4,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 6,
+      "state_revision": 21,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 68868.60000000149,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 45,
+      "type": "interview.interruption",
+      "playback_epoch": 6
+    },
+    {
+      "at": 68868.70000000298,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 46,
+      "type": "interview.interruption",
+      "playback_epoch": 4
+    },
+    {
+      "at": 68868.70000000298,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 47,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 6,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 6,
+      "state_revision": 22,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 68868.80000000075,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 48,
+      "type": "interview.interruption",
+      "playback_epoch": 5
+    },
+    {
+      "at": 68868.90000000224,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 49,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 6,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 6,
+      "state_revision": 23,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 68869.70000000298,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 50,
+      "type": "interview.interruption",
+      "playback_epoch": 7
+    },
+    {
+      "at": 68869.80000000075,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 51,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 7,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 6,
+      "state_revision": 24,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 69540.70000000298,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 52,
+      "type": "interview.caption",
+      "text": "I",
+      "final": false,
+      "segment_id": "0"
+    },
+    {
+      "at": 69542.70000000298,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 53,
+      "type": "interview.caption",
+      "text": "I",
+      "final": false,
+      "segment_id": "0"
+    },
+    {
+      "at": 70531.5,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 54,
+      "type": "interview.caption",
+      "text": "I",
+      "final": false,
+      "segment_id": "0"
+    },
+    {
+      "at": 70534.90000000224,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 55,
+      "type": "interview.caption",
+      "text": "I",
+      "final": false,
+      "segment_id": "0"
+    },
+    {
+      "at": 70541,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 56,
+      "type": "interview.caption",
+      "text": "I started",
+      "final": false,
+      "segment_id": "0"
+    },
+    {
+      "at": 70543.90000000224,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 57,
+      "type": "interview.caption",
+      "text": "I started a",
+      "final": false,
+      "segment_id": "0"
+    },
+    {
+      "at": 70551.20000000298,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 58,
+      "type": "interview.caption",
+      "text": "I started a backend",
+      "final": false,
+      "segment_id": "0"
+    },
+    {
+      "at": 70551.20000000298,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 59,
+      "type": "interview.caption",
+      "text": "I started a backend",
+      "final": false,
+      "segment_id": "0"
+    },
+    {
+      "at": 70555.20000000298,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 60,
+      "type": "interview.caption",
+      "text": "I started a backend project",
+      "final": false,
+      "segment_id": "0"
+    },
+    {
+      "at": 70561.40000000224,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 61,
+      "type": "interview.caption",
+      "text": "I started a backend project",
+      "final": false,
+      "segment_id": "0"
+    },
+    {
+      "at": 70567.90000000224,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 62,
+      "type": "interview.caption",
+      "text": "I started a backend project wit",
+      "final": false,
+      "segment_id": "0"
+    },
+    {
+      "at": 70570.40000000224,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 63,
+      "type": "interview.caption",
+      "text": "I started a backend project with",
+      "final": false,
+      "segment_id": "0"
+    },
+    {
+      "at": 70589,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 64,
+      "type": "interview.caption",
+      "text": "I started a backend project with a",
+      "final": false,
+      "segment_id": "0"
+    },
+    {
+      "at": 70589.10000000149,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 65,
+      "type": "interview.caption",
+      "text": "I started a backend project with a slow",
+      "final": false,
+      "segment_id": "0"
+    },
+    {
+      "at": 70589.30000000075,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 66,
+      "type": "interview.caption",
+      "text": "I started a backend project with a slow",
+      "final": false,
+      "segment_id": "0"
+    },
+    {
+      "at": 70589.40000000224,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 67,
+      "type": "interview.caption",
+      "text": "I started a backend project with a slow data",
+      "final": false,
+      "segment_id": "0"
+    },
+    {
+      "at": 70590.70000000298,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 68,
+      "type": "interview.caption",
+      "text": "I started a backend project with a slow data",
+      "final": false,
+      "segment_id": "0"
+    },
+    {
+      "at": 71523.30000000075,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 69,
+      "type": "interview.caption",
+      "text": "I",
+      "final": false,
+      "segment_id": "0"
+    },
+    {
+      "at": 71528.5,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 70,
+      "type": "interview.caption",
+      "text": "I",
+      "final": false,
+      "segment_id": "0"
+    },
+    {
+      "at": 71983.40000000224,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 71,
+      "type": "interview.caption",
+      "text": "I",
+      "final": false,
+      "segment_id": "0"
+    },
+    {
+      "at": 71986.70000000298,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 72,
+      "type": "interview.caption",
+      "text": "I tri",
+      "final": false,
+      "segment_id": "0"
+    },
+    {
+      "at": 71993.90000000224,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 73,
+      "type": "interview.caption",
+      "text": "I tried",
+      "final": false,
+      "segment_id": "0"
+    },
+    {
+      "at": 71998.90000000224,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 74,
+      "type": "interview.caption",
+      "text": "I tried to",
+      "final": false,
+      "segment_id": "0"
+    },
+    {
+      "at": 72005.30000000075,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 75,
+      "type": "interview.caption",
+      "text": "I tried to solve",
+      "final": false,
+      "segment_id": "0"
+    },
+    {
+      "at": 72137.60000000149,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 76,
+      "type": "interview.caption",
+      "text": "मैंने 1 backend project में slow database queries की problem solve की।",
+      "final": true,
+      "segment_id": "0",
+      "candidate_turn_id": 2
+    },
+    {
+      "at": 72467.90000000224,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 77,
+      "type": "interview.interruption",
+      "playback_epoch": 8
+    },
+    {
+      "at": 72468.10000000149,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 78,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 9,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 6,
+      "state_revision": 25,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 72469.60000000149,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 79,
+      "type": "interview.interruption",
+      "playback_epoch": 9
+    },
+    {
+      "at": 72469.70000000298,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 80,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 10,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 6,
+      "state_revision": 26,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 72469.80000000075,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 81,
+      "type": "interview.interruption",
+      "playback_epoch": 10
+    },
+    {
+      "at": 72469.90000000224,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 82,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 10,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 6,
+      "state_revision": 27,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 72470.70000000298,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 83,
+      "type": "interview.interruption",
+      "playback_epoch": 11
+    },
+    {
+      "at": 72470.80000000075,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 84,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 11,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 6,
+      "state_revision": 28,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 73157.70000000298,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 85,
+      "type": "interview.caption",
+      "text": "First",
+      "final": false,
+      "segment_id": "1"
+    },
+    {
+      "at": 73157.80000000075,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 86,
+      "type": "interview.caption",
+      "text": "First,",
+      "final": false,
+      "segment_id": "1"
+    },
+    {
+      "at": 73158.70000000298,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 87,
+      "type": "interview.caption",
+      "text": "First, logs",
+      "final": false,
+      "segment_id": "1"
+    },
+    {
+      "at": 73158.80000000075,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 88,
+      "type": "interview.caption",
+      "text": "First, logs,",
+      "final": false,
+      "segment_id": "1"
+    },
+    {
+      "at": 73158.80000000075,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 89,
+      "type": "interview.caption",
+      "text": "First, logs, and",
+      "final": false,
+      "segment_id": "1"
+    },
+    {
+      "at": 73158.90000000224,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 90,
+      "type": "interview.caption",
+      "text": "First, logs, and",
+      "final": false,
+      "segment_id": "1"
+    },
+    {
+      "at": 74157.30000000075,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 91,
+      "type": "interview.caption",
+      "text": "First",
+      "final": false,
+      "segment_id": "1"
+    },
+    {
+      "at": 74157.40000000224,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 92,
+      "type": "interview.caption",
+      "text": "First,",
+      "final": false,
+      "segment_id": "1"
+    },
+    {
+      "at": 74165.10000000149,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 93,
+      "type": "interview.caption",
+      "text": "First, let",
+      "final": false,
+      "segment_id": "1"
+    },
+    {
+      "at": 74172.40000000224,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 94,
+      "type": "interview.caption",
+      "text": "First, let's",
+      "final": false,
+      "segment_id": "1"
+    },
+    {
+      "at": 74238.30000000075,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 95,
+      "type": "interview.caption",
+      "text": "पहले logs और query timings देखें",
+      "final": true,
+      "segment_id": "1",
+      "candidate_turn_id": 2
+    },
+    {
+      "at": 74447.40000000224,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 96,
+      "type": "interview.interruption",
+      "playback_epoch": 12
+    },
+    {
+      "at": 74447.60000000149,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 97,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 13,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 6,
+      "state_revision": 29,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 74449.80000000075,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 98,
+      "type": "interview.interruption",
+      "playback_epoch": 13
+    },
+    {
+      "at": 74450,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 99,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 14,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 6,
+      "state_revision": 30,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 74450.10000000149,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 100,
+      "type": "interview.interruption",
+      "playback_epoch": 14
+    },
+    {
+      "at": 74450.20000000298,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 101,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 14,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 6,
+      "state_revision": 31,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 74450.80000000075,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 102,
+      "type": "interview.interruption",
+      "playback_epoch": 15
+    },
+    {
+      "at": 74450.90000000224,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 103,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 15,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 6,
+      "state_revision": 32,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 75820.10000000149,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 104,
+      "type": "interview.caption",
+      "text": "Then",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 75820.20000000298,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 105,
+      "type": "interview.caption",
+      "text": "Then,",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 75880.60000000149,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 106,
+      "type": "interview.caption",
+      "text": "फिर composite index add किया",
+      "final": true,
+      "segment_id": "2",
+      "candidate_turn_id": 2
+    },
+    {
+      "at": 77908.5,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 107,
+      "type": "interview.interruption",
+      "playback_epoch": 16
+    },
+    {
+      "at": 77908.70000000298,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 108,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 17,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 6,
+      "state_revision": 33,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 77910.70000000298,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 109,
+      "type": "interview.interruption",
+      "playback_epoch": 19
+    },
+    {
+      "at": 77910.80000000075,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 110,
+      "type": "interview.interruption",
+      "playback_epoch": 17
+    },
+    {
+      "at": 77910.80000000075,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 111,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 19,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 6,
+      "state_revision": 34,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 77910.80000000075,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 112,
+      "type": "interview.interruption",
+      "playback_epoch": 18
+    },
+    {
+      "at": 77910.80000000075,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 113,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 19,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 6,
+      "state_revision": 35,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 77911.20000000298,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 114,
+      "type": "interview.interruption",
+      "playback_epoch": 20
+    },
+    {
+      "at": 77911.30000000075,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 115,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 20,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 6,
+      "state_revision": 36,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 78559.10000000149,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 116,
+      "type": "interview.caption",
+      "text": "R",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 78561.80000000075,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 117,
+      "type": "interview.caption",
+      "text": "Resp",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 78567.80000000075,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 118,
+      "type": "interview.caption",
+      "text": "Response",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 78569.90000000224,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 119,
+      "type": "interview.caption",
+      "text": "Response time",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 78574.80000000075,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 120,
+      "type": "interview.caption",
+      "text": "Response time,",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 78574.90000000224,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 121,
+      "type": "interview.caption",
+      "text": "Response time, those",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 78579.10000000149,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 122,
+      "type": "interview.caption",
+      "text": "Response time, those",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 79546.80000000075,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 123,
+      "type": "interview.caption",
+      "text": "R",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 79550.20000000298,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 124,
+      "type": "interview.caption",
+      "text": "Resp",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 79556.30000000075,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 125,
+      "type": "interview.caption",
+      "text": "Response",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 79561.40000000224,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 126,
+      "type": "interview.caption",
+      "text": "Response time",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 79566,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 127,
+      "type": "interview.caption",
+      "text": "Response time do",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 79570.70000000298,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 128,
+      "type": "interview.caption",
+      "text": "Response time do s",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 79573.5,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 129,
+      "type": "interview.caption",
+      "text": "Response time do secon",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 79578,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 130,
+      "type": "interview.caption",
+      "text": "Response time do second",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 79582.80000000075,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 131,
+      "type": "interview.caption",
+      "text": "Response time do second se",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 79586.30000000075,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 132,
+      "type": "interview.caption",
+      "text": "Response time do second se do",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 79589.90000000224,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 133,
+      "type": "interview.caption",
+      "text": "Response time do second se do hundred",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 79593.30000000075,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 134,
+      "type": "interview.caption",
+      "text": "Response time do second se do hundred mill",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 79608.40000000224,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 135,
+      "type": "interview.caption",
+      "text": "Response time do second se do hundred mill",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 80128.30000000075,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 136,
+      "type": "interview.caption",
+      "text": "Response time do secon",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 80131.60000000149,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 137,
+      "type": "interview.caption",
+      "text": "Response time do seconds",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 80136.20000000298,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 138,
+      "type": "interview.caption",
+      "text": "Response time do seconds se",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 80141.40000000224,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 139,
+      "type": "interview.caption",
+      "text": "Response time do seconds se do",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 80145.80000000075,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 140,
+      "type": "interview.caption",
+      "text": "Response time do seconds se do hundred",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 80151.10000000149,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 141,
+      "type": "interview.caption",
+      "text": "Response time do seconds se do hundred mill",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 80252.80000000075,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 142,
+      "type": "interview.caption",
+      "text": "Response time 2 second se 200 milliseconds ho gaya.",
+      "final": true,
+      "segment_id": "3",
+      "candidate_turn_id": 2
+    },
+    {
+      "at": 80483.10000000149,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 143,
+      "type": "interview.interruption",
+      "playback_epoch": 21
+    },
+    {
+      "at": 80483.20000000298,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 144,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 22,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 6,
+      "state_revision": 37,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 80484.30000000075,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 145,
+      "type": "interview.interruption",
+      "playback_epoch": 22
+    },
+    {
+      "at": 80484.30000000075,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 146,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 23,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 6,
+      "state_revision": 38,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 80484.30000000075,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 147,
+      "type": "interview.interruption",
+      "playback_epoch": 23
+    },
+    {
+      "at": 80484.40000000224,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 148,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 23,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 6,
+      "state_revision": 39,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 80485.5,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 149,
+      "type": "interview.interruption",
+      "playback_epoch": 24
+    },
+    {
+      "at": 80485.5,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 150,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 24,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 6,
+      "state_revision": 40,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 81147.30000000075,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 151,
+      "type": "interview.caption",
+      "text": "M",
+      "final": false,
+      "segment_id": "4"
+    },
+    {
+      "at": 81152,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 152,
+      "type": "interview.caption",
+      "text": "Maine",
+      "final": false,
+      "segment_id": "4"
+    },
+    {
+      "at": 81152.10000000149,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 153,
+      "type": "interview.caption",
+      "text": "Maine load",
+      "final": false,
+      "segment_id": "4"
+    },
+    {
+      "at": 81157.10000000149,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 154,
+      "type": "interview.caption",
+      "text": "Maine load",
+      "final": false,
+      "segment_id": "4"
+    },
+    {
+      "at": 82127.10000000149,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 155,
+      "type": "interview.caption",
+      "text": "I",
+      "final": false,
+      "segment_id": "4"
+    },
+    {
+      "at": 82140.90000000224,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 156,
+      "type": "interview.caption",
+      "text": "I",
+      "final": false,
+      "segment_id": "4"
+    },
+    {
+      "at": 82198.90000000224,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 157,
+      "type": "interview.caption",
+      "text": "I",
+      "final": false,
+      "segment_id": "4"
+    },
+    {
+      "at": 82312.20000000298,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 158,
+      "type": "interview.caption",
+      "text": "मैंने load test से result verify किया।",
+      "final": true,
+      "segment_id": "4",
+      "candidate_turn_id": 2
+    },
+    {
+      "at": 84651.30000000075,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 159,
+      "type": "interview.status",
+      "status": "Thinking",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 24,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 6,
+      "state_revision": 40,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 84651.60000000149,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 160,
+      "type": "interview.status",
+      "status": "Thinking",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 24,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 6,
+      "state_revision": 40,
+      "question_text": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 87656.40000000224,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 161,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "follow_up",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 24,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 7,
+      "state_revision": 41,
+      "question_text": "ரொம்ப நல்லது. \"slow database queries की problem solve की\" பண்ணும்போது உங்க team கூட எப்படி சேர்ந்து வேலை செஞ்சீங்க?",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 87656.5,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 162,
+      "type": "interview.reply",
+      "text": "ரொம்ப நல்லது. \"slow database queries की problem solve की\" பண்ணும்போது உங்க team கூட எப்படி சேர்ந்து வேலை செஞ்சீங்க?",
+      "dispatch_id": 17
+    },
+    {
+      "at": 88039,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 163,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "follow_up",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 24,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 7,
+      "state_revision": 42,
+      "question_text": "ரொம்ப நல்லது. \"slow database queries की problem solve की\" பண்ணும்போது உங்க team கூட எப்படி சேர்ந்து வேலை செஞ்சீங்க?",
+      "interaction_state": "speaking",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 88039.30000000075,
+      "v": 1,
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "seq": 164,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "follow_up",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 24,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 7,
+      "state_revision": 42,
+      "question_text": "ரொம்ப நல்லது. \"slow database queries की problem solve की\" பண்ணும்போது உங்க team கூட எப்படி சேர்ந்து வேலை செஞ்சீங்க?",
+      "interaction_state": "speaking",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    }
+  ],
+  "failure_events": [],
+  "outbound": [
+    {
+      "at": 493.80000000074506,
+      "v": 1,
+      "type": "interview.ready",
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "capabilities": [
+        "interaction_controls_v1"
+      ]
+    },
+    {
+      "at": 17087.300000000745,
+      "v": 1,
+      "type": "interview.command",
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "command_id": 1,
+      "prompt_revision": 2,
+      "action": "explain"
+    },
+    {
+      "at": 35377.5,
+      "v": 1,
+      "type": "interview.command",
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "command_id": 2,
+      "prompt_revision": 4,
+      "action": "thinking"
+    },
+    {
+      "at": 88219.40000000224,
+      "v": 1,
+      "type": "interview.command",
+      "session_id": "bee17d1ad61143d685c40e39785f31e7",
+      "connection_generation": 1,
+      "command_id": 3,
+      "prompt_revision": 7,
+      "action": "end"
+    }
+  ],
+  "notice": "Playback is blocked. Press Enable speaker to resume audio.",
+  "page_errors": [],
+  "console_errors": []
+}

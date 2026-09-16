@@ -6,6 +6,7 @@ import json
 import httpx
 import pytest
 
+from demo.interview.languages import TTS_LANGUAGES
 from demo.interview.sarvam_tts import InterviewSarvamTTSService
 from demo.tests.test_rumik_tts import _envelope, _submit, _yield_tasks
 from pipecat.frames.frames import (
@@ -42,7 +43,38 @@ class Chunks(httpx.AsyncByteStream):
 
 
 @pytest.mark.asyncio
-@pytest.mark.parametrize("language", ["en-IN", "hi-IN"])
+async def test_opening_and_follow_up_keep_the_selected_speech_pace():
+    """Successive replies retain the session's speed and PCM clock."""
+    requests = []
+
+    async def handler(request):
+        requests.append(json.loads(request.content))
+        return httpx.Response(
+            200, content=b"\x01\x00" * 2400, headers={"content-type": "audio/pcm"}
+        )
+
+    tts = InterviewSarvamTTSService(
+        api_key="test-key",
+        language_code="ta-IN",
+        pace=0.85,
+        current_playback_epoch=lambda: 4,
+        http_transport=httpx.MockTransport(handler),
+    )
+    down, _ = await run_test(
+        tts,
+        frames_to_send=_envelope("வணக்கம். நாம பேசலாம்.")
+        + _envelope('"team" சொன்னீங்க. எப்படி help பண்ணீங்க?', dispatch=24),
+    )
+    assert len(requests) == 2
+    assert [request["pace"] for request in requests] == [0.85, 0.85]
+    assert all(request["speech_sample_rate"] == 24000 for request in requests)
+    pcm = [frame for frame in down if isinstance(frame, TTSAudioRawFrame)]
+    assert len(pcm) == 2
+    assert all(frame.sample_rate == 24000 for frame in pcm)
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize("language", TTS_LANGUAGES)
 async def test_sarvam_streams_pcm_and_recovers_from_http_error(language):
     """Explicit model/auth/codec settings reach HTTP, with incremental PCM output."""
     requests = []
@@ -62,6 +94,7 @@ async def test_sarvam_streams_pcm_and_recovers_from_http_error(language):
     tts = InterviewSarvamTTSService(
         api_key="test-key",
         language_code=language,
+        pace=1.2,
         current_playback_epoch=lambda: 4,
         http_transport=httpx.MockTransport(handler),
     )
@@ -77,6 +110,7 @@ async def test_sarvam_streams_pcm_and_recovers_from_http_error(language):
     assert requests[1]["model"] == "bulbul:v3"
     assert requests[1]["output_audio_codec"] == "linear16"
     assert requests[1]["speech_sample_rate"] == 24000
+    assert requests[1]["pace"] == 1.2
     assert tts.last_metrics.first_audio_seconds >= 0
     assert tts._client.is_closed
     assert not tts._task_manager.current_tasks()

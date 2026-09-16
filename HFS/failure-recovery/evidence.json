@@ -1,0 +1,58 @@
+{
+  "commit": "6b942c0eb035634da03c8e871668f4cf411b43c5",
+  "scope": "planning-time source snapshot; no provider or microphone calls",
+  "files": {
+    "demo/interview/__init__.py": "e7d82f1271f2e5b5e472fc4734ea5d43a5fadb1250c33c773e03d1906b90b66b",
+    "demo/interview/browser_contract.py": "85e95860ffb34f88704e5a2985904dde69a8020dfc671d6d13796ad9ff865b4d",
+    "demo/interview/browser_stt.py": "68239e87150ea7136d3d4e2c60eb2fab43df5b428d91c01baf5b43b0336fbcfb",
+    "demo/interview/coaching.py": "1af2d0f88fa0c1e26f31f4817fd7e6431446c2ef778034ec321fa36cfea62f8e",
+    "demo/interview/config.py": "f7bf92c80b6584ae3608a804539494a22ee68ff3463b6004af5bff18d37451d3",
+    "demo/interview/contracts.py": "b58b63e68afe8c13c71c08db303a4813f3ddac6cfbe26087de5068cb2e214908",
+    "demo/interview/controller.py": "bebc4ff0187c4a156a338e0714741add466e63d17841fa400114084098f0db1c",
+    "demo/interview/eval_bot.py": "bf2ce4694aca4de414cb65bf4ade25cc21483206293915600c2d663e9936e6f4",
+    "demo/interview/google_llm.py": "632795099f37f29446a44942e1bc1037f3a300d01c0dc45ff1f9f6fecf57e855",
+    "demo/interview/interaction.py": "5b845419a771e57fa04b72dd1e38351d690a055fecfed527420d9cc231cf20a0",
+    "demo/interview/interaction_copy.py": "8bf66009d047a53439ac0ad2569c4e7aa10d4fdc2f30e46dfe258418ecb47f9d",
+    "demo/interview/ledger.py": "3f16cff6b145e80b02f13f401e29808ca65bb2e354289920a998a2cd3a41050f",
+    "demo/interview/pipeline.py": "a99b15620dcb35116dbbdaa2f67922985c84acc6ef16084481e3b7990bd708cd",
+    "demo/interview/providers.py": "da0cc585e3dabcff9a4eff0f0456aa1fe67782aafe0cb21aeb44690b3d845832",
+    "demo/interview/reply_guard.py": "72efbd5680cfdd8710c6658e48684c172cc36ab435ed551fc228f5a095c86f9d",
+    "demo/interview/rumik.py": "b933fa7dbcba1eb42414564850d197bf1664fff925c40489b3619ba706b75e82",
+    "demo/interview/sarvam_events.py": "c43465a1a73933918fdf3bebe923a74817b8763e1db74757ccb5e8b1c93ae57f",
+    "demo/interview/sarvam_tts.py": "3c9cec90347f55d5b120b75a7bf146c8c93d1ef273b69828c7dc38fffe4e1b62",
+    "demo/interview/server.py": "796e8442e6b7f7693bbf845b5aa6a7140e94369c547f7ea0ddeefa7ee20b8792",
+    "demo/interview/session.py": "7b72b90218ef92f6e4e88215650f6d645efc9d3bba60252e4903e0f42ca77314",
+    "demo/interview/transcript_gate.py": "a1921d2ffa4f83c13f175fc8d1a8dd9a6030ac4b8799682ab3c0fd8a03c08baa",
+    "demo/interview/turn_coordinator.py": "ac28094c49305121d22fa91f31a5036b110a201adc84c81761b2afcc5d52f79a",
+    "demo/interview/turn_policy.py": "25ff6eceada9c7e1f0276212d9dada376c59f2de03c9dfd60cf6df9850eeb26b",
+    "demo/interview/voice_controls.py": "102239a85fd6b9a4466876a3ee5010c256a217b09180ce39209e9a72e1c269b0",
+    "demo/interview/web/app.js": "9dc98c604613ceacfbaa2728103d2d5e16cfb5a0ae74eb35da6b90c4009017e7",
+    "demo/interview/web/index.html": "17f094de6a20ba7c53a1c3d36620585da43937cac1c3099a7d967e16e78ed340",
+    "demo/interview/web/styles.css": "35a5c02c33cdd841f4a8cbf5a6bbc7258da9c940688a908eec52522861ee3ae3"
+  },
+  "validation": {
+    "focused_tests": {
+      "passed": 24,
+      "skipped": 0,
+      "suite": [
+        "test_sarvam_tts.py",
+        "test_browser_stt.py",
+        "test_interaction_repair.py"
+      ]
+    },
+    "scenario_artifact_check": {
+      "parsed": 13,
+      "status": "PASS"
+    },
+    "live_provider": "NOT RUN",
+    "physical_audio": "NOT RUN"
+  },
+  "hf_revision": "16d7f98ff712fb082d53497937f5456667c84680",
+  "concurrent_work_note": "Other ongoing demo edits observed. Tests are a point-in-time observation; no before/after source stability check was enforced.",
+  "changed_since_snapshot": [
+    "demo/interview/coaching.py",
+    "demo/interview/pipeline.py",
+    "demo/interview/session.py",
+    "demo/interview/web/app.js"
+  ]
+}

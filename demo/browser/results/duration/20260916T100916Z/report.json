@@ -1,0 +1,411 @@
+{
+  "passed": true,
+  "duration_minutes": 5,
+  "checkpoints": [
+    {
+      "status": "Listening",
+      "ended": false,
+      "elapsed_seconds": 30.00429999999702
+    },
+    {
+      "status": "Listening",
+      "ended": false,
+      "elapsed_seconds": 60.00419999999553
+    },
+    {
+      "status": "Listening",
+      "ended": false,
+      "elapsed_seconds": 90.00419999999554
+    },
+    {
+      "status": "Listening",
+      "ended": false,
+      "elapsed_seconds": 120.0045
+    },
+    {
+      "status": "Listening",
+      "ended": false,
+      "elapsed_seconds": 150.003299999997
+    },
+    {
+      "status": "Listening",
+      "ended": false,
+      "elapsed_seconds": 180.0028999999985
+    },
+    {
+      "status": "Listening",
+      "ended": false,
+      "elapsed_seconds": 210.00219999999553
+    },
+    {
+      "status": "Listening",
+      "ended": false,
+      "elapsed_seconds": 240.003
+    },
+    {
+      "status": "Listening",
+      "ended": false,
+      "elapsed_seconds": 270.0025
+    },
+    {
+      "status": "Listening",
+      "ended": false,
+      "elapsed_seconds": 295.0033999999985
+    }
+  ],
+  "elapsed_seconds": 300.00229999999704,
+  "media_closed": true,
+  "restart_visible": true,
+  "page_errors": [],
+  "events": [
+    {
+      "at": 339.70000000298023,
+      "v": 1,
+      "session_id": "454832a4aca94c9f93e32e222fac0906",
+      "connection_generation": 1,
+      "seq": 1,
+      "type": "interview.status",
+      "status": "Reconnecting"
+    },
+    {
+      "at": 372.70000000298023,
+      "v": 1,
+      "session_id": "454832a4aca94c9f93e32e222fac0906",
+      "connection_generation": 1,
+      "seq": 2,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 1,
+      "state_revision": 1,
+      "interaction_state": "generating",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 2312.39999999851,
+      "v": 1,
+      "session_id": "454832a4aca94c9f93e32e222fac0906",
+      "connection_generation": 1,
+      "seq": 3,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 1,
+      "state_revision": 2,
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 7076.79999999702,
+      "v": 1,
+      "session_id": "454832a4aca94c9f93e32e222fac0906",
+      "connection_generation": 1,
+      "seq": 4,
+      "type": "interview.reply",
+      "text": "வணக்கம்! நீங்க என்ன வேலை செய்றீங்க அல்லது உங்க நாளை எப்படி செலவிடுறீங்க?",
+      "dispatch_id": 1
+    },
+    {
+      "at": 7077,
+      "v": 1,
+      "session_id": "454832a4aca94c9f93e32e222fac0906",
+      "connection_generation": 1,
+      "seq": 5,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 3,
+      "question_text": "வணக்கம்! நீங்க என்ன வேலை செய்றீங்க அல்லது உங்க நாளை எப்படி செலவிடுறீங்க?",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 7115,
+      "v": 1,
+      "session_id": "454832a4aca94c9f93e32e222fac0906",
+      "connection_generation": 1,
+      "seq": 6,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 4,
+      "question_text": "வணக்கம்! நீங்க என்ன வேலை செய்றீங்க அல்லது உங்க நாளை எப்படி செலவிடுறீங்க?",
+      "interaction_state": "listening",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 90406.79999999702,
+      "v": 1,
+      "session_id": "454832a4aca94c9f93e32e222fac0906",
+      "connection_generation": 1,
+      "seq": 7,
+      "type": "interview.command_result",
+      "prompt_revision": 2,
+      "command_id": 1,
+      "outcome": "applied",
+      "code": "ok"
+    },
+    {
+      "at": 90407.10000000149,
+      "v": 1,
+      "session_id": "454832a4aca94c9f93e32e222fac0906",
+      "connection_generation": 1,
+      "seq": 8,
+      "type": "interview.status",
+      "status": "Giving you time",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 1,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 5,
+      "question_text": "வணக்கம்! நீங்க என்ன வேலை செய்றீங்க அல்லது உங்க நாளை எப்படி செலவிடுறீங்க?",
+      "interaction_state": "thinking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 90407.39999999851,
+      "v": 1,
+      "session_id": "454832a4aca94c9f93e32e222fac0906",
+      "connection_generation": 1,
+      "seq": 9,
+      "type": "interview.interruption",
+      "playback_epoch": 2,
+      "prompt_revision": 2,
+      "state_revision": 6,
+      "question_text": "வணக்கம்! நீங்க என்ன வேலை செய்றீங்க அல்லது உங்க நாளை எப்படி செலவிடுறீங்க?",
+      "interaction_state": "thinking",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 180398.1000000015,
+      "v": 1,
+      "session_id": "454832a4aca94c9f93e32e222fac0906",
+      "connection_generation": 1,
+      "seq": 10,
+      "type": "interview.command_result",
+      "prompt_revision": 2,
+      "command_id": 2,
+      "outcome": "applied",
+      "code": "ok"
+    },
+    {
+      "at": 180398.20000000298,
+      "v": 1,
+      "session_id": "454832a4aca94c9f93e32e222fac0906",
+      "connection_generation": 1,
+      "seq": 11,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 3,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 7,
+      "question_text": "வணக்கம்! நீங்க என்ன வேலை செய்றீங்க அல்லது உங்க நாளை எப்படி செலவிடுறீங்க?",
+      "interaction_state": "generating",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 180398.20000000298,
+      "v": 1,
+      "session_id": "454832a4aca94c9f93e32e222fac0906",
+      "connection_generation": 1,
+      "seq": 12,
+      "type": "interview.interruption",
+      "playback_epoch": 4,
+      "prompt_revision": 2,
+      "state_revision": 8,
+      "question_text": "வணக்கம்! நீங்க என்ன வேலை செய்றீங்க அல்லது உங்க நாளை எப்படி செலவிடுறீங்க?",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 181117.1000000015,
+      "v": 1,
+      "session_id": "454832a4aca94c9f93e32e222fac0906",
+      "connection_generation": 1,
+      "seq": 13,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 4,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 9,
+      "question_text": "வணக்கம்! நீங்க என்ன வேலை செய்றீங்க அல்லது உங்க நாளை எப்படி செலவிடுறீங்க?",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 185759.6000000015,
+      "v": 1,
+      "session_id": "454832a4aca94c9f93e32e222fac0906",
+      "connection_generation": 1,
+      "seq": 14,
+      "type": "interview.reply",
+      "text": "வணக்கம்! நீங்க என்ன வேலை செய்றீங்க அல்லது உங்க நாளை எப்படி செலவிடுறீங்க?",
+      "dispatch_id": 2
+    },
+    {
+      "at": 185759.70000000298,
+      "v": 1,
+      "session_id": "454832a4aca94c9f93e32e222fac0906",
+      "connection_generation": 1,
+      "seq": 15,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 4,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 3,
+      "state_revision": 10,
+      "question_text": "வணக்கம்! நீங்க என்ன வேலை செய்றீங்க அல்லது உங்க நாளை எப்படி செலவிடுறீங்க?",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 185795.70000000298,
+      "v": 1,
+      "session_id": "454832a4aca94c9f93e32e222fac0906",
+      "connection_generation": 1,
+      "seq": 16,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 4,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 3,
+      "state_revision": 11,
+      "question_text": "வணக்கம்! நீங்க என்ன வேலை செய்றீங்க அல்லது உங்க நாளை எப்படி செலவிடுறீங்க?",
+      "interaction_state": "listening",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 300374,
+      "v": 1,
+      "session_id": "454832a4aca94c9f93e32e222fac0906",
+      "connection_generation": 1,
+      "seq": 17,
+      "type": "interview.ended",
+      "phase": "ended",
+      "question_count": 5,
+      "prompt_revision": 3,
+      "state_revision": 12,
+      "question_text": "வணக்கம்! நீங்க என்ன வேலை செய்றீங்க அல்லது உங்க நாளை எப்படி செலவிடுறீங்க?",
+      "interaction_state": "ended",
+      "permitted_actions": []
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "name": "demo-or-experiment",
+  "config": {
+    "fixture": "sha256:",
+    "model": "",
+    "prompt": "sha256:",
+    "voice": "",
+    "language": "en|ta|hi|tanglish|hinglish",
+    "device": "headset|laptop-speakers",
+    "endpointing": {},
+    "validation_policy": {}
+  },
+  "functional_qualification": {"status": "pass|fail|not_run"},
+  "cancellation_qualification": {"status": "pass|fail|not_run"},
+  "ratings": [{"language": "en", "rater": "owner|speaker-1|speaker-2", "naturalness": 4, "control": 4}],
+  "turns": [{
+    "turn_id": "session-1-turn-1", "session_id": "session-1", "status": "pass|fail|not_run",
+    "capture": {
+      "synchronized": true, "sample_rate": 16000, "answer_end_sample": 0,
+      "first_audible_sample": 0, "interrupt_start_sample": 0, "last_old_audible_sample": 0
+    }
+  }]
+}

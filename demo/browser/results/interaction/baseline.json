@@ -1,0 +1,37 @@
+{
+  "baseline_commit": "6b942c0eb",
+  "utc": "2026-09-16T06:23:09.231162+00:00",
+  "passed": true,
+  "scope": "Chromium UI, synthetic microphone, real WebRTC and live providers",
+  "page_errors": [],
+  "timing_rows": [
+    {
+      "final_caption_at_ms": 26016.699999999255,
+      "final_to_reply_ms": 19874.8,
+      "final_to_server_speaking_ms": 20270.7
+    },
+    {
+      "final_caption_at_ms": 28090.39999999851,
+      "final_to_reply_ms": 17801.1,
+      "final_to_server_speaking_ms": 18197.0
+    },
+    {
+      "final_caption_at_ms": 29799.5,
+      "final_to_reply_ms": 16092.0,
+      "final_to_server_speaking_ms": 16487.9
+    },
+    {
+      "final_caption_at_ms": 32658.199999999255,
+      "final_to_reply_ms": 13233.3,
+      "final_to_server_speaking_ms": 13629.2
+    },
+    {
+      "final_caption_at_ms": 34688.29999999702,
+      "final_to_reply_ms": 11203.2,
+      "final_to_server_speaking_ms": 11599.1
+    }
+  ],
+  "physical_microphone": "NOT RUN",
+  "audible_p95": "NOT MEASURED",
+  "timing_note": "Client event arrival deltas; server Speaking is not proof of physical audibility."
+}

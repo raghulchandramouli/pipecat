@@ -1,0 +1,11 @@
+name: interaction_recovery
+turns:
+  - user: "I missed part of the question; please repeat it."
+    expect:
+      - event: response
+        eval: "repeats the current question or gives a clear recovery invitation"
+  - user: "Here is my answer after the repeat: I clarified the requirements first."
+    expect:
+      - event: response
+        eval: "acknowledges the recovered answer and keeps the interview moving"
+

@@ -3,6 +3,9 @@
 from __future__ import annotations
 
 import asyncio
+import json
+import time
+from collections import OrderedDict, deque
 from contextlib import asynccontextmanager
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -22,11 +25,15 @@ from pipecat.transports.smallwebrtc.request_handler import (
 )
 from pipecat.workers.runner import WorkerRunner
 
-from .browser_contract import BrowserInterviewSetup, InterviewBrowserEvent
+from .browser_contract import (
+    BrowserInterviewCommand,
+    BrowserInterviewSetup,
+    BrowserReady,
+    InterviewBrowserEvent,
+)
 from .pipeline import (
     BrowserEventEmitter,
     InterviewPipelineFactory,
-    LiveInterviewPipelineFactory,
     ManagedInterview,
     create_smallwebrtc_transport,
     default_live_config,
@@ -55,6 +62,19 @@ class _SessionRecord:
     connection: Any | None = None
     ready: bool = False
     closed: bool = False
+    connection_generation: int = 1
+    negotiated_capabilities: frozenset[str] = field(default_factory=frozenset)
+    command_cache: OrderedDict[int, tuple[str, dict[str, Any]]] = field(default_factory=OrderedDict)
+    command_highwater: int = 0
+    command_times: deque[float] = field(default_factory=deque)
+    command_lock: asyncio.Lock = field(default_factory=asyncio.Lock)
+
+
+_INTERACTION_CAPABILITY = "interaction_controls_v1"
+_COMMAND_CACHE_SIZE = 128
+_COMMAND_RATE_LIMIT = 5
+_COMMAND_WINDOW_SECONDS = 1.0
+_COMMAND_MAX_BYTES = 2_048
 
 
 @dataclass
@@ -81,13 +101,16 @@ def create_interview_app(*, factory: InterviewPipelineFactory | None = None) -> 
 
     Args:
         factory: Optional injected factory for deterministic tests. Omitting it
-            constructs the real Sarvam, Gemini, and Bulbul factory from backend
-            environment variables.
+            constructs the Gemini native audio factory from backend environment
+            variables.
 
     Returns:
         A FastAPI application serving public setup, SDP, ICE, and teardown routes.
     """
-    factory = factory or LiveInterviewPipelineFactory.from_environment(default_live_config())
+    if factory is None:
+        from .gemini_conversation import GeminiConversationPipelineFactory
+
+        factory = GeminiConversationPipelineFactory.from_environment(default_live_config())
     state = _ServerState(factory=factory)
 
     @asynccontextmanager
@@ -157,9 +180,16 @@ def create_interview_app(*, factory: InterviewPipelineFactory | None = None) -> 
                 output = transport.output()
                 await output.send_message(OutputTransportMessageFrame(message))
 
-            emitter = BrowserEventEmitter(session_id=session_id, connection_generation=1, send=send)
+            emitter = BrowserEventEmitter(
+                session_id=session_id,
+                connection_generation=record.connection_generation,
+                send=send,
+            )
 
             async def emit(event: InterviewBrowserEvent) -> None:
+                if event.type == "interview.command_result" and not _controls_negotiated(record):
+                    return
+                event = _event_for_capabilities(record, event)
                 if event.status is not None:
                     record.status = event.status
                 if event.type == "interview.caption" and event.text is not None:
@@ -187,14 +217,66 @@ def create_interview_app(*, factory: InterviewPipelineFactory | None = None) -> 
 
                 @transport.event_handler("on_app_message")
                 async def app_message(_transport, message, _client) -> None:
-                    if (
-                        isinstance(message, dict)
-                        and message.get("type") == "interview.ready"
-                        and not record.ready
-                        and not record.closed
-                    ):
+                    if not isinstance(message, dict) or record.closed:
+                        return
+                    message_type = message.get("type")
+                    if message_type == "interview.ready" and not record.ready:
+                        capability_fallback = False
+                        try:
+                            ready_message = BrowserReady.model_validate(message)
+                        except ValueError:
+                            try:
+                                ready_message = BrowserReady.model_validate(
+                                    {
+                                        key: value
+                                        for key, value in message.items()
+                                        if key != "capabilities"
+                                    }
+                                )
+                            except ValueError:
+                                await emit(
+                                    InterviewBrowserEvent(
+                                        type="interview.error",
+                                        message="Browser readiness could not be verified. Reload and try again.",
+                                        recoverable=True,
+                                    )
+                                )
+                                return
+                            capability_fallback = True
+                        if (
+                            ready_message.session_id is not None
+                            and ready_message.session_id != session_id
+                        ):
+                            await emit(
+                                InterviewBrowserEvent(
+                                    type="interview.error",
+                                    message="Browser readiness belongs to another interview. Reload and try again.",
+                                    recoverable=True,
+                                )
+                            )
+                            return
+                        record.negotiated_capabilities = frozenset(
+                            capability
+                            for capability in ready_message.capabilities or ()
+                            if capability == _INTERACTION_CAPABILITY
+                        )
+                        if capability_fallback:
+                            await emit(
+                                InterviewBrowserEvent(
+                                    type="interview.error",
+                                    message="Browser controls are unavailable. The interview will continue by voice.",
+                                    recoverable=True,
+                                )
+                            )
                         record.ready = True
                         await managed.ready()
+                    elif message_type == "interview.command":
+                        await _handle_browser_command(
+                            record,
+                            session_id=session_id,
+                            message=message,
+                            emit=emit,
+                        )
 
                 @transport.event_handler("on_client_disconnected")
                 async def client_disconnected(_transport, _client) -> None:
@@ -262,8 +344,10 @@ def create_interview_app(*, factory: InterviewPipelineFactory | None = None) -> 
         record = _record_or_404(state, session_id)
         session = record.managed.session if record.managed is not None else None
         question = session.controller.current_question if session is not None else None
+        snapshot = _interaction_snapshot(record)
         return {
             "session_id": session_id,
+            "connection_generation": record.connection_generation,
             "status": record.status,
             "phase": session.controller.phase.value if session is not None else "connecting",
             "question_index": question.index + 1 if question is not None else 0,
@@ -271,6 +355,8 @@ def create_interview_app(*, factory: InterviewPipelineFactory | None = None) -> 
             if session is not None
             else len(record.setup.rubric),
             "provisional_caption": record.caption,
+            "capabilities": sorted(record.negotiated_capabilities),
+            **snapshot,
         }
 
     @app.delete("/api/sessions/{session_id}", status_code=204)
@@ -290,6 +376,244 @@ def _record_or_404(state: _ServerState, session_id: str) -> _SessionRecord:
     if record is None:
         raise HTTPException(status_code=404, detail="interview session not found")
     return record
+
+
+def _controls_negotiated(record: _SessionRecord) -> bool:
+    """Return whether this established data channel may use interaction controls."""
+    return _INTERACTION_CAPABILITY in record.negotiated_capabilities
+
+
+def _event_for_capabilities(
+    record: _SessionRecord, event: InterviewBrowserEvent
+) -> InterviewBrowserEvent:
+    """Keep the v1 event surface unchanged until the client has negotiated controls."""
+    if _controls_negotiated(record):
+        if event.type == "interview.status":
+            return event.model_copy(update={"capabilities": [_INTERACTION_CAPABILITY]})
+        return event
+    return event.model_copy(
+        update={
+            "capabilities": None,
+            "prompt_revision": None,
+            "state_revision": None,
+            "question_text": None,
+            "interaction_state": None,
+            "permitted_actions": None,
+            "recovery_token": None,
+        }
+    )
+
+
+def _interaction_snapshot(record: _SessionRecord) -> dict[str, Any]:
+    """Return a read-only interaction view without borrowing data-channel sequence numbers."""
+    session = record.managed.session if record.managed is not None else None
+    snapshot_getter = getattr(session, "interaction_snapshot", None)
+    if not callable(snapshot_getter):
+        return {
+            "prompt_revision": 0,
+            "state_revision": 0,
+            "question_text": None,
+            "interaction_state": "connecting",
+            "permitted_actions": [],
+            "recovery_token": None,
+        }
+    snapshot = snapshot_getter()
+    return {
+        "prompt_revision": snapshot["prompt_revision"],
+        "state_revision": snapshot["state_revision"],
+        "question_text": snapshot["question_text"],
+        "interaction_state": snapshot["interaction_state"],
+        "permitted_actions": snapshot["permitted_actions"],
+        "recovery_token": snapshot["recovery_token"],
+    }
+
+
+async def _handle_browser_command(
+    record: _SessionRecord,
+    *,
+    session_id: str,
+    message: dict[str, Any],
+    emit,
+) -> None:
+    """Validate, serialize, apply, and acknowledge one browser action.
+
+    The cache stores semantic results rather than data-channel envelopes so a resend
+    gets a fresh server sequence number and cannot be dropped as an old event.
+    """
+    if not _controls_negotiated(record) or record.closed or record.managed is None:
+        return
+    try:
+        encoded = json.dumps(message, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
+    except (TypeError, ValueError):
+        return
+    if len(encoded) > _COMMAND_MAX_BYTES:
+        await _emit_rejected_command(message, emit, record, "payload_too_large")
+        return
+    try:
+        command = BrowserInterviewCommand.model_validate(message)
+    except ValueError:
+        await _emit_rejected_command(message, emit, record, "invalid_command")
+        return
+
+    canonical = json.dumps(
+        command.model_dump(mode="json", exclude_none=True),
+        ensure_ascii=False,
+        sort_keys=True,
+        separators=(",", ":"),
+    )
+    async with record.command_lock:
+        cached = record.command_cache.get(command.command_id)
+        if cached is not None:
+            cached_payload, result = cached
+            if canonical == cached_payload:
+                await emit(InterviewBrowserEvent(**result))
+            else:
+                await _emit_command_result(
+                    emit,
+                    record,
+                    command.command_id,
+                    outcome="rejected",
+                    code="command_id_conflict",
+                )
+            return
+        if command.command_id <= record.command_highwater:
+            await _emit_command_result(
+                emit,
+                record,
+                command.command_id,
+                outcome="rejected",
+                code="command_id_expired",
+            )
+            return
+        if command.session_id != session_id:
+            await _emit_command_result(
+                emit, record, command.command_id, outcome="rejected", code="foreign_session"
+            )
+            return
+        if command.connection_generation != record.connection_generation:
+            await _emit_command_result(
+                emit, record, command.command_id, outcome="rejected", code="foreign_connection"
+            )
+            return
+
+        record.command_highwater = command.command_id
+        snapshot = _interaction_snapshot(record)
+        if command.prompt_revision != snapshot["prompt_revision"]:
+            result = _command_result(
+                command.command_id,
+                outcome="rejected",
+                code="stale_prompt",
+                prompt_revision=snapshot["prompt_revision"],
+            )
+        elif command.action not in snapshot["permitted_actions"]:
+            result = _command_result(
+                command.command_id,
+                outcome="rejected",
+                code="unavailable",
+                prompt_revision=snapshot["prompt_revision"],
+            )
+        elif command.action != "end" and not _within_command_rate(record):
+            result = _command_result(
+                command.command_id,
+                outcome="rejected",
+                code="rate_limited",
+                prompt_revision=snapshot["prompt_revision"],
+            )
+        else:
+            try:
+                record.managed.session.apply_interaction_action(
+                    command.action, recovery_token=command.recovery_token
+                )
+            except ValueError:
+                result = _command_result(
+                    command.command_id,
+                    outcome="rejected",
+                    code="unavailable",
+                    prompt_revision=snapshot["prompt_revision"],
+                )
+            except Exception:
+                result = _command_result(
+                    command.command_id,
+                    outcome="failed",
+                    code="action_failed",
+                    prompt_revision=snapshot["prompt_revision"],
+                )
+            else:
+                result = _command_result(
+                    command.command_id,
+                    outcome="applied",
+                    code="ok",
+                    prompt_revision=_interaction_snapshot(record)["prompt_revision"],
+                )
+        _cache_command_result(record, command.command_id, canonical, result)
+        await emit(InterviewBrowserEvent(**result))
+
+
+def _within_command_rate(record: _SessionRecord) -> bool:
+    """Record at most five new non-end actions in each rolling one-second window."""
+    now = time.monotonic()
+    while record.command_times and now - record.command_times[0] >= _COMMAND_WINDOW_SECONDS:
+        record.command_times.popleft()
+    if len(record.command_times) >= _COMMAND_RATE_LIMIT:
+        return False
+    record.command_times.append(now)
+    return True
+
+
+def _command_result(
+    command_id: int,
+    *,
+    outcome: str,
+    code: str,
+    prompt_revision: object,
+) -> dict[str, Any]:
+    """Build the cacheable semantic portion of a command result."""
+    return {
+        "type": "interview.command_result",
+        "command_id": command_id,
+        "outcome": outcome,
+        "code": code,
+        "prompt_revision": prompt_revision,
+    }
+
+
+def _cache_command_result(
+    record: _SessionRecord, command_id: int, canonical: str, result: dict[str, Any]
+) -> None:
+    """Keep the latest bounded command outcomes while retaining their high-water mark."""
+    record.command_cache[command_id] = (canonical, result)
+    while len(record.command_cache) > _COMMAND_CACHE_SIZE:
+        record.command_cache.popitem(last=False)
+
+
+async def _emit_command_result(
+    emit,
+    record: _SessionRecord,
+    command_id: int,
+    *,
+    outcome: str,
+    code: str,
+) -> None:
+    """Emit a non-cacheable rejection for a request that never reached ingress."""
+    await emit(
+        InterviewBrowserEvent(
+            **_command_result(
+                command_id,
+                outcome=outcome,
+                code=code,
+                prompt_revision=_interaction_snapshot(record)["prompt_revision"],
+            )
+        )
+    )
+
+
+async def _emit_rejected_command(
+    message: dict[str, Any], emit, record: _SessionRecord, code: str
+) -> None:
+    """Acknowledge malformed commands only when their ID is itself a safe integer."""
+    command_id = message.get("command_id")
+    if isinstance(command_id, int) and not isinstance(command_id, bool) and command_id > 0:
+        await _emit_command_result(emit, record, command_id, outcome="rejected", code=code)
 
 
 async def _remove_session(

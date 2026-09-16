@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "turns": [
+    {
+      "prompt": "What is the capital of France?",
+      "passed": true,
+      "audio_bytes": 65536
+    },
+    {
+      "prompt": "Tell me a joke about robots.",
+      "passed": true,
+      "audio_bytes": 98304
+    }
+  ],
+  "source_hashes": {
+    "speech_to_speech/__init__.py": "e2681a8c90f551cdbe876a6d9de63af97eac2347890dd14bc0ab2e9228766484",
+    "speech_to_speech/sarvam_stt.py": "d022bb35fb0e44a1dd934702dd70137285690c5444b27b42e022ae0e5ff7bbd6",
+    "speech_to_speech/comparison.py": "b5d42f8a0a831521c24172429fd840f347941489c981bd05db75ad5156adbddb",
+    "speech_to_speech/launcher.py": "5bf8c50f7bf57ac526f586baf4e4014c498fe6791e013112ae3ede4f5a185277",
+    "speech_to_speech/__main__.py": "51ce8c8f58fd21e2f1c329d7c3042c862c510a19a7392fc729993eb5c3351a10",
+    "speech_to_speech/sarvam_tts.py": "d0089dccaa3d69b746586fc540a5942722847e72f17412e83807996722fcfcdc",
+    "speech_to_speech/smoke.py": "dc489ff50b0d6e2138a8ea67f9144e53c24d2092abc4a2dd4b5c407aee5407b6"
+  }
+}

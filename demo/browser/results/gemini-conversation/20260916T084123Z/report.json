@@ -1,0 +1,565 @@
+{
+  "model": "gemini-3.8-live",
+  "passed": false,
+  "scope": "Live WebRTC with synthetic microphone audio; audio receipt is not a listening assessment.",
+  "stage": "explain",
+  "error": "Page.wait_for_function: Timeout 60000ms exceeded.",
+  "events": [
+    {
+      "at": 2034.6000000014901,
+      "v": 1,
+      "session_id": "d0e9059495ef48aa9a78810a65b62491",
+      "connection_generation": 1,
+      "seq": 1,
+      "type": "interview.status",
+      "status": "Reconnecting"
+    },
+    {
+      "at": 2085.5,
+      "v": 1,
+      "session_id": "d0e9059495ef48aa9a78810a65b62491",
+      "connection_generation": 1,
+      "seq": 2,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 1,
+      "state_revision": 1,
+      "question_text": "Practice prompt: Tell me about a time you worked with others to achieve a shared goal.",
+      "interaction_state": "generating",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 2179.39999999851,
+      "label": "rtvi-ai",
+      "type": "user-llm-text",
+      "data": {
+        "text": "Greet the candidate warmly, then ask this first question slowly. The current rubric question is: Tell me about a time you worked with others to achieve a shared goal."
+      }
+    },
+    {
+      "at": 4406.5,
+      "label": "rtvi-ai",
+      "type": "bot-tts-started"
+    },
+    {
+      "at": 4406.5,
+      "label": "rtvi-ai",
+      "type": "bot-llm-started"
+    },
+    {
+      "at": 4406.5,
+      "label": "rtvi-ai",
+      "type": "bot-llm-text",
+      "data": {
+        "text": "Vanakkam! Ungala "
+      }
+    },
+    {
+      "at": 4406.5,
+      "label": "rtvi-ai",
+      "type": "bot-transcription",
+      "data": {
+        "text": "Vanakkam! Ungala "
+      }
+    },
+    {
+      "at": 4406.69999999553,
+      "v": 1,
+      "session_id": "d0e9059495ef48aa9a78810a65b62491",
+      "connection_generation": 1,
+      "seq": 3,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 1,
+      "state_revision": 2,
+      "question_text": "Practice prompt: Tell me about a time you worked with others to achieve a shared goal.",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 4407.89999999851,
+      "label": "rtvi-ai",
+      "type": "bot-started-speaking"
+    },
+    {
+      "at": 4464.60000000149,
+      "label": "rtvi-ai",
+      "type": "bot-output",
+      "data": {
+        "text": "Vanakkam! Ungala ",
+        "aggregated_by": "sentence",
+        "segment_id": 174,
+        "spoken": true,
+        "will_be_spoken": false
+      }
+    },
+    {
+      "at": 4464.60000000149,
+      "label": "rtvi-ai",
+      "type": "bot-tts-text",
+      "data": {
+        "text": "Vanakkam! Ungala "
+      }
+    },
+    {
+      "at": 4748.39999999851,
+      "label": "rtvi-ai",
+      "type": "bot-llm-text",
+      "data": {
+        "text": "meet pannathula"
+      }
+    },
+    {
+      "at": 4888.5,
+      "label": "rtvi-ai",
+      "type": "bot-llm-text",
+      "data": {
+        "text": " romba santhosam."
+      }
+    },
+    {
+      "at": 4888.5,
+      "label": "rtvi-ai",
+      "type": "bot-transcription",
+      "data": {
+        "text": "meet pannathula romba santhosam."
+      }
+    },
+    {
+      "at": 5156.5,
+      "label": "rtvi-ai",
+      "type": "bot-llm-text",
+      "data": {
+        "text": " Modhala,"
+      }
+    },
+    {
+      "at": 5350.10000000149,
+      "label": "rtvi-ai",
+      "type": "bot-llm-text",
+      "data": {
+        "text": " namma teamwork"
+      }
+    },
+    {
+      "at": 5598.69999999553,
+      "label": "rtvi-ai",
+      "type": "bot-llm-text",
+      "data": {
+        "text": " pathi pesalam."
+      }
+    },
+    {
+      "at": 5598.69999999553,
+      "label": "rtvi-ai",
+      "type": "bot-transcription",
+      "data": {
+        "text": " Modhala, namma teamwork pathi pesalam."
+      }
+    },
+    {
+      "at": 5787.79999999702,
+      "label": "rtvi-ai",
+      "type": "bot-llm-text",
+      "data": {
+        "text": " Neenga matravangaloda"
+      }
+    },
+    {
+      "at": 5824.39999999851,
+      "label": "rtvi-ai",
+      "type": "bot-output",
+      "data": {
+        "text": "meet pannathula",
+        "aggregated_by": "sentence",
+        "segment_id": 230,
+        "spoken": true,
+        "will_be_spoken": false
+      }
+    },
+    {
+      "at": 5824.39999999851,
+      "label": "rtvi-ai",
+      "type": "bot-tts-text",
+      "data": {
+        "text": "meet pannathula"
+      }
+    },
+    {
+      "at": 6061.19999999553,
+      "label": "rtvi-ai",
+      "type": "bot-llm-text",
+      "data": {
+        "text": " sernthu,"
+      }
+    },
+    {
+      "at": 6400.89999999851,
+      "label": "rtvi-ai",
+      "type": "bot-llm-text",
+      "data": {
+        "text": " ore goal-a achieve"
+      }
+    },
+    {
+      "at": 6559.10000000149,
+      "label": "rtvi-ai",
+      "type": "bot-llm-text",
+      "data": {
+        "text": " panna time-a pathi"
+      }
+    },
+    {
+      "at": 6745.79999999702,
+      "label": "rtvi-ai",
+      "type": "bot-output",
+      "data": {
+        "text": " romba santhosam.",
+        "aggregated_by": "sentence",
+        "segment_id": 269,
+        "spoken": true,
+        "will_be_spoken": false
+      }
+    },
+    {
+      "at": 6745.79999999702,
+      "label": "rtvi-ai",
+      "type": "bot-tts-text",
+      "data": {
+        "text": " romba santhosam."
+      }
+    },
+    {
+      "at": 6758.79999999702,
+      "label": "rtvi-ai",
+      "type": "bot-llm-text",
+      "data": {
+        "text": " sollunga."
+      }
+    },
+    {
+      "at": 6758.79999999702,
+      "label": "rtvi-ai",
+      "type": "bot-transcription",
+      "data": {
+        "text": " Neenga matravangaloda sernthu, ore goal-a achieve panna time-a pathi sollunga."
+      }
+    },
+    {
+      "at": 7665.69999999553,
+      "label": "rtvi-ai",
+      "type": "bot-output",
+      "data": {
+        "text": " Modhala,",
+        "aggregated_by": "sentence",
+        "segment_id": 315,
+        "spoken": true,
+        "will_be_spoken": false
+      }
+    },
+    {
+      "at": 7665.79999999702,
+      "label": "rtvi-ai",
+      "type": "bot-tts-text",
+      "data": {
+        "text": " Modhala,"
+      }
+    },
+    {
+      "at": 8584.79999999702,
+      "label": "rtvi-ai",
+      "type": "bot-output",
+      "data": {
+        "text": " namma teamwork",
+        "aggregated_by": "sentence",
+        "segment_id": 358,
+        "spoken": true,
+        "will_be_spoken": false
+      }
+    },
+    {
+      "at": 8584.79999999702,
+      "label": "rtvi-ai",
+      "type": "bot-tts-text",
+      "data": {
+        "text": " namma teamwork"
+      }
+    },
+    {
+      "at": 9545.39999999851,
+      "label": "rtvi-ai",
+      "type": "bot-output",
+      "data": {
+        "text": " pathi pesalam.",
+        "aggregated_by": "sentence",
+        "segment_id": 403,
+        "spoken": true,
+        "will_be_spoken": false
+      }
+    },
+    {
+      "at": 9545.39999999851,
+      "label": "rtvi-ai",
+      "type": "bot-tts-text",
+      "data": {
+        "text": " pathi pesalam."
+      }
+    },
+    {
+      "at": 10424.89999999851,
+      "label": "rtvi-ai",
+      "type": "bot-output",
+      "data": {
+        "text": " Neenga matravangaloda",
+        "aggregated_by": "sentence",
+        "segment_id": 447,
+        "spoken": true,
+        "will_be_spoken": false
+      }
+    },
+    {
+      "at": 10424.89999999851,
+      "label": "rtvi-ai",
+      "type": "bot-tts-text",
+      "data": {
+        "text": " Neenga matravangaloda"
+      }
+    },
+    {
+      "at": 11544.79999999702,
+      "label": "rtvi-ai",
+      "type": "bot-output",
+      "data": {
+        "text": " sernthu,",
+        "aggregated_by": "sentence",
+        "segment_id": 496,
+        "spoken": true,
+        "will_be_spoken": false
+      }
+    },
+    {
+      "at": 11544.79999999702,
+      "label": "rtvi-ai",
+      "type": "bot-tts-text",
+      "data": {
+        "text": " sernthu,"
+      }
+    },
+    {
+      "at": 12663.89999999851,
+      "label": "rtvi-ai",
+      "type": "bot-output",
+      "data": {
+        "text": " ore goal-a achieve",
+        "aggregated_by": "sentence",
+        "segment_id": 548,
+        "spoken": true,
+        "will_be_spoken": false
+      }
+    },
+    {
+      "at": 12664,
+      "label": "rtvi-ai",
+      "type": "bot-tts-text",
+      "data": {
+        "text": " ore goal-a achieve"
+      }
+    },
+    {
+      "at": 13585.89999999851,
+      "label": "rtvi-ai",
+      "type": "bot-output",
+      "data": {
+        "text": " panna time-a pathi",
+        "aggregated_by": "sentence",
+        "segment_id": 587,
+        "spoken": true,
+        "will_be_spoken": false
+      }
+    },
+    {
+      "at": 13585.89999999851,
+      "label": "rtvi-ai",
+      "type": "bot-tts-text",
+      "data": {
+        "text": " panna time-a pathi"
+      }
+    },
+    {
+      "at": 14425.19999999553,
+      "label": "rtvi-ai",
+      "type": "bot-output",
+      "data": {
+        "text": " sollunga.",
+        "aggregated_by": "sentence",
+        "segment_id": 631,
+        "spoken": true,
+        "will_be_spoken": false
+      }
+    },
+    {
+      "at": 14425.29999999702,
+      "label": "rtvi-ai",
+      "type": "bot-tts-text",
+      "data": {
+        "text": " sollunga."
+      }
+    },
+    {
+      "at": 14521.29999999702,
+      "v": 1,
+      "session_id": "d0e9059495ef48aa9a78810a65b62491",
+      "connection_generation": 1,
+      "seq": 4,
+      "type": "interview.reply",
+      "text": "Vanakkam! Ungala meet pannathula romba santhosam. Modhala, namma teamwork pathi pesalam. Neenga matravangaloda sernthu, ore goal-a achieve panna time-a pathi sollunga.",
+      "dispatch_id": 1
+    },
+    {
+      "at": 14522,
+      "label": "rtvi-ai",
+      "type": "bot-tts-stopped"
+    },
+    {
+      "at": 14522,
+      "label": "rtvi-ai",
+      "type": "bot-llm-stopped"
+    },
+    {
+      "at": 14553.79999999702,
+      "v": 1,
+      "session_id": "d0e9059495ef48aa9a78810a65b62491",
+      "connection_generation": 1,
+      "seq": 5,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 1,
+      "state_revision": 3,
+      "question_text": "Practice prompt: Tell me about a time you worked with others to achieve a shared goal.",
+      "interaction_state": "listening",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 14554.69999999553,
+      "label": "rtvi-ai",
+      "type": "bot-stopped-speaking"
+    },
+    {
+      "at": 14579.79999999702,
+      "v": 1,
+      "session_id": "d0e9059495ef48aa9a78810a65b62491",
+      "connection_generation": 1,
+      "seq": 6,
+      "type": "interview.command_result",
+      "prompt_revision": 1,
+      "command_id": 1,
+      "outcome": "applied",
+      "code": "ok"
+    },
+    {
+      "at": 14579.79999999702,
+      "v": 1,
+      "session_id": "d0e9059495ef48aa9a78810a65b62491",
+      "connection_generation": 1,
+      "seq": 7,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 1,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 1,
+      "state_revision": 4,
+      "question_text": "Practice prompt: Tell me about a time you worked with others to achieve a shared goal.",
+      "interaction_state": "generating",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 14579.89999999851,
+      "label": "rtvi-ai",
+      "type": "bot-interrupted"
+    },
+    {
+      "at": 14579.89999999851,
+      "v": 1,
+      "session_id": "d0e9059495ef48aa9a78810a65b62491",
+      "connection_generation": 1,
+      "seq": 8,
+      "type": "interview.interruption",
+      "playback_epoch": 1,
+      "prompt_revision": 1,
+      "state_revision": 4,
+      "question_text": "Practice prompt: Tell me about a time you worked with others to achieve a shared goal.",
+      "interaction_state": "generating",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 14580.39999999851,
+      "label": "rtvi-ai",
+      "type": "user-llm-text",
+      "data": {
+        "text": "Explain this question simply, then repeat the question. Do not give an example. The current rubric question is: Tell me about a time you worked with others to achieve a shared goal."
+      }
+    }
+  ],
+  "page_errors": [],
+  "notice": ""
+}

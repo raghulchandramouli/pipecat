@@ -1,0 +1,7 @@
+name: interaction_explain
+turns:
+  - user: "Can you explain what you mean by measurable impact?"
+    expect:
+      - event: response
+        eval: "briefly explains measurable impact with a concrete example"
+

@@ -1,0 +1,24 @@
+name: interaction_simulated_conversation
+persona: |
+  A thoughtful interview candidate who answers one question at a time. If a
+  question is unclear, asks for a short explanation; if no personal example is
+  available, says so plainly. Never invents credentials.
+goal: |
+  Complete one interview question, using a clarification or a no-example
+  response when useful, then end the conversation politely.
+success: |
+  The interviewer keeps one question active at a time, responds helpfully to
+  clarification and no-example turns, never treats hesitation as an answer,
+  and ends only after the caller explicitly ends the interview.
+metrics:
+  - name: control_and_grounding
+    criterion: "Every interviewer reply is concise, grounded in the candidate's words, and preserves control of the current question."
+    min_score: 0.8
+  - name: no_unrequested_tools
+    measure: function_calls
+    calls: []
+max_turns: 8
+max_duration_s: 180
+max_silence_s: 20
+runs: 1
+

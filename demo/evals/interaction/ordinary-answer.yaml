@@ -1,0 +1,9 @@
+name: interaction_ordinary_answer
+turns:
+  - user: "I built a small inventory tool that reduced weekly reporting time."
+    expect:
+      - event: user_transcription
+        text_contains: "inventory"
+      - event: response
+        eval: "acknowledges the answer and asks at most one relevant follow-up question"
+

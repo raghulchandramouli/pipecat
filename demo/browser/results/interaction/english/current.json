@@ -1,0 +1,2695 @@
+{
+  "utc": "2026-09-16T07:19:38.435659+00:00",
+  "scope": "Chromium UI, synthetic split microphone audio, real WebRTC and live providers",
+  "timing_note": "Client event arrival deltas; not proof of physical microphone or audible playback.",
+  "url": "http://127.0.0.1:7871",
+  "language": "english",
+  "candidate_sha256": "5d95b8d0d8c9c945542962814ebe2b9f16e3551b2d52cac3cce671f18a0e4443",
+  "audio_split": {
+    "split_frame": 92512,
+    "sample_rate": 24000,
+    "total_frames": 235520
+  },
+  "passed": true,
+  "stage": "ended",
+  "opening_question": "Have you ever helped someone finish a task? Tell me about it.",
+  "explain_same_question": true,
+  "no_reply_during_pause": true,
+  "timings_ms": {
+    "last_final_at_ms": 33937.800000000745,
+    "thinking_at_ms": 36260.900000002235,
+    "reply_at_ms": 38062.699999999255,
+    "speaking_at_ms": 38452.5,
+    "last_final_to_thinking_ms": 2323.10000000149,
+    "thinking_to_reply_ms": 1801.7999999970198,
+    "reply_to_speaking_ms": 389.80000000074506,
+    "synthetic_input_stop_to_reply_ms": 4348.5
+  },
+  "grounded_reply": "That was very helpful of you. When you \"helped a teammate test the difficult part\", how did the two of you work together to solve the problem?",
+  "grounding": {
+    "candidate_final_before_reply": true,
+    "follow_up_phase_after_reply": true,
+    "question_before_answer": "Have you ever helped someone finish a task? Tell me about it.",
+    "question_after_reply": "That was very helpful of you. When you \"helped a teammate test the difficult part\", how did the two of you work together to solve the problem?"
+  },
+  "end_closed": true,
+  "events": [
+    {
+      "at": 832.6000000014901,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 1,
+      "type": "interview.status",
+      "status": "Reconnecting"
+    },
+    {
+      "at": 845,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 2,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "introduction",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 0,
+      "state_revision": 0,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "connecting",
+      "question_delivery": "pending",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking"
+      ]
+    },
+    {
+      "at": 896.1999999992549,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 3,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "introduction",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 1,
+      "state_revision": 1,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "generating",
+      "question_delivery": "pending",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking"
+      ]
+    },
+    {
+      "at": 896.5,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 4,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 2,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "generating",
+      "question_delivery": "pending",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 897.1999999992549,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 5,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 3,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "generating",
+      "question_delivery": "pending",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 897.1999999992549,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 6,
+      "type": "interview.reply",
+      "text": "Welcome. I am your AI practice interviewer for this 5-minute junior interview for Behavioural interview. I will ask one question at a time. You can ask me to repeat, skip, take a moment, or end the interview.",
+      "playback_epoch": 0,
+      "dispatch_id": 1
+    },
+    {
+      "at": 897.6000000014901,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 7,
+      "type": "interview.reply",
+      "text": "Have you ever helped someone finish a task? Tell me about it.",
+      "playback_epoch": 0,
+      "dispatch_id": 3
+    },
+    {
+      "at": 1297,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 8,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 4,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "speaking",
+      "question_delivery": "pending",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 1297.199999999255,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 9,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 4,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "speaking",
+      "question_delivery": "pending",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 14013,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 10,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 5,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "listening",
+      "question_delivery": "complete",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 14013.300000000745,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 11,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 6,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "speaking",
+      "question_delivery": "pending",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 14013.400000002235,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 12,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 5,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "listening",
+      "question_delivery": "complete",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 14013.400000002235,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 13,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 6,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "speaking",
+      "question_delivery": "pending",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 16572.10000000149,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 14,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 7,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "listening",
+      "question_delivery": "complete",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 16572.199999999255,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 15,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 7,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "listening",
+      "question_delivery": "complete",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 16685.5,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 16,
+      "type": "interview.command_result",
+      "prompt_revision": 3,
+      "command_id": 1,
+      "outcome": "applied",
+      "code": "ok"
+    },
+    {
+      "at": 16685.699999999255,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 17,
+      "type": "interview.interruption",
+      "playback_epoch": 1
+    },
+    {
+      "at": 16686.10000000149,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 18,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 1,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 3,
+      "state_revision": 8,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "generating",
+      "question_delivery": "pending",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 16686.10000000149,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 19,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 1,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 3,
+      "state_revision": 9,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "generating",
+      "question_delivery": "pending",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 16686.199999999255,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 20,
+      "type": "interview.reply",
+      "text": "Think of a time you worked with someone toward a shared goal.",
+      "playback_epoch": 1,
+      "dispatch_id": 7
+    },
+    {
+      "at": 17050.699999999255,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 21,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 1,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 3,
+      "state_revision": 10,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "speaking",
+      "question_delivery": "pending",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 17051,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 22,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 1,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 3,
+      "state_revision": 10,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "speaking",
+      "question_delivery": "pending",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 19603.199999999255,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 23,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 1,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 3,
+      "state_revision": 11,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "listening",
+      "question_delivery": "complete",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 19603.400000002235,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 24,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 1,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 3,
+      "state_revision": 11,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "listening",
+      "question_delivery": "complete",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 19634.800000000745,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 25,
+      "type": "interview.command_result",
+      "prompt_revision": 4,
+      "command_id": 2,
+      "outcome": "applied",
+      "code": "ok"
+    },
+    {
+      "at": 19634.900000002235,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 26,
+      "type": "interview.interruption",
+      "playback_epoch": 2
+    },
+    {
+      "at": 19635.199999999255,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 27,
+      "type": "interview.status",
+      "status": "Giving you time",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 2,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 12,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "thinking",
+      "question_delivery": "pending",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 19635.199999999255,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 28,
+      "type": "interview.status",
+      "status": "Giving you time",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 2,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 13,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "thinking",
+      "question_delivery": "pending",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 19635.199999999255,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 29,
+      "type": "interview.status",
+      "status": "Giving you time",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 2,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 14,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "thinking",
+      "question_delivery": "pending",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 19635.300000000745,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 30,
+      "type": "interview.reply",
+      "text": "Take your time. Let me know when you are ready to continue.",
+      "playback_epoch": 2,
+      "dispatch_id": 11
+    },
+    {
+      "at": 19934.199999999255,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 31,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 2,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 15,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "speaking",
+      "question_delivery": "pending",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 19934.60000000149,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 32,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 2,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 15,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "speaking",
+      "question_delivery": "pending",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 22332,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 33,
+      "type": "interview.status",
+      "status": "Giving you time",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 2,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 16,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "listening",
+      "question_delivery": "complete",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 22332.10000000149,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 34,
+      "type": "interview.status",
+      "status": "Giving you time",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 2,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 16,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "listening",
+      "question_delivery": "complete",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 22831.800000000745,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 35,
+      "type": "interview.interruption",
+      "playback_epoch": 3
+    },
+    {
+      "at": 22832.800000000745,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 36,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 4,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 17,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "listening",
+      "question_delivery": "complete",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 22832.900000002235,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 37,
+      "type": "interview.interruption",
+      "playback_epoch": 6
+    },
+    {
+      "at": 22832.900000002235,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 38,
+      "type": "interview.interruption",
+      "playback_epoch": 4
+    },
+    {
+      "at": 22833,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 39,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 6,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 18,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "listening",
+      "question_delivery": "complete",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 22833,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 40,
+      "type": "interview.interruption",
+      "playback_epoch": 5
+    },
+    {
+      "at": 22833.10000000149,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 41,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 6,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 19,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "listening",
+      "question_delivery": "complete",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 22834.800000000745,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 42,
+      "type": "interview.interruption",
+      "playback_epoch": 7
+    },
+    {
+      "at": 22834.900000002235,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 43,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 7,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 20,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "listening",
+      "question_delivery": "complete",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 24731.10000000149,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 44,
+      "type": "interview.interruption",
+      "playback_epoch": 8
+    },
+    {
+      "at": 24732.10000000149,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 45,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 9,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 21,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "listening",
+      "question_delivery": "complete",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 24732.199999999255,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 46,
+      "type": "interview.interruption",
+      "playback_epoch": 9
+    },
+    {
+      "at": 24732.199999999255,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 47,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 10,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 22,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "listening",
+      "question_delivery": "complete",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 24732.300000000745,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 48,
+      "type": "interview.interruption",
+      "playback_epoch": 10
+    },
+    {
+      "at": 24732.300000000745,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 49,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 10,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 23,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "listening",
+      "question_delivery": "complete",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 24732.400000002235,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 50,
+      "type": "interview.interruption",
+      "playback_epoch": 11
+    },
+    {
+      "at": 24732.400000002235,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 51,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 11,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 24,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "listening",
+      "question_delivery": "complete",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 24987.60000000149,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 52,
+      "type": "interview.caption",
+      "text": "Our",
+      "final": false,
+      "segment_id": "0"
+    },
+    {
+      "at": 24990.199999999255,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 53,
+      "type": "interview.caption",
+      "text": "Our",
+      "final": false,
+      "segment_id": "0"
+    },
+    {
+      "at": 24994.900000002235,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 54,
+      "type": "interview.caption",
+      "text": "Our",
+      "final": false,
+      "segment_id": "0"
+    },
+    {
+      "at": 24999.199999999255,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 55,
+      "type": "interview.caption",
+      "text": "Our team",
+      "final": false,
+      "segment_id": "0"
+    },
+    {
+      "at": 25005.60000000149,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 56,
+      "type": "interview.caption",
+      "text": "Our team was",
+      "final": false,
+      "segment_id": "0"
+    },
+    {
+      "at": 25009,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 57,
+      "type": "interview.caption",
+      "text": "Our team was running",
+      "final": false,
+      "segment_id": "0"
+    },
+    {
+      "at": 25014.800000000745,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 58,
+      "type": "interview.caption",
+      "text": "Our team was running",
+      "final": false,
+      "segment_id": "0"
+    },
+    {
+      "at": 25018.800000000745,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 59,
+      "type": "interview.caption",
+      "text": "Our team was running behind",
+      "final": false,
+      "segment_id": "0"
+    },
+    {
+      "at": 25023.199999999255,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 60,
+      "type": "interview.caption",
+      "text": "Our team was running behind on",
+      "final": false,
+      "segment_id": "0"
+    },
+    {
+      "at": 25028.199999999255,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 61,
+      "type": "interview.caption",
+      "text": "Our team was running behind on a",
+      "final": false,
+      "segment_id": "0"
+    },
+    {
+      "at": 25032.199999999255,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 62,
+      "type": "interview.caption",
+      "text": "Our team was running behind on a",
+      "final": false,
+      "segment_id": "0"
+    },
+    {
+      "at": 25038,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 63,
+      "type": "interview.caption",
+      "text": "Our team was running behind on a project",
+      "final": false,
+      "segment_id": "0"
+    },
+    {
+      "at": 25133.400000002235,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 64,
+      "type": "interview.caption",
+      "text": "Our team is running behind on a project.",
+      "final": true,
+      "segment_id": "0",
+      "candidate_turn_id": 2
+    },
+    {
+      "at": 25458.5,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 65,
+      "type": "interview.caption",
+      "text": "I",
+      "final": false,
+      "segment_id": "1"
+    },
+    {
+      "at": 25465.10000000149,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 66,
+      "type": "interview.caption",
+      "text": "I",
+      "final": false,
+      "segment_id": "1"
+    },
+    {
+      "at": 25465.10000000149,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 67,
+      "type": "interview.caption",
+      "text": "I asked",
+      "final": false,
+      "segment_id": "1"
+    },
+    {
+      "at": 25472.60000000149,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 68,
+      "type": "interview.caption",
+      "text": "I asked",
+      "final": false,
+      "segment_id": "1"
+    },
+    {
+      "at": 25474.699999999255,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 69,
+      "type": "interview.caption",
+      "text": "I asked eve",
+      "final": false,
+      "segment_id": "1"
+    },
+    {
+      "at": 25479.900000002235,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 70,
+      "type": "interview.caption",
+      "text": "I asked every",
+      "final": false,
+      "segment_id": "1"
+    },
+    {
+      "at": 25484.699999999255,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 71,
+      "type": "interview.caption",
+      "text": "I asked everyone",
+      "final": false,
+      "segment_id": "1"
+    },
+    {
+      "at": 25489,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 72,
+      "type": "interview.caption",
+      "text": "I asked everyone",
+      "final": false,
+      "segment_id": "1"
+    },
+    {
+      "at": 26244.400000002235,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 73,
+      "type": "interview.caption",
+      "text": "I",
+      "final": false,
+      "segment_id": "1"
+    },
+    {
+      "at": 26253.5,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 74,
+      "type": "interview.caption",
+      "text": "I",
+      "final": false,
+      "segment_id": "1"
+    },
+    {
+      "at": 26253.60000000149,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 75,
+      "type": "interview.caption",
+      "text": "I asked",
+      "final": false,
+      "segment_id": "1"
+    },
+    {
+      "at": 26258.900000002235,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 76,
+      "type": "interview.caption",
+      "text": "I asked",
+      "final": false,
+      "segment_id": "1"
+    },
+    {
+      "at": 26262.900000002235,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 77,
+      "type": "interview.caption",
+      "text": "I asked eve",
+      "final": false,
+      "segment_id": "1"
+    },
+    {
+      "at": 26272.199999999255,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 78,
+      "type": "interview.caption",
+      "text": "I asked every",
+      "final": false,
+      "segment_id": "1"
+    },
+    {
+      "at": 26272.300000000745,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 79,
+      "type": "interview.caption",
+      "text": "I asked everyone",
+      "final": false,
+      "segment_id": "1"
+    },
+    {
+      "at": 26283.5,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 80,
+      "type": "interview.caption",
+      "text": "I asked everyone what",
+      "final": false,
+      "segment_id": "1"
+    },
+    {
+      "at": 26299.5,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 81,
+      "type": "interview.caption",
+      "text": "I asked everyone what was",
+      "final": false,
+      "segment_id": "1"
+    },
+    {
+      "at": 26299.60000000149,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 82,
+      "type": "interview.caption",
+      "text": "I asked everyone what was blocking",
+      "final": false,
+      "segment_id": "1"
+    },
+    {
+      "at": 26386.5,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 83,
+      "type": "interview.caption",
+      "text": "I asked everyone what was blocking them.",
+      "final": true,
+      "segment_id": "1",
+      "candidate_turn_id": 2
+    },
+    {
+      "at": 28309,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 84,
+      "type": "interview.interruption",
+      "playback_epoch": 12
+    },
+    {
+      "at": 28309.199999999255,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 85,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 13,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 25,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "listening",
+      "question_delivery": "complete",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 28309.900000002235,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 86,
+      "type": "interview.interruption",
+      "playback_epoch": 15
+    },
+    {
+      "at": 28309.900000002235,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 87,
+      "type": "interview.interruption",
+      "playback_epoch": 13
+    },
+    {
+      "at": 28309.900000002235,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 88,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 15,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 26,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "listening",
+      "question_delivery": "complete",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 28310,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 89,
+      "type": "interview.interruption",
+      "playback_epoch": 14
+    },
+    {
+      "at": 28310,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 90,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 15,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 27,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "listening",
+      "question_delivery": "complete",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 28311.60000000149,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 91,
+      "type": "interview.interruption",
+      "playback_epoch": 16
+    },
+    {
+      "at": 28311.699999999255,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 92,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 16,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 28,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "listening",
+      "question_delivery": "complete",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 29053.900000002235,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 93,
+      "type": "interview.caption",
+      "text": "Then",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 29064.10000000149,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 94,
+      "type": "interview.caption",
+      "text": "Then I",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 29069.10000000149,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 95,
+      "type": "interview.caption",
+      "text": "Then I di",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 29074.699999999255,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 96,
+      "type": "interview.caption",
+      "text": "Then I divide",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 29079.900000002235,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 97,
+      "type": "interview.caption",
+      "text": "Then I divide the",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 29090.800000000745,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 98,
+      "type": "interview.caption",
+      "text": "Then I divide the",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 29093.800000000745,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 99,
+      "type": "interview.caption",
+      "text": "Then I divide the",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 29950,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 100,
+      "type": "interview.caption",
+      "text": "Then",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 29958.699999999255,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 101,
+      "type": "interview.caption",
+      "text": "Then I",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 29977.699999999255,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 102,
+      "type": "interview.caption",
+      "text": "Then I di",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 29977.699999999255,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 103,
+      "type": "interview.caption",
+      "text": "Then I divide",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 29981.60000000149,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 104,
+      "type": "interview.caption",
+      "text": "Then I divided",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 29989.10000000149,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 105,
+      "type": "interview.caption",
+      "text": "Then I divided the",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 29994.300000000745,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 106,
+      "type": "interview.caption",
+      "text": "Then I divided the",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 29996.5,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 107,
+      "type": "interview.caption",
+      "text": "Then I divided the remain",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 30002,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 108,
+      "type": "interview.caption",
+      "text": "Then I divided the remaining",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 30005.5,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 109,
+      "type": "interview.caption",
+      "text": "Then I divided the remaining work",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 30013,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 110,
+      "type": "interview.caption",
+      "text": "Then I divided the remaining work and",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 30017,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 111,
+      "type": "interview.caption",
+      "text": "Then I divided the remaining work and helped",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 30027.300000000745,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 112,
+      "type": "interview.caption",
+      "text": "Then I divided the remaining work and helped the",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 30030.5,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 113,
+      "type": "interview.caption",
+      "text": "Then I divided the remaining work and helped the",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 30033.699999999255,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 114,
+      "type": "interview.caption",
+      "text": "Then I divided the remaining work and helped the",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 30943.5,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 115,
+      "type": "interview.caption",
+      "text": "Then I divided the",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 30946.800000000745,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 116,
+      "type": "interview.caption",
+      "text": "Then I divided the remain",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 30951.10000000149,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 117,
+      "type": "interview.caption",
+      "text": "Then I divided the remaining",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 30953.900000002235,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 118,
+      "type": "interview.caption",
+      "text": "Then I divided the remaining work",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 30960.5,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 119,
+      "type": "interview.caption",
+      "text": "Then I divided the remaining work and",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 30965.5,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 120,
+      "type": "interview.caption",
+      "text": "Then I divided the remaining work and helped",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 30968,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 121,
+      "type": "interview.caption",
+      "text": "Then I divided the remaining work and helped the",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 30972.60000000149,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 122,
+      "type": "interview.caption",
+      "text": "Then I divided the remaining work and helped the",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 30977.199999999255,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 123,
+      "type": "interview.caption",
+      "text": "Then I divided the remaining work and helped the team",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 30984.10000000149,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 124,
+      "type": "interview.caption",
+      "text": "Then I divided the remaining work and helped the teammate",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 30991.400000002235,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 125,
+      "type": "interview.caption",
+      "text": "Then I divided the remaining work and helped the teammate test",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 30991.60000000149,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 126,
+      "type": "interview.caption",
+      "text": "Then I divided the remaining work and helped the teammate test the",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 31000,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 127,
+      "type": "interview.caption",
+      "text": "Then I divided the remaining work and helped the teammate test the",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 31000,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 128,
+      "type": "interview.caption",
+      "text": "Then I divided the remaining work and helped the teammate test the",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 31293.199999999255,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 129,
+      "type": "interview.caption",
+      "text": "Then I divided the remaining work and helped the team",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 31293.300000000745,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 130,
+      "type": "interview.caption",
+      "text": "Then I divided the remaining work and helped the teammate",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 31302,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 131,
+      "type": "interview.caption",
+      "text": "Then I divided the remaining work and helped the teammate test",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 31307.800000000745,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 132,
+      "type": "interview.caption",
+      "text": "Then I divided the remaining work and helped the teammate test the",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 31313.900000002235,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 133,
+      "type": "interview.caption",
+      "text": "Then I divided the remaining work and helped the teammate test the",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 31321.699999999255,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 134,
+      "type": "interview.caption",
+      "text": "Then I divided the remaining work and helped the teammate test the difficult",
+      "final": false,
+      "segment_id": "2"
+    },
+    {
+      "at": 31456.300000000745,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 135,
+      "type": "interview.caption",
+      "text": "Then I divided the remaining work and helped a teammate test the difficult part.",
+      "final": true,
+      "segment_id": "2",
+      "candidate_turn_id": 2
+    },
+    {
+      "at": 31888.10000000149,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 136,
+      "type": "interview.interruption",
+      "playback_epoch": 17
+    },
+    {
+      "at": 31888.900000002235,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 137,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 18,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 29,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "listening",
+      "question_delivery": "complete",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 31889,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 138,
+      "type": "interview.interruption",
+      "playback_epoch": 18
+    },
+    {
+      "at": 31889,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 139,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 19,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 30,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "listening",
+      "question_delivery": "complete",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 31889.10000000149,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 140,
+      "type": "interview.interruption",
+      "playback_epoch": 19
+    },
+    {
+      "at": 31889.10000000149,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 141,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 19,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 31,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "listening",
+      "question_delivery": "complete",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 31891.10000000149,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 142,
+      "type": "interview.interruption",
+      "playback_epoch": 20
+    },
+    {
+      "at": 31891.199999999255,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 143,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 20,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 32,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "listening",
+      "question_delivery": "complete",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 32565.199999999255,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 144,
+      "type": "interview.caption",
+      "text": "We",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 32569.199999999255,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 145,
+      "type": "interview.caption",
+      "text": "We delivered",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 32572.199999999255,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 146,
+      "type": "interview.caption",
+      "text": "We delivered on",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 32575.300000000745,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 147,
+      "type": "interview.caption",
+      "text": "We delivered on",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 33541.400000002235,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 148,
+      "type": "interview.caption",
+      "text": "We",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 33568.400000002235,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 149,
+      "type": "interview.caption",
+      "text": "We delivered",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 33568.5,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 150,
+      "type": "interview.caption",
+      "text": "We delivered on",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 33598.300000000745,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 151,
+      "type": "interview.caption",
+      "text": "We delivered on time",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 33615.5,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 152,
+      "type": "interview.caption",
+      "text": "We delivered on time and",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 33615.699999999255,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 153,
+      "type": "interview.caption",
+      "text": "We delivered on time and kept",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 33615.699999999255,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 154,
+      "type": "interview.caption",
+      "text": "We delivered on time and kept the",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 33615.900000002235,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 155,
+      "type": "interview.caption",
+      "text": "We delivered on time and kept the client",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 33615.900000002235,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 156,
+      "type": "interview.caption",
+      "text": "We delivered on time and kept the client",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 33818.10000000149,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 157,
+      "type": "interview.caption",
+      "text": "We delivered on time",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 33822.800000000745,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 158,
+      "type": "interview.caption",
+      "text": "We delivered on time and",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 33829.5,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 159,
+      "type": "interview.caption",
+      "text": "We delivered on time and kept",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 33836.5,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 160,
+      "type": "interview.caption",
+      "text": "We delivered on time and kept the",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 33839.199999999255,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 161,
+      "type": "interview.caption",
+      "text": "We delivered on time and kept the client",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 33842.900000002235,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 162,
+      "type": "interview.caption",
+      "text": "We delivered on time and kept the client informed",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 33854.699999999255,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 163,
+      "type": "interview.caption",
+      "text": "We delivered on time and kept the client informed.",
+      "final": false,
+      "segment_id": "3"
+    },
+    {
+      "at": 33937.800000000745,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 164,
+      "type": "interview.caption",
+      "text": "We delivered on time and kept the client informed.",
+      "final": true,
+      "segment_id": "3",
+      "candidate_turn_id": 2
+    },
+    {
+      "at": 36260.900000002235,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 165,
+      "type": "interview.status",
+      "status": "Thinking",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 20,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 32,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "listening",
+      "question_delivery": "complete",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 36261,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 166,
+      "type": "interview.status",
+      "status": "Thinking",
+      "phase": "question",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 20,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 32,
+      "question_text": "Have you ever helped someone finish a task? Tell me about it.",
+      "interaction_state": "listening",
+      "question_delivery": "complete",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 38062.699999999255,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 167,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "follow_up",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 20,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 5,
+      "state_revision": 33,
+      "question_text": "That was very helpful of you. When you \"helped a teammate test the difficult part\", how did the two of you work together to solve the problem?",
+      "interaction_state": "listening",
+      "question_delivery": "complete",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 38062.699999999255,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 168,
+      "type": "interview.reply",
+      "text": "That was very helpful of you. When you \"helped a teammate test the difficult part\", how did the two of you work together to solve the problem?",
+      "playback_epoch": 20,
+      "dispatch_id": 15
+    },
+    {
+      "at": 38452.5,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 169,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "follow_up",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 20,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 5,
+      "state_revision": 34,
+      "question_text": "That was very helpful of you. When you \"helped a teammate test the difficult part\", how did the two of you work together to solve the problem?",
+      "interaction_state": "speaking",
+      "question_delivery": "pending",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    },
+    {
+      "at": 38452.699999999255,
+      "v": 1,
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "seq": 170,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "follow_up",
+      "question_index": 1,
+      "question_count": 5,
+      "playback_epoch": 20,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 5,
+      "state_revision": 34,
+      "question_text": "That was very helpful of you. When you \"helped a teammate test the difficult part\", how did the two of you work together to solve the problem?",
+      "interaction_state": "speaking",
+      "question_delivery": "pending",
+      "permitted_actions": [
+        "end",
+        "repeat",
+        "thinking",
+        "explain",
+        "skip"
+      ]
+    }
+  ],
+  "failure_events": [],
+  "outbound": [
+    {
+      "at": 843.6999999992549,
+      "v": 1,
+      "type": "interview.ready",
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "capabilities": [
+        "interaction_controls_v1"
+      ]
+    },
+    {
+      "at": 16678.60000000149,
+      "v": 1,
+      "type": "interview.command",
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "command_id": 1,
+      "prompt_revision": 2,
+      "action": "explain"
+    },
+    {
+      "at": 19629.5,
+      "v": 1,
+      "type": "interview.command",
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "command_id": 2,
+      "prompt_revision": 3,
+      "action": "thinking"
+    },
+    {
+      "at": 38612.199999999255,
+      "v": 1,
+      "type": "interview.command",
+      "session_id": "f25e22f169424d61bf65c75541823333",
+      "connection_generation": 1,
+      "command_id": 3,
+      "prompt_revision": 5,
+      "action": "end"
+    }
+  ],
+  "notice": "",
+  "page_errors": [],
+  "console_errors": []
+}

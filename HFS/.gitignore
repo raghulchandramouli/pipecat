@@ -1,0 +1,11 @@
+# Bootstrap-owned source and environment. Neither is part of Pipecat's environment.
+/upstream/
+/.venv/
+/.cache/
+
+# Generated dependency evidence; dependency-lock.toml remains tracked.
+/requirements-resolved.txt
+/bootstrap-manifest.json
+
+__pycache__/
+.pytest_cache/

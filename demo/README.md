@@ -1,7 +1,9 @@
 # Conversational interview demo
 
-Status: browser and eval entry points wire isolated interview sessions through
-Sarvam STT, local VAD, Gemini, strict transcript/reply validation, and Sarvam TTS.
+Status: the browser entry point uses Gemini 3.8 Live native speech-to-speech for
+microphone input, captions, and audio output in isolated interview sessions.
+The older Sarvam STT/TTS and EvalTransport paths remain available as explicit
+legacy integrations.
 See [browser setup and evidence](docs/browser-interview.md). Physical microphone,
 echo, and audible interruption acceptance remain separate live checks.
 
@@ -32,7 +34,7 @@ demo/.venv/bin/ruff format --check demo
 Live provider evidence is recorded separately from deterministic tests in the
 [browser guide](docs/browser-interview.md) and the speech synthesis results below.
 
-## Sarvam event extension
+## Legacy Sarvam event extension
 
 See [segment events and setup](docs/sarvam-events.md) for the loop 02 extension,
 explicit boundary/utterance binding, and tests against the real framework. Its
@@ -48,6 +50,8 @@ See [turn policy and reply authorization](docs/turn-policy.md) for coordinated
 pauses, thinking time, strict streamed-reply validation, and composition.
 See [interview controller](docs/controller.md) for question progression, exact voice
 controls, staged answer acceptance, and evidence validation.
+See [interaction acceptance](docs/interaction-acceptance.md) for runnable scenarios,
+browser gates, timing boundaries, and human-trial evidence.
 
 ## Run a scripted interview
 
@@ -67,11 +71,12 @@ closing. It needs no microphone, credentials, network requests, or TTS model.
 For a provider-backed composition, use `InterviewSession.create_llm(api_key=...)`,
 `create_user_aggregator()`, and `create_reply_guard()`. Keep the guard before TTS and
 output; bind Sarvam utterances to verified local boundaries before accepting finals.
-Sarvam TTS is connected through the session factory used by both browser and eval entry points.
+This composition is retained for the legacy EvalTransport/Sarvam path; the
+default browser uses Gemini Live native audio.
 
-## Sarvam speech output
+## Legacy Sarvam speech output
 
-The active TTS provider is **Sarvam Bulbul v3**, with the `shubh` voice and streamed
+The legacy TTS provider is **Sarvam Bulbul v3**, with the `shubh` voice and streamed
 24-kHz PCM. Use `session.create_tts(api_key=...)` after the reply guard. It also
 reads `SARVAM_API_KEY` from the environment; the smoke command loads `demo/.env`.
 

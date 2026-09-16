@@ -1,0 +1,63 @@
+{
+  "utc": "2026-09-16T06:46:59.693693+00:00",
+  "scope": "Chromium UI, synthetic split microphone audio, real WebRTC and live providers",
+  "timing_note": "Client event arrival deltas; not proof of physical microphone or audible playback.",
+  "url": "http://127.0.0.1:7871",
+  "language": "tanglish",
+  "candidate_sha256": "d2f149a4de8a55e194d2acd4ad5fb24db7ca8e15dab1a715d98e603498fe2c0a",
+  "audio_split": {
+    "split_frame": 176185,
+    "sample_rate": 24000,
+    "total_frames": 290816
+  },
+  "passed": false,
+  "stage": "opening",
+  "failure": "TimeoutError: Page.wait_for_function: Timeout 45000ms exceeded.",
+  "events": [
+    {
+      "at": 800.1000000014901,
+      "v": 1,
+      "session_id": "8d325bc13b374fb78c7a113bb3f7783d",
+      "connection_generation": 1,
+      "seq": 1,
+      "type": "interview.status",
+      "status": "Reconnecting"
+    },
+    {
+      "at": 822.8000000007451,
+      "v": 1,
+      "session_id": "8d325bc13b374fb78c7a113bb3f7783d",
+      "connection_generation": 1,
+      "seq": 2,
+      "type": "interview.error",
+      "message": "Browser capabilities could not be read. Continuing with voice controls.",
+      "recoverable": true
+    }
+  ],
+  "failure_events": [
+    {
+      "at": 822.8000000007451,
+      "v": 1,
+      "session_id": "8d325bc13b374fb78c7a113bb3f7783d",
+      "connection_generation": 1,
+      "seq": 2,
+      "type": "interview.error",
+      "message": "Browser capabilities could not be read. Continuing with voice controls.",
+      "recoverable": true
+    }
+  ],
+  "outbound": [
+    {
+      "at": 821.3000000007451,
+      "v": 1,
+      "type": "interview.ready",
+      "session_id": "8d325bc13b374fb78c7a113bb3f7783d",
+      "capabilities": [
+        "interaction_controls_v1"
+      ]
+    }
+  ],
+  "notice": "Browser capabilities could not be read. Continuing with voice controls.",
+  "page_errors": [],
+  "console_errors": []
+}

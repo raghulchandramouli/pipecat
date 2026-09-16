@@ -2,8 +2,10 @@
 
 The local application uses Pipecat's SmallWebRTC transport, which connects browser
 microphone and playback tracks directly to the Python pipeline without a separate
-media service. The eval entry point uses the same pipeline factory with
-`EvalTransport` and RTVI instead of WebRTC.
+media service. The default browser conversation uses Gemini 3.8 Live native
+speech-to-speech: microphone audio goes to Gemini and its native audio output is
+played back while captions are rendered from the conversation events. The older
+EvalTransport/RTVI entry point remains a legacy test path.
 
 ## Run
 
@@ -12,45 +14,57 @@ From the repository root:
 ```bash
 uv venv demo/.venv --python 3.12
 python3 demo/scripts/prepare_pipecat.py
-uv pip install --python demo/.venv/bin/python 'demo/.build/pipecat[sarvam]' -r demo/requirements-browser.txt
-PYTHONPATH=src demo/.venv/bin/python -m demo.interview.server --host 127.0.0.1 --port 7860
+uv pip install --python demo/.venv/bin/python 'demo/.build/pipecat[google]' -r demo/requirements-browser.txt
+GOOGLE_API_KEY=... PYTHONPATH=src demo/.venv/bin/python -m demo.interview.server --host 127.0.0.1 --port 7871
 ```
 
-Put `SARVAM_API_KEY` and `GOOGLE_API_KEY` in `demo/.env` or the server environment.
+Put `GOOGLE_API_KEY` in `demo/.env` or the server environment.
 Startup rejects missing credentials without displaying their values. Open
-<http://127.0.0.1:7860>, choose the language, role, difficulty, duration and rubric, then enable
+<http://127.0.0.1:7871>, choose the language, role, difficulty, duration and rubric, then enable
 microphone and playback. Speak naturally after the opening question; there is no
 per-answer submit or stop-speaking control. Browser microphone access requires
 localhost or HTTPS. This entry point is a local practice server.
 
-The default language is Tanglish (Tamil mixed with English): realtime STT uses `auto`/`codemix`, and speech
-output uses `ta-IN`. The setup selector also offers Hinglish (Hindi and English) and English. Say
+The default language is slow Tanglish (Tamil mixed with English), expressed as
+conversation guidance to Gemini rather than a numeric speech-rate guarantee. The
+setup selector offers all 97 Gemini languages plus Tanglish and Hinglish. Say
 “repeat the question,” “give me a moment,” “skip this question,” or “end the
-interview.” Readable interviewer replies remain available if speech synthesis
-fails; microphone input continues so the interview can proceed.
+interview.” Native Gemini audio and captions are part of the same live session;
+provider failure is surfaced as a reconnect/error state.
+
+## Conversation flow
+
+The round first asks what work the person does or how they spend their days,
+then waits for the answer. It adapts to their occupation or daily role without
+assuming employment from the setup role. Gemini follows
+concrete details from their answers, asks one question at a time, and moves to
+another related topic after one or two follow-ups. Listening themes guide the
+conversation privately; they are not a fixed question list. Brief answers and
+lack of experience are accepted without pressure.
+
+Skip remains an optional way to change the subject. Repeat and Explain refer
+to the latest conversational question. The conversation panel shows Gemini's
+actual wording, without a numbered question counter.
 
 ## Pipeline and ownership
 
-Each session owns its controller, transcript ledger, context, service instances,
-worker, and transport. A long-lived `WorkerRunner` hosts the browser sessions.
+Each session owns its conversation state, context, service instance, worker, and
+transport. A long-lived `WorkerRunner` hosts the browser sessions.
 The pipeline follows this order, with application event bridges between stages:
 
 ```text
-transport input → Sarvam manual endpointing → transcript/session gate
-→ user aggregation and local Silero VAD → Gemini → strict reply guard
-→ session.create_tts() → transport output → assistant aggregation
+transport input → Gemini 3.8 Live native conversation → native audio output/captions
+→ browser playback and interview state
 ```
 
-The selected speech provider is Sarvam Bulbul v3. Replies preserve
-candidate quotations in their original script and spelling. Gemini uses `gemini-3.8-flash`
-with explicit `low` thinking. Provider credentials and endpoints stay on the server;
-client setup accepts only interview choices. The assistant aggregation after output
-keeps playback history separate from the controller's validated interview context.
+Gemini owns the native speech-to-speech input/output session. Provider credentials
+and endpoints stay on the server;
+client setup accepts only interview choices. Assistant aggregation records
+conversation text alongside native audio turns.
 
-The browser STT adapter retains 400 ms of onset PCM until the manual speech-start
-boundary is sent. Older audio continues upstream during silence to keep the
-provider connection active. It matches final timestamps to the actual sent audio intervals;
-missing or ambiguous matches hold the transcript gate.
+Native Gemini audio events supply the conversation captions. They are displayed as
+conversation state and do not use the older pre-speech JSON evidence/reply-guard
+authorization path.
 
 The microphone remains active during playback with echo cancellation requested.
 Speech resumption invalidates server response/playback ownership, interrupts the
@@ -76,7 +90,7 @@ opening only after media setup.
 | --- | --- |
 | `interview.status` | Listening, Giving you time, Thinking, Speaking, or Reconnecting, with optional question progress and playback epoch. |
 | `interview.caption` | Provisional or finalized user transcript, identified by segment. Finalization does not itself accept an answer. |
-| `interview.reply` | Guard-approved interviewer text, identified by dispatch. |
+| `interview.reply` | Native interviewer output transcript, identified by reply. |
 | `interview.interruption` | Invalidate playback through the supplied epoch. |
 | `interview.error` | A public, sanitized failure notice. |
 | `interview.ended` | Interview completion and media teardown. |
@@ -84,7 +98,7 @@ opening only after media setup.
 `Reconnecting` indicates unavailable transport/transcription. Restoring accepted
 state across a replacement connection is loop 09 work.
 
-## Eval and validation
+## Legacy eval and validation
 
 ```bash
 PYTHONPATH=src demo/.venv/bin/python -m demo.interview.eval_bot --port 7861
@@ -92,11 +106,12 @@ PYTHONPATH=src demo/.venv/bin/python -m demo.interview.eval_bot --port 7861
 PYTHONPATH=src demo/.venv/bin/python -m pipecat.evals run path/to/scenario.yaml --bot-url ws://localhost:7861
 ```
 
-Use the repository's `pipecat eval run` entry point if installed. Eval receives
+Use the repository's `pipecat eval run` entry point if installed. This legacy eval
+path receives
 guard-approved TTS text and audio; raw model text and internal coaching are not
-forwarded as RTVI LLM events. Provider-backed
-audio scenarios exercise STT and turn-taking; a fixture or text-only scenario
-cannot establish microphone behavior.
+forwarded as RTVI LLM events. This legacy path does not exercise the native
+Gemini browser session. Provider-backed audio scenarios exercise STT and
+turn-taking; a fixture or text-only scenario cannot establish microphone behavior.
 
 Focused checks:
 
@@ -124,7 +139,8 @@ echo behavior, or audible interruption latency with speakers/headphones. See the
 
 Provider references checked on 2026-09-15:
 [Gemini model and thinking settings](https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash),
-[Sarvam streaming TTS](https://docs.sarvam.ai/api-reference/text-to-speech/stream).
+[Sarvam streaming TTS](https://docs.sarvam.ai/api-reference/text-to-speech/stream)
+(legacy path only).
 
 ## Current evidence
 
@@ -141,3 +157,7 @@ The [conversation screenshot](../browser/results/conversation.png) shows the
 canonical transcript and approved response. Physical microphone, acoustic echo and
 latency measurements remain unrun. Invalid model replies remain blocked and produce
 a recoverable notice; these short successful runs do not establish a reliability rate.
+
+The [interaction acceptance pack](interaction-acceptance.md) covers hesitation,
+resumed speech, clarification, controls, and recovery. Its event assertions are
+semantic; audible timing still requires boundary timestamps and human trials.

@@ -20,6 +20,8 @@ from pydantic import (
     model_validator,
 )
 
+from .languages import STT_LANGUAGES, TTS_LANGUAGES
+
 
 class InterviewModel(BaseModel):
     """Common safe validation settings for interview configuration."""
@@ -132,7 +134,7 @@ class InterviewDeadlines(InterviewModel):
 
 
 class SarvamSTTConfig(InterviewModel):
-    """Pinned Sarvam realtime STT choices for the initial en-IN prototype."""
+    """Pinned Sarvam realtime STT choices for the supported recognition languages."""
 
     credentials: ProviderCredentials = Field(default_factory=ProviderCredentials)
     model: str = "saaras:v3-realtime"
@@ -147,8 +149,8 @@ class SarvamSTTConfig(InterviewModel):
             raise ValueError("Sarvam model must not be blank")
         if self.endpointing != "manual":
             raise ValueError("the interview prototype requires Sarvam manual endpointing")
-        if self.language_code not in {"en-IN", "hi-IN", "ta-IN", "auto"}:
-            raise ValueError("the demo supports en-IN, hi-IN, ta-IN, or auto STT")
+        if self.language_code not in {*STT_LANGUAGES, "auto"}:
+            raise ValueError("unsupported Sarvam realtime STT language")
         if self.sample_rate != 16_000:
             raise ValueError("the interview prototype requires a 16000 Hz Sarvam input")
         return self
@@ -195,22 +197,23 @@ class RumikTTSConfig(InterviewModel):
 
 
 class SarvamTTSConfig(InterviewModel):
-    """Hosted streaming speech for the English practice interview."""
+    """Hosted streaming speech for the supported interview languages."""
 
     credentials: ProviderCredentials = Field(default_factory=ProviderCredentials)
     model: str = "bulbul:v3"
     speaker: str = Field(default="shubh", min_length=1)
     language_code: str = "en-IN"
     sample_rate: int = 24_000
+    pace: float = Field(default=0.85, ge=0.5, le=2.0)
 
     @model_validator(mode="after")
     def _validate_stream(self):
         if (
             self.model != "bulbul:v3"
-            or self.language_code not in {"en-IN", "hi-IN", "ta-IN"}
+            or self.language_code not in TTS_LANGUAGES
             or self.sample_rate != 24_000
         ):
-            raise ValueError("the demo requires bulbul:v3, en-IN, hi-IN, or ta-IN, and 24000 Hz")
+            raise ValueError("the demo requires bulbul:v3, a supported language, and 24000 Hz")
         return self
 
 

@@ -9,6 +9,8 @@ from time import monotonic
 
 from .config import InterviewConfig, QuestionRubric
 from .contracts import AcceptedAnswer, ReplyKind
+from .interaction_copy import get_copy
+from .prompt_languages import LANGUAGES, closing, introduction, question
 
 
 class InterviewPhase(StrEnum):
@@ -131,8 +133,8 @@ class InterviewController:
         """
         if not session_id.strip():
             raise ValueError("session_id must not be blank")
-        if language not in {"english", "hinglish", "tanglish"}:
-            raise ValueError("language must be english, hinglish, or tanglish")
+        if language not in LANGUAGES:
+            raise ValueError(f"language must be one of: {', '.join(sorted(LANGUAGES))}")
         self.config = config
         self.session_id = session_id
         self._language = language
@@ -147,6 +149,9 @@ class InterviewController:
         self._waiting_reason: str | None = None
         self._pending: _PendingOutput | None = None
         self._last_follow_up: str | None = None
+        self._active_scenario: str | None = None
+        self._scenario_questions: set[str] = set()
+        self._prompt_revision = 0
         self._next_response_id = 1
         self._used_response_ids: set[int] = set()
 
@@ -173,6 +178,60 @@ class InterviewController:
     def current_prompt(self) -> ControllerPrompt | None:
         """Return output that has not yet reached its downstream release boundary."""
         return self._pending.prompt if self._pending is not None else None
+
+    @property
+    def prompt_revision(self) -> int:
+        """Return the revision of the active candidate-facing prompt."""
+        return self._prompt_revision
+
+    @property
+    def active_prompt_text(self) -> str | None:
+        """Return the question, scenario, or follow-up the candidate should answer."""
+        if self._phase is InterviewPhase.FOLLOW_UP:
+            return self._last_follow_up
+        if self._active_scenario is not None:
+            return self._active_scenario
+        question = self.current_question
+        return question.text if question is not None else None
+
+    @property
+    def active_scenario(self) -> str | None:
+        """Return the one allowed practice scenario for the current base question."""
+        return self._active_scenario
+
+    def offer_scenario(self, text: str) -> ControllerPrompt | None:
+        """Offer one practice scenario without accepting an answer or changing identity."""
+        question = self.current_question
+        if self._phase is not InterviewPhase.QUESTION or question is None:
+            return None
+        if question.question_id in self._scenario_questions:
+            return None
+        scenario = text.strip()
+        if not scenario:
+            raise ValueError("scenario must not be blank")
+        self.invalidate_response()
+        self._scenario_questions.add(question.question_id)
+        self._active_scenario = scenario
+        return self._issue(text=scenario, reply_kind=ReplyKind.CHECK_IN, action=_ReleaseAction.NONE)
+
+    def can_offer_scenario(self) -> bool:
+        """Return whether the current base question can receive its one scenario."""
+        question = self.current_question
+        return (
+            self._phase is InterviewPhase.QUESTION
+            and question is not None
+            and question.question_id not in self._scenario_questions
+        )
+
+    def offer_help(self, text: str) -> ControllerPrompt | None:
+        """Issue a non-answer explanation while retaining the active candidate turn."""
+        if self._phase not in {InterviewPhase.QUESTION, InterviewPhase.FOLLOW_UP}:
+            return None
+        message = text.strip()
+        if not message:
+            raise ValueError("help text must not be blank")
+        self.invalidate_response()
+        return self._issue(text=message, reply_kind=ReplyKind.CHECK_IN, action=_ReleaseAction.NONE)
 
     @property
     def accepted_answers(self) -> tuple[AcceptedAnswer, ...]:
@@ -337,6 +396,7 @@ class InterviewController:
         if pending.action is _ReleaseAction.ADVANCE_AFTER_FOLLOW_UP:
             self._expected_candidate_turn_id = None
             self._question_index += 1
+            self._active_scenario = None
             if self._question_index < len(self.config.question_rubric):
                 self._phase = InterviewPhase.QUESTION
                 return self._issue_question()
@@ -391,7 +451,7 @@ class InterviewController:
             self.invalidate_response()
             self._waiting_reason = "thinking"
             return self._issue(
-                text="Take your time. Let me know when you are ready to continue.",
+                text=get_copy(self._language, "thinking"),
                 reply_kind=ReplyKind.CHECK_IN,
                 action=(
                     _ReleaseAction.REISSUE_INTRODUCTION
@@ -442,7 +502,11 @@ class InterviewController:
             return self._begin_closing()
         self.invalidate_response()
         self._waiting_reason = None
-        text = self._last_follow_up if self._phase is InterviewPhase.FOLLOW_UP else question.text
+        text = (
+            self._last_follow_up
+            if self._phase is InterviewPhase.FOLLOW_UP
+            else self._active_scenario or question.text
+        )
         return self._issue(
             text=text or question.text,
             reply_kind=ReplyKind.REPEAT,
@@ -457,6 +521,7 @@ class InterviewController:
         self._waiting_reason = None
         self._question_index += 1
         self._last_follow_up = None
+        self._active_scenario = None
         if self._question_index >= len(self.config.question_rubric):
             return self._begin_closing()
         self._phase = InterviewPhase.QUESTION
@@ -500,6 +565,7 @@ class InterviewController:
             question_id=question.question_id if question is not None else None,
             question_index=question.index if question is not None else None,
         )
+        self._prompt_revision += 1
         self._pending = _PendingOutput(prompt, action, answer, evidence, coaching)
         return prompt
 
@@ -525,28 +591,14 @@ class InterviewController:
             self._coaching_notes.append(coaching)
 
     def _introduction_text(self) -> str:
-        if self._language == "hinglish":
+        text = introduction(self._language)
+        if self._language == "english":
+            focus = f" focused on {self.config.role.focus}" if self.config.role.focus else ""
             return (
-                "नमस्ते! चलिए थोड़ी बात करते हैं। घर या काम की रोज़ की बातों पर सवाल पूछूँगा। "
-                "English बोलना ज़रूरी नहीं है। आप आराम से अपनी बात बताइए।"
+                f"{text} This is a {self.config.duration_minutes}-minute {self.config.difficulty.value} "
+                f"practice interview for {self.config.role.title}{focus}."
             )
-        if self._language == "tanglish":
-            return (
-                "வணக்கம்! நாம கொஞ்ச நேரம் பேசலாம். "
-                "வீட்டுலயோ வேலை செய்யும் இடத்துலயோ நடந்த விஷயங்களைப் பத்தி கேட்பேன். "
-                "இங்கிலீஷ் பேசணும்னு அவசியம் இல்ல. உங்களுக்கு வசதியா தமிழ்ல பேசுங்க."
-            )
-        focus = f" focused on {self.config.role.focus}" if self.config.role.focus else ""
-        return (
-            f"Welcome. I am your AI practice interviewer for this {self.config.duration_minutes}-minute "
-            f"{self.config.difficulty.value} interview for {self.config.role.title}{focus}. I will ask "
-            "one question at a time. You can ask me to repeat, skip, take a moment, or end the interview."
-            + (
-                " You may answer in Hindi, English, or Hinglish."
-                if self._language == "hinglish"
-                else ""
-            )
-        )
+        return text
 
     def _question_text(self, rubric: QuestionRubric, index: int) -> str:
         if self._language == "hinglish":
@@ -559,53 +611,22 @@ class InterviewController:
             }
             if rubric.competency.casefold() in questions:
                 return questions[rubric.competency.casefold()]
-        if self._language == "english":
-            questions = {
-                "teamwork": "Have you ever helped someone finish a task? Tell me about it.",
-                "communication": "If someone does not understand you, how would you explain it?",
-                "conflict resolution": "If someone speaks angrily to you, what would you do?",
-                "ownership": "If you make a mistake while working, what would you do?",
-                "resilience": "If a task feels difficult, what would you do?",
-            }
-            if rubric.competency.casefold() in questions:
-                return questions[rubric.competency.casefold()]
-        if self._language == "tanglish":
-            questions = {
-                "teamwork": "நீங்க யாருக்காவது ஒரு வேலையை முடிக்க உதவி செஞ்சிருக்கீங்களா? அதைப் பத்தி சொல்லுங்க.",
-                "communication": "நீங்க சொன்னது ஒருத்தருக்குப் புரியலைன்னா, எப்படி புரிய வைப்பீங்க?",
-                "conflict resolution": "ஒருத்தர் உங்ககிட்ட கோபமா பேசினா, நீங்க என்ன செய்வீங்க?",
-                "ownership": "ஒரு வேலையில உங்களால தவறு நடந்தா, என்ன செய்வீங்க?",
-                "resilience": "ஒரு வேலை செய்யும்போது கஷ்டமா இருந்தா, நீங்க என்ன செய்வீங்க?",
-            }
-            question = questions.get(rubric.competency.casefold())
-            if question is not None:
-                return question
+        prompt = question(self._language, rubric.competency)
+        if self._language == "english" and rubric.competency.casefold() not in {
+            "teamwork",
+            "communication",
+            "conflict resolution",
+            "ownership",
+            "resilience",
+        }:
             return (
-                f"{rubric.competency} சம்பந்தமா உங்க வாழ்க்கையில நடந்த ஒரு சம்பவத்தைப் "
-                "பத்தி சொல்லுங்க. அப்போ நீங்க என்ன பண்ணீங்க?"
+                f"Question {index + 1} of {len(self.config.question_rubric)} for this "
+                f"{self.config.difficulty.value} {self.config.role.title} interview. {prompt}"
             )
-        return (
-            f"Question {index + 1} of {len(self.config.question_rubric)} for this "
-            f"{self.config.difficulty.value} {self.config.role.title} interview: "
-            f"{rubric.competency}. {rubric.guidance}"
-            + (
-                " Aap Hindi, English, ya Hinglish mein jawab de sakte hain."
-                if self._language == "hinglish"
-                else ""
-            )
-        )
+        return prompt
 
     def _closing_text(self) -> str:
-        if self._language == "hinglish":
-            return "हमारी बातचीत पूरी हो गई। अपना समय देने के लिए धन्यवाद!"
-        if self._language == "tanglish":
-            return "நாம பேசி முடிச்சிட்டோம். நேரம் ஒதுக்கிப் பேசினதுக்கு நன்றி!"
-        return (
-            f"That concludes your {self.config.duration_minutes}-minute "
-            f"{self.config.difficulty.value} practice interview for {self.config.role.title}. "
-            "Thank you for sharing your experience."
-            + (" Dhanyavaad." if self._language == "hinglish" else "")
-        )
+        return closing(self._language)
 
     def _expired(self) -> bool:
         deadline = self.deadline

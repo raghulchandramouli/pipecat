@@ -149,3 +149,7 @@ an eligible answer must preserve the admitted ledger revision and response
 identity through that release. Clearing the ledger or advancing its candidate turn
 inside that callback invalidates the reply; defer that transition until output
 release or add an explicit release acknowledgment when implementing loop 05.
+
+Use [interaction-acceptance.md](interaction-acceptance.md) to exercise hesitation,
+resumed speech, and check-in suppression. Keep server finalization, dispatch,
+guard authorization, and actual playback timestamps distinct when measuring delay.

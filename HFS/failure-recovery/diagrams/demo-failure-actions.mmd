@@ -1,0 +1,16 @@
+graph TD
+    A[Reproduce demo failure] --> B[Record source and turn timings]
+    B --> C{Sarvam direct probes pass?}
+    C -->|No| D[Fix key or provider request]
+    D --> C
+    C -->|Yes| E[Find first failed stage]
+    E --> F[Focused fix and regression]
+    F --> G{Demo passes matched checks?}
+    G -->|Yes| H[Keep demo and verify real audio]
+    G -->|No after investigation checkpoint| I[Isolated pinned HF folder]
+    I --> J[Supported baseline then Sarvam adapters]
+    J --> K{Audio and cancellation pass?}
+    K -->|No| L[Save failure and stop experiment]
+    K -->|Yes| M[Compare matched language trials]
+    M --> N[Keep only a qualified voice baseline]
+    N --> O[Interview parity before any migration]

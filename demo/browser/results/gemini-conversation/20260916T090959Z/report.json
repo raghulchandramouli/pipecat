@@ -1,0 +1,921 @@
+{
+  "model": "gemini-3.8-live",
+  "passed": true,
+  "scope": "Live WebRTC with synthetic microphone audio; audio receipt is not a listening assessment.",
+  "stage": "end",
+  "received_audio": [
+    {
+      "bytesReceived": 321120,
+      "totalSamplesReceived": 1458720
+    }
+  ],
+  "events": [
+    {
+      "at": 473.69999999552965,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 1,
+      "type": "interview.status",
+      "status": "Reconnecting"
+    },
+    {
+      "at": 525.1999999955297,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 2,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 1,
+      "state_revision": 1,
+      "interaction_state": "generating",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 3041.5,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 3,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 1,
+      "state_revision": 2,
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 5529.69999999553,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 4,
+      "type": "interview.reply",
+      "text": "Vanakkam! Inaiku unga day eppadi pochu?",
+      "dispatch_id": 1
+    },
+    {
+      "at": 5530,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 5,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 3,
+      "question_text": "Vanakkam! Inaiku unga day eppadi pochu?",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 5674.29999999702,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 6,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 0,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 4,
+      "question_text": "Vanakkam! Inaiku unga day eppadi pochu?",
+      "interaction_state": "listening",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 5702.5999999940395,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 7,
+      "type": "interview.command_result",
+      "prompt_revision": 2,
+      "command_id": 1,
+      "outcome": "applied",
+      "code": "ok"
+    },
+    {
+      "at": 5702.79999999702,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 8,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 1,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 5,
+      "question_text": "Vanakkam! Inaiku unga day eppadi pochu?",
+      "interaction_state": "generating",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 5702.79999999702,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 9,
+      "type": "interview.interruption",
+      "playback_epoch": 1,
+      "prompt_revision": 2,
+      "state_revision": 5,
+      "question_text": "Vanakkam! Inaiku unga day eppadi pochu?",
+      "interaction_state": "generating",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 6571,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 10,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 1,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 2,
+      "state_revision": 6,
+      "question_text": "Vanakkam! Inaiku unga day eppadi pochu?",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 11443.89999999851,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 11,
+      "type": "interview.reply",
+      "text": "Ungala naan eppadi irukeenga nu ketkuren. Vanakkam, inaiku unga day eppadi pochu?",
+      "dispatch_id": 2
+    },
+    {
+      "at": 11444.09999999404,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 12,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 1,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 3,
+      "state_revision": 7,
+      "question_text": "Ungala naan eppadi irukeenga nu ketkuren. Vanakkam, inaiku unga day eppadi pochu?",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 11483.09999999404,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 13,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 1,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 3,
+      "state_revision": 8,
+      "question_text": "Ungala naan eppadi irukeenga nu ketkuren. Vanakkam, inaiku unga day eppadi pochu?",
+      "interaction_state": "listening",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 11511.19999999553,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 14,
+      "type": "interview.command_result",
+      "prompt_revision": 3,
+      "command_id": 2,
+      "outcome": "applied",
+      "code": "ok"
+    },
+    {
+      "at": 11511.29999999702,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 15,
+      "type": "interview.status",
+      "status": "Giving you time",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 2,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 3,
+      "state_revision": 9,
+      "question_text": "Ungala naan eppadi irukeenga nu ketkuren. Vanakkam, inaiku unga day eppadi pochu?",
+      "interaction_state": "thinking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 11511.29999999702,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 16,
+      "type": "interview.interruption",
+      "playback_epoch": 2,
+      "prompt_revision": 3,
+      "state_revision": 9,
+      "question_text": "Ungala naan eppadi irukeenga nu ketkuren. Vanakkam, inaiku unga day eppadi pochu?",
+      "interaction_state": "thinking",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 14366.09999999404,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 17,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 2,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 3,
+      "state_revision": 10,
+      "question_text": "Ungala naan eppadi irukeenga nu ketkuren. Vanakkam, inaiku unga day eppadi pochu?",
+      "interaction_state": "listening",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 14368.59999999404,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 18,
+      "type": "interview.interruption",
+      "playback_epoch": 2,
+      "prompt_revision": 3,
+      "state_revision": 10,
+      "question_text": "Ungala naan eppadi irukeenga nu ketkuren. Vanakkam, inaiku unga day eppadi pochu?",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 32384.89999999851,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 19,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 2,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 3,
+      "state_revision": 11,
+      "question_text": "Ungala naan eppadi irukeenga nu ketkuren. Vanakkam, inaiku unga day eppadi pochu?",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 33333.29999999702,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 20,
+      "type": "interview.caption",
+      "text": "குழுவில் ஒரு வேலை முடிக்க தாமதம் ஆச்சு.  எல்லார்கிட்டயும் என்ன பிரச்சனைன்னு கேட்டேன்.  மீதி வேலையை பிரிச்சு கொடுத்தேன்.  ஒரு நண்பருக்கு கடினமான பகுதியை முடிக்க உதவி பண்ணேன்.  நாங்க நேரத்துக்கு வேலையை முடிச்சோம்.",
+      "final": true,
+      "segment_id": "native-input-1"
+    },
+    {
+      "at": 38702.89999999851,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 21,
+      "type": "interview.reply",
+      "text": "Super! Team-ah nalla support panni velaiya mudichitinga. Apdi handle panrapo ungaluku epdi irundhudhu?",
+      "dispatch_id": 3
+    },
+    {
+      "at": 38703.09999999404,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 22,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 2,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 12,
+      "question_text": "Super! Team-ah nalla support panni velaiya mudichitinga. Apdi handle panrapo ungaluku epdi irundhudhu?",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 38744.39999999851,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 23,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 2,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 13,
+      "question_text": "Super! Team-ah nalla support panni velaiya mudichitinga. Apdi handle panrapo ungaluku epdi irundhudhu?",
+      "interaction_state": "listening",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 40506.79999999702,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 24,
+      "type": "interview.interruption",
+      "playback_epoch": 2,
+      "prompt_revision": 4,
+      "state_revision": 13,
+      "question_text": "Super! Team-ah nalla support panni velaiya mudichitinga. Apdi handle panrapo ungaluku epdi irundhudhu?",
+      "interaction_state": "listening",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 47415.89999999851,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 25,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 2,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 4,
+      "state_revision": 14,
+      "question_text": "Super! Team-ah nalla support panni velaiya mudichitinga. Apdi handle panrapo ungaluku epdi irundhudhu?",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 48390.79999999702,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 26,
+      "type": "interview.caption",
+      "text": "Ippo varaikkum vazhkaiyila onnumae pannathilla.",
+      "final": true,
+      "segment_id": "native-input-2"
+    },
+    {
+      "at": 53955.19999999553,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 27,
+      "type": "interview.reply",
+      "text": "Apdi nenaikadinga, ellarum vazhkaiyila vera vera speed-la dhan travel panrom. Ungaluku enna seiya pidikum?",
+      "dispatch_id": 4
+    },
+    {
+      "at": 53955.5,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 28,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 2,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 5,
+      "state_revision": 15,
+      "question_text": "Apdi nenaikadinga, ellarum vazhkaiyila vera vera speed-la dhan travel panrom. Ungaluku enna seiya pidikum?",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 53994.69999999553,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 29,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 2,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 5,
+      "state_revision": 16,
+      "question_text": "Apdi nenaikadinga, ellarum vazhkaiyila vera vera speed-la dhan travel panrom. Ungaluku enna seiya pidikum?",
+      "interaction_state": "listening",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 54136.09999999404,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 30,
+      "type": "interview.command_result",
+      "prompt_revision": 5,
+      "command_id": 3,
+      "outcome": "applied",
+      "code": "ok"
+    },
+    {
+      "at": 54136.29999999702,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 31,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 3,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 5,
+      "state_revision": 17,
+      "question_text": "Apdi nenaikadinga, ellarum vazhkaiyila vera vera speed-la dhan travel panrom. Ungaluku enna seiya pidikum?",
+      "interaction_state": "generating",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 54136.29999999702,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 32,
+      "type": "interview.interruption",
+      "playback_epoch": 3,
+      "prompt_revision": 5,
+      "state_revision": 17,
+      "question_text": "Apdi nenaikadinga, ellarum vazhkaiyila vera vera speed-la dhan travel panrom. Ungaluku enna seiya pidikum?",
+      "interaction_state": "generating",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 54860.39999999851,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 33,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 3,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 5,
+      "state_revision": 18,
+      "question_text": "Apdi nenaikadinga, ellarum vazhkaiyila vera vera speed-la dhan travel panrom. Ungaluku enna seiya pidikum?",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 56575.09999999404,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 34,
+      "type": "interview.reply",
+      "text": "Ungaluku enna seiya pidikum?",
+      "dispatch_id": 5
+    },
+    {
+      "at": 56575.29999999702,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 35,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 3,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 6,
+      "state_revision": 19,
+      "question_text": "Ungaluku enna seiya pidikum?",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 56654.59999999404,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 36,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 3,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 6,
+      "state_revision": 20,
+      "question_text": "Ungaluku enna seiya pidikum?",
+      "interaction_state": "listening",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 56686.19999999553,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 37,
+      "type": "interview.command_result",
+      "prompt_revision": 6,
+      "command_id": 4,
+      "outcome": "applied",
+      "code": "ok"
+    },
+    {
+      "at": 56686.29999999702,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 38,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 4,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 6,
+      "state_revision": 21,
+      "question_text": "Ungaluku enna seiya pidikum?",
+      "interaction_state": "generating",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 56686.29999999702,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 39,
+      "type": "interview.interruption",
+      "playback_epoch": 4,
+      "prompt_revision": 6,
+      "state_revision": 21,
+      "question_text": "Ungaluku enna seiya pidikum?",
+      "interaction_state": "generating",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 57625,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 40,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 4,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 6,
+      "state_revision": 22,
+      "question_text": "Ungaluku enna seiya pidikum?",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 61117.69999999553,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 41,
+      "type": "interview.reply",
+      "text": "Sari, inaiku neenga enjoy panni edhavadhu special-la pottungala?",
+      "dispatch_id": 6
+    },
+    {
+      "at": 61117.89999999851,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 42,
+      "type": "interview.status",
+      "status": "Speaking",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 4,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 7,
+      "state_revision": 23,
+      "question_text": "Sari, inaiku neenga enjoy panni edhavadhu special-la pottungala?",
+      "interaction_state": "speaking",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    },
+    {
+      "at": 61154,
+      "v": 1,
+      "session_id": "9aad4a1edd3946cc9d8d5fdaf85802c3",
+      "connection_generation": 1,
+      "seq": 43,
+      "type": "interview.status",
+      "status": "Listening",
+      "phase": "question",
+      "question_count": 5,
+      "playback_epoch": 4,
+      "capabilities": [
+        "interaction_controls_v1"
+      ],
+      "prompt_revision": 7,
+      "state_revision": 24,
+      "question_text": "Sari, inaiku neenga enjoy panni edhavadhu special-la pottungala?",
+      "interaction_state": "listening",
+      "question_delivery": "unconfirmed",
+      "permitted_actions": [
+        "repeat",
+        "explain",
+        "thinking",
+        "skip",
+        "end"
+      ]
+    }
+  ],
+  "page_errors": [],
+  "notice": ""
+}
